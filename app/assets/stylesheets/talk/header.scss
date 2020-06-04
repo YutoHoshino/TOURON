@@ -1,0 +1,39 @@
+.header{
+  height:70px;
+  .upper{
+    height:10px;
+    background-color: steelblue;
+  }
+  .bottom{
+    display:flex;
+    background-color: steelblue;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+    &__left{
+      height:50px;
+      width:50px;
+      line-height: 50px;
+    }
+    &__center{
+      height:50px;
+      width:calc(100% - 50%);
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+    &__right{
+      height:50px;
+      background-color: rgb(226, 124, 124);
+      width:calc(100% - 90%);
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+  }
+  .lower{
+    height:10px;
+    background-color: steelblue;
+  }
+}
