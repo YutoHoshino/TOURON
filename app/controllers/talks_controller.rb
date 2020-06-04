@@ -11,7 +11,7 @@ class TalksController < ApplicationController
 
   def create
     Talk.create(talks_params)
-    redirect_to root_path
+    redirect_to new_talk_path
   end
 
 
