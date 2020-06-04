@@ -1,14 +1,14 @@
 .room-main
   .room-main-content
-  // トーク画面左側
     .room-main-content__left
+      .room-main-content__left__box
       .room-main-content__left__user
         .room-main-content__left__user--image
         .room-main-content__left__user--text
-      .room-main-content__left__box
-  // トーク画面右側
     .room-main-content__right
-      .room-main-content__right__user
-        .room-main-content__right__user--image
-        .room-main-content__right__user--text
-      .room-main-content__right__box
+      - @talks.each do|talk|
+        .room-main-content__right__user
+          .room-main-content__right__user--image
+          .room-main-content__right__user--text
+            = talk.text
+        .room-main-content__right__box
