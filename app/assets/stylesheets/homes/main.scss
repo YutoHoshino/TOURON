@@ -1,0 +1,140 @@
+body {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main__title {
+  width: 100%;
+  height: 60px;
+  background: white;
+  opacity: 0.7;
+  text-align: center;
+  margin-bottom: 50px;
+  &--text {
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+    font-family: cursive;
+    font-style: italic;
+  }
+}
+
+.main {
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  opacity: 0.7;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.1);
+  &__body {
+    display: flex;
+    &--left {
+      width: 45%;
+      height: 300px;
+      background: white;
+      margin: 50px 0 0 50px;
+      border-radius: 10px;
+      box-shadow: 0 20px 30px 15px rgba(0,0,0,0.1);
+      .touron__image {
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+      }
+      .image__text {
+        height: 100px;
+        font-size: 40px;
+        line-height: 100px;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    &--right {
+      width: 45%;
+      height: 300px;
+      margin: 50px 50px 0 20px;
+      border-radius: 10px;
+      letter-spacing: 0.2em;
+      font-size: 14px;
+      background: #CCFFFF;
+      box-shadow: 40px 20px 30px 15px rgba(0,0,0,0.08);
+    }
+  }
+}
+// 右側「討論中」
+.touron__right--contents {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  background: #EEE;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.touron__right--box {
+  display: flex;
+  height: 85%;
+  // 賛成コメント
+  .touron__box--agree {
+    width: 50%;
+    background: #CCFFFF;
+    border-bottom-left-radius: 10px;
+    .touron__left {
+      text-align: center;
+      background: #999;
+      margin: 0;
+    }
+    .touron__left--comments {
+      margin-top: 10px;
+      .touron__user {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 20px 0 0 10px;
+      }
+    }
+    .touron__right--agree {
+      width: 80%;
+      background: #fff;
+      border-radius: 5px;
+      margin: 0 0 0 20px;
+      padding: 2px;
+    }
+  }
+  // 反対コメント
+  .touron__box--opposition {
+    width: 50%;
+    background: green;
+    border-bottom-right-radius: 10px;
+    .touron__right {
+      text-align: center;
+      background: #CC0000;
+      margin: 0;
+    }
+    .touron__right--comments {
+      margin: 0;
+      .touron__user {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 40px 10px 0 0;
+        float: right;
+      }
+    }
+    .touron__right--opposition {
+      width: 80%;
+      background: #f5f5f5;
+      border-radius: 5px;
+      margin: 5px 20px 0 0;
+      padding: 2px;
+      float: right;
+    }
+  }
+}
