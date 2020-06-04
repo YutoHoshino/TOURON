@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_054732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+ActiveRecord::Schema.define(version: 2020_06_04_054600) do
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -29,11 +30,8 @@ ActiveRecord::Schema.define(version: 2020_06_04_054732) do
   create_table "talks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.string "image"
-    t.bigint "room_id"
-    t.integer "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_talks_on_room_id"
   end
 
   add_foreign_key "talks", "rooms"
