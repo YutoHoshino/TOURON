@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+ 
+.footer_bottom{
+
+  li {
+    padding-top: 15px;
+  }
+
+  a { 
+    color: #fff;
+  }
+
+  height: 260px;
+  width: 100%;
+  padding: 10px 60px 10px;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background: rgb(33, 33, 33);
+  position: relative;
+
+  &_bar{
+    color:white;
+    display: flex;
+
+    &-info{
+      width:25%;
+    }
+    &-help{
+      width:25%;
+    }
+    &-privacy{
+      width:25%;
+    }
+    &-nation{
+      width:25%;
+    }
+  }
+  &_content{
+    font-size: 12px;
+    line-height: 1.5em;
+    display: flex;
+    opacity: .7;
+
+    &_info{
+      width: 25%;
+      }
+    &_help{
+      width: 25%;
+    }
+    &_privacy{
+      width: 25%;
+
+    }
+    &_nation{
+      width: 25%;
+    }
+  }
+
+  &_inc{
+    &_icon{
+      height: 36px;
+      width: 124px;
+      background-image:image-url("fmarket_logo_white.svg");
+      background-size: cover;
+    }
+    &_text{
+      font-size: 12px;
+      color:white;
+      text-align: center;
+    }
+  }
+}
