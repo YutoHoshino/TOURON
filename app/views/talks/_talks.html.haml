@@ -2,13 +2,19 @@
   .room-main-content
     .room-main-content__left
       .room-main-content__left__box
-      .room-main-content__left__user
-        .room-main-content__left__user--image
-        .room-main-content__left__user--text
+      - @talks.each do|talk|
+        .room-main-content__left__user
+          -if talk.status_id == 1
+            .room-main-content__left__user--image
+            .room-main-content__left__user--text
+              = talk.text
+              = image_tag talk.image.url, size: "300x300" if talk.image.present?
     .room-main-content__right
       - @talks.each do|talk|
         .room-main-content__right__user
-          .room-main-content__right__user--image
-          .room-main-content__right__user--text
-            = talk.text
+          -if talk.status_id == 2
+            .room-main-content__right__user--image
+            .room-main-content__right__user--text
+              = talk.text
+              = image_tag talk.image.url, size: "300x300" if talk.image.present?
         .room-main-content__right__box
