@@ -1,0 +1,48 @@
+.talk_side {
+  width: 15%;
+  height: calc(100% - 100px);
+  background: #e6e6e6;
+
+  // テキストBOX
+  &-box {
+    background: rgb(52, 53, 52);
+    width: 100%;
+    height: 7%;
+    font-size: 18px;
+    color: #fff;
+    padding: 0 20px;
+    font-family: verdana, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    .fas {
+      line-height: 66.6px;
+      font-size: 25px;
+      padding-right: 15px;
+      padding-left: 10px;
+    }
+    .text {
+      line-height: 66.6px;
+    }
+  }
+
+  // ルーム
+  &-group {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    img {
+      margin: auto 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+    .name {
+      color: #333;
+      font-size: 18px;
+      line-height: 76px;
+      padding-left: 10px;
+    }
+  }
+}
