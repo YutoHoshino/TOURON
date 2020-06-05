@@ -5,7 +5,7 @@ class CreateTalks < ActiveRecord::Migration[5.2]
       t.string :image
       # t.references :user, foreign_key: true
       # t.references :room, foreign_key: true
-      # t.integer :status_id
+      t.integer :status_id
       t.timestamps
     end
   end
