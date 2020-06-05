@@ -1,0 +1,36 @@
+.side
+  -# ユーザー
+  .side-top
+    = link_to mypages_path do
+      =image_tag 'user'
+    .name トウロン君
+    .introduction こんなアカウントです。
+    .box
+      .box-follow フォロー中
+      .box-follow フォロワー
+    .number
+      .number-follow 20
+      .number-follow 28
+
+  -# 各種ボタン
+  .side-info
+    = link_to do
+      .box 
+        = icon('fas fa-home', class: 'icon')
+        .text ホーム
+    = link_to do
+      .box 
+        = icon('far fa-paper-plane', class: 'icon')
+        .text 部屋を作る
+    = link_to do
+      .box 
+        = icon('fas fa-question-circle', class: 'icon')
+        .text ヘルプ
+    = link_to do
+      .box 
+        = icon('fas fa-wrench', class: 'icon')
+        .text 設定
+    = link_to do
+      .box 
+        = icon('far fa-user-circle', class: 'icon')
+        .text ログアウト
