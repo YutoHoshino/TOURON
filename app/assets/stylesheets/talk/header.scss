@@ -1,39 +1,46 @@
 .header{
-  height:70px;
+  height:100px;
   .upper{
     height:10px;
-    background-color: steelblue;
+    background-color: #076938;
   }
   .bottom{
     display:flex;
-    background-color: steelblue;
-    height:50px;
+    background-color: #076938;
+    height:100px;
     text-align: center;
-    line-height: 50px;
+    line-height: 150px;
     font-size: x-large;
     color: white;
     font-weight: bold;
+    align-items: center;
     &__left{
       height:50px;
       width:50px;
       line-height: 50px;
+      font-size: 30px;
     }
     &__center{
       height:50px;
       width:calc(100% - 50%);
       margin: 0 auto;
+      padding-left: calc(100% - 85%);
       border-radius: 5px;
+      line-height: 50px;
+      font-size: 30px;
     }
     &__right{
       height:50px;
       background-color: rgb(226, 124, 124);
       width:calc(100% - 90%);
       border-radius: 5px;
-      margin-right: 20px;
+      margin-right: 70px;
+      line-height: 50px;
+      font-size: 20px;
     }
   }
   .lower{
     height:10px;
-    background-color: steelblue;
+    background-color: #076938;
   }
 }
