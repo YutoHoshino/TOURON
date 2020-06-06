@@ -1,7 +1,6 @@
 body {
   width: 100%;
   height: 100%;
-  background: #F5F5F5;
 }
 
 a {
@@ -9,10 +8,10 @@ a {
   color: black;
 }
 
+
 .main__title {
   width: 100%;
   height: 60px;
-  // background: white;
   opacity: 0.7;
   text-align: center;
   margin-bottom: 50px;
@@ -30,29 +29,29 @@ a {
   height: 400px;
   margin: auto;
   margin-top: 50px;
-  margin-bottom: 50px;
-  background: white;
-  opacity: 0.7;
+  margin-bottom: 100px;
+  background: whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.1);
+  box-shadow: 20px 20px 30px -15px rgba(0,0,0,0.3);
   &__body {
     display: flex;
+    justify-content: center;
     &--left {
-      width: 45%;
+      width: 30%;
       height: 300px;
       background: white;
-      margin: 50px 0 0 50px;
+      margin: 50px;
       border-radius: 10px;
       box-shadow: 0 20px 30px 15px rgba(0,0,0,0.1);
       .touron__image {
         width: 100%;
-        height: 200px;
-        border-radius: 5px;
+        height: 80%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
       }
       .image__text {
-        height: 100px;
-        font-size: 40px;
-        line-height: 100px;
+        font-size: 20px;
+        line-height: 50px;
         text-align: center;
         margin: 0;
       }
@@ -60,81 +59,109 @@ a {
     &--right {
       width: 45%;
       height: 300px;
-      margin: 50px 50px 0 20px;
+      margin: 50px;
       border-radius: 10px;
       letter-spacing: 0.2em;
       font-size: 14px;
       background: #CCFFFF;
-      box-shadow: 40px 20px 30px 15px rgba(0,0,0,0.08);
+      box-shadow: 40px 30px 30px 20px rgba(0,0,0,0.09);
+      position: relative;
     }
   }
 }
+
+// 吹き出し部分
+.oppation__image {
+  position: absolute;
+  top:20px;
+  left: 0;
+  z-index: 5;
+  width: 100px;
+  height: 100px;
+  animation:blink 3s ease-in-out infinite alternate;
+}
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+.agree__image {
+  position: absolute;
+  top:10px;
+  right: -20px;
+  z-index: 5;
+  width: 150px;
+  height: 150px;
+  animation:blink 4s ease-in-out infinite alternate;
+}
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+// 吹きだし部分
+
 // 右側「討論中」
 .touron__right--contents {
   width: 100%;
   font-size: 30px;
   font-family: cursive;
-  background: #EEE;
+  background: green;
+  text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .touron__right--box {
   display: flex;
   height: 85%;
-  // 賛成コメント
-  .touron__box--agree {
-    width: 50%;
-    background: #CCFFFF;
-    border-bottom-left-radius: 10px;
-    .touron__left {
-      text-align: center;
-      background: #999;
-      margin: 0;
-    }
-    .touron__left--comments {
-      margin-top: 10px;
-      .touron__user {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin: 20px 0 0 10px;
-      }
-    }
-    .touron__right--agree {
-      width: 80%;
-      background: #fff;
-      border-radius: 5px;
-      margin: 0 0 0 20px;
-      padding: 2px;
-    }
-  }
   // 反対コメント
   .touron__box--opposition {
     width: 50%;
-    background: green;
-    border-bottom-right-radius: 10px;
-    .touron__right {
-      text-align: center;
-      background: #CC0000;
-      margin: 0;
+    background: whitesmoke;
+    border-bottom-left-radius: 10px;
+    .touron__left {
+      margin: 2px 0 0 2px;
     }
-    .touron__right--comments {
-      margin: 0;
+    .touron__left--comments {
+      position: relative;
       .touron__user {
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        margin: 40px 10px 0 0;
-        float: right;
+        position: absolute;
+        top: -22px;
+        left: 4px;
       }
     }
     .touron__right--opposition {
-      width: 80%;
-      background: #f5f5f5;
+      width:90%;
+      background: #E6CED0;
       border-radius: 5px;
-      margin: 5px 20px 0 0;
+      margin: 40px 0 0 10px;
       padding: 2px;
-      float: right;
+    }
+  }
+  // 賛成コメント
+  .touron__box--agree {
+    width: 50%;
+    background: whitesmoke;
+    border-bottom-right-radius: 10px;
+    .touron__right--comments {
+      position: relative;
+      .touron__user {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-inline-end: 0;
+        position: absolute;
+        top: -20px;
+        right: 5px;
+      }
+    }
+    .touron__right--agree {
+      width: 90%;
+      background: #BBC8D6;
+      border-radius: 5px;
+      margin-top: 30px;
+      padding: 2px;
     }
   }
 }
