@@ -212,3 +212,46 @@ a {
     }
   }
 }
+
+// footer
+.home-footer {
+  width: 100%;
+  height: 400px;
+  background: #ffffff;
+  &-name {
+    width: 100%;
+    height: 20%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px 0 80px;
+  }
+  &-contents {
+    width: 100%;
+    height: calc(80% - 100px);
+    display: flex;
+    overflow: scroll;
+    a {
+      .contents {
+        width: 250px;
+        height: 100%;
+        margin-bottom: 32px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+      .fist {
+        margin-left: 200px;
+      }
+      .last {
+        margin-right: 200px;
+      }
+    }
+  }
+}
