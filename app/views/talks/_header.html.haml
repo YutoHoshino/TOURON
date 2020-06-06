@@ -3,9 +3,11 @@
   .upper
   .bottom
     .bottom__left
-      = icon("fas fa-arrow-circle-left fa-3x",class: "icon")
     .bottom__center
       %h2 TOURONテーマ
     .bottom__right
-      %p Agree
+      %button#menu-button.open{:onclick => "onClickMenu()"}
+        %span#menu-open{:style => "display: block"} Agree
+        %span#menu-close{:style => "display: none"} Oposition
+      %div
   .lower
