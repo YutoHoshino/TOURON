@@ -28,7 +28,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        margin: 40px 0 10px 0;
+        margin: 40px 0 30px 0;
         &--image {
           height: 100px;
           width: 100px;
@@ -36,9 +36,10 @@
           border-radius: 100px;
           background-color: white;
           position: absolute;
+          margin-right: 10px;
         }
         &--text {
-          width: 100%;
+          // width: 100%;
           overflow: visible;
           // text-align: center;
           // line-height: 80%;
@@ -47,7 +48,20 @@
           box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
           background-color: #E6CED0;
           border-radius: 50px;
-          padding: 10px 30px 10px 100px;
+          padding: 10px 50px 10px 100px;
+          font-size: 20px;
+          &--image {
+            margin: 0 10px;
+            border-radius: 20px;
+          }
+        }
+        &--text2 {
+          width: 100%;
+          height: 120px;
+          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+          background-color: #E6CED0;
+          border-radius: 50px;
+          padding: 10px 50px 10px 100px;
           font-size: 20px;
         }
       }
@@ -68,7 +82,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        margin: 40px 0 10px 0;
+        margin: 40px 0 30px 0;
         &--image {
           height: 100px;
           width: 100px;
@@ -85,6 +99,19 @@
           // text-align: center;
           // height: 80%;
           // line-height: 80%;
+          box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+          background-color: #BBC8D6;
+          border-radius: 50px;
+          padding: 10px 100px 10px 30px;
+          font-size: 20px;
+          &--image {
+            margin: 0 10px;
+            border-radius: 20px;
+          }
+        }
+        &--text2 {
+          width: 100%;
+          height: 120px;
           box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
           background-color: #BBC8D6;
           border-radius: 50px;
