@@ -1,0 +1,80 @@
+// マイページ全体のdiv
+.mypage__index {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.02);
+}
+
+// マイルーム部分
+.main__contents {
+  width: 700px;
+  height: 480px;
+  background: #fff;
+  margin-top: 60px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.main__contents--tabs {
+  height: 10%;
+  .tabs__list {
+    display: flex;
+    list-style: none; 
+    margin: 0;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    .tab__item {
+      margin: 0 20px;
+      color: lightgray;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main__room--contents {
+  display: flex;
+  flex-wrap: wrap;
+  .main__room {
+    width: 250px;
+    height: 30%;
+    margin: 10px auto;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05);
+    .main__body {
+      &--image {
+        width: 100%;
+        .room__image {
+          width: 100%;
+          height: 130px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        .image__body--text {
+          width: 100%;
+          height: 30px;
+          font-size: 15px;
+          margin-left: 5px;
+        }
+        .main__icon {
+          color: lightgray;
+          margin-left: 5px;
+        }
+        .far {
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
