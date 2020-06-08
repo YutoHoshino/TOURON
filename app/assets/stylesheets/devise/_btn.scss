@@ -1,10 +1,11 @@
-.header-right {
+.header_nav-bar_user {
   font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
   text-align: center;
-  padding-top: 40px;
+
 a {
+  margin: 5px ;
   display: inline-block;
-  width: 180px;
+  width: 160px;
   text-align: center;
   font-size: 16px;
   color: #FFF;
@@ -17,7 +18,8 @@ a {
   background-size: 200%;
 }
 
-.header-btn:hover {
+.header_nav-bar_user :hover {
   background-position: right center;
 }
+
 }
