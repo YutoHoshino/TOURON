@@ -2,17 +2,19 @@
   height: 100vh;
   width: 100vw;
   background: url(bg.jpg) repeat;
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
 }
 .logo {
   height: 100px;
   padding-top: 100px;
   text-align: center;
 }
-.container {
-  position: relative;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
+
 .form-sign-up {
   width: 400px;
   height: 320px;
@@ -35,6 +37,7 @@
       margin-left: 25px;
     }
 }
+
 .field {
   margin-left: 20px;
   margin-bottom: 20px;

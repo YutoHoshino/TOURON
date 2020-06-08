@@ -2,18 +2,20 @@
   height: 100vh;
   width: 100vw;
   background: url(bg.jpg) repeat;
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
 }
 .logo {
   height: 100px;
   padding-top: 100px;
   text-align: center;
 }
-.container {
-  position: relative;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-.form-bg {
+
+.form-login-box {
   width: 370px;
   height: 250px;
   margin: 50px auto 0;
