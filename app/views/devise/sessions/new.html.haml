@@ -1,8 +1,8 @@
 .login-box
   .logo
     = image_tag("TOURON_logo-cutout.png", class:"top__image__1__photo",size:"400x110")
-  .container
-    .form-bg
+  .login-box__container
+    .form-login-box
       = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
         %h2 Login
         .field

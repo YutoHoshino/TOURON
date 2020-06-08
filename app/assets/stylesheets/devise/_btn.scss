@@ -18,8 +18,27 @@ a {
   background-size: 200%;
 }
 
-.header_nav-bar_user :hover {
+.header-btn__my-page {
+  margin-left: 50px;
+}
+
+.header-btn__log-in {
+  margin-left: 50px;
+}
+
+.header-btn__my-page:hover {
   background-position: right center;
 }
 
+.header-btn__log-out:hover {
+  background-position: right center;
+}
+
+.header-btn__log-in:hover {
+  background-position: right center;
+}
+
+.header-btn__sign-up:hover {
+  background-position: right center;
+}
 }
