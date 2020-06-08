@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :talks, only: [:index, :new, :create]
 
   resources :mypages, only: [:index]
+
+  resources :rooms, only: [:new, :create]
 end
