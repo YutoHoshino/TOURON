@@ -67,4 +67,4 @@ gem 'haml-rails'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'mini_magick'
 gem 'ransack'
-  gem 'rubocop', require: false
+gem 'rubocop', require: false
