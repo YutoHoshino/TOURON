@@ -67,7 +67,9 @@ gem 'haml-rails'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'mini_magick'
 gem 'ransack'
+gem "font-awesome-sass", "< 5.0.13"
 gem 'rubocop', require: false
 gem 'active_hash'
 gem 'acts-as-taggable-on'
 gem 'rails-i18n'
+

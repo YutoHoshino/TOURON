@@ -1,0 +1,14 @@
+.result
+  %h1.search_result
+    検索結果 : 
+  .result_count
+    ="#{@results.count}件"
+
+
+
+-if @results.any? 
+  -@results.each do |result| 
+    .result_name
+      ="ROOM名 : #{result.name}"
+-else
+  検索ワードに該当する部屋はありません

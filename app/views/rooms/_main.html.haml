@@ -1,0 +1,36 @@
+.body
+  .rooms-main 
+    = form_with model:@rooms, local:true, class:"rooms-main-box" do |f|
+      .title ルーム作成
+      .rooms-from
+
+        -# 左の入力欄
+        .rooms-from-text
+          .rooms-from-text-area
+            = f.text_field :name, class: "text-area"
+            .text 部屋名 (必須)
+          .rooms-from-text-area.text_area
+            = f.text_area :description, class: "text-area area"
+            .text 部屋の説明 (必須)
+          .rooms-from-text-area.text-area_2
+            = f.collection_select :category_id, Category.all, :id, :name, prompt: ""
+            .text カテゴリ (必須)
+          .rooms-from-text-area.text-area_2
+            = f.text_field :period, class: "text-area area2"
+            .text 期間 (必須)
+          .rooms-from-text-area.text-area_2
+            = f.text_field :tag, class: "text-area area2"
+            .text タグ
+
+        -# 右入力欄
+        = f.label :image, class: "rooms-from-img" do
+          .rooms-from-img-text
+            = icon('fas fa-camera', class: 'icon')
+            画像をアップロード
+            %br
+            画像をクリックしてアップロード  
+          = f.file_field :image, clsss: "field"
+      .submit-form
+        = link_to root_path do
+          キャンセル
+        = f.submit "送信", class: "submit-form-btn"
