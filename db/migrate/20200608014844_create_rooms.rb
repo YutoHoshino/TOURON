@@ -4,6 +4,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :image
       t.string :name, null:false
       t.text :description
+      t.integer :category_id, null: false
       t.timestamps
     end
   end
