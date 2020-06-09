@@ -1,17 +1,19 @@
 class RoomsController < ApplicationController
+
+
   def new
-    @room = Talk.new
-    @rooms = Talk.all
+    @rooms = Room.new
   end
 
   def create
-    Room.create(rooms_params)
-    redirect_to toot_path
+    Room.create(room_params)
+    redirect_to root_path
   end
 
 
   private
   def room_params
-    params.require(:room).permit(:image, :name, :description)
+    params.require(:room).permit(:image, :name, :description, :category_id, :period, :tag)
   end
+
 end
