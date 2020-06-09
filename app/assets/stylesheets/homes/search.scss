@@ -1,0 +1,12 @@
+.result{
+  display:flex;
+  font-size:30px;
+  justify-content: center;
+  &_count{
+    margin-left:5px;
+  }
+}
+
+.result_name{
+  font-size:20px;
+}
