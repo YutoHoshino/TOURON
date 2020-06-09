@@ -1,7 +1,6 @@
 body {
   width: 100%;
   height: 100%;
-  background: #F5F5F5;
 }
 
 a {
@@ -9,132 +8,265 @@ a {
   color: black;
 }
 
+
 .main__title {
   width: 100%;
-  height: 60px;
-  background: white;
+  height: 160px;
   opacity: 0.7;
   text-align: center;
-  margin-bottom: 50px;
-  &--text {
-    padding: 0;
-    margin: 0;
-    font-size: 40px;
-    font-family: cursive;
-    font-style: italic;
+  padding: 40px 0 20px;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.5);
+  .h1 {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+  .categorly {
+    margin: 0 auto;
+    width: 40%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      color: #333;
+      text-decoration: none;
+      height: 30px;
+      background: rgb(212, 212, 212);
+      border-radius: 100px;
+      padding: 0 15px;
+      .categorly_text {
+        font-size: 13px;
+        line-height: 30px;
+      }
+      .categorly_text:hover {
+        color: rgb(51, 49, 185);
+      }
+    }
   }
 }
 
+.home-body {
+  background: #f5f5f5;
+  height: 100%;
+  padding: 50px 0;
+}
 .main {
-  width: 80%;
-  height: 400px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background: white;
-  opacity: 0.7;
+  width: 50%;
+  height: 300px;
+  margin: 30px auto 120px;;
+  background: orange;
+  box-shadow: 20px 20px 30px -15px rgba(0,0,0,0.3);
   border-radius: 10px;
-  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.1);
   &__body {
+    width: 100%;
+    height: 100%;
     display: flex;
+
+    // 左要素
     &--left {
-      width: 45%;
-      height: 300px;
+      width: 50%;
+      height: 100%;
       background: white;
-      margin: 50px 0 0 50px;
-      border-radius: 10px;
-      box-shadow: 0 20px 30px 15px rgba(0,0,0,0.1);
+      position: relative;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
       .touron__image {
+        height: 100%;
         width: 100%;
-        height: 200px;
-        border-radius: 5px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
       }
-      .image__text {
-        height: 100px;
-        font-size: 40px;
-        line-height: 100px;
-        text-align: center;
-        margin: 0;
+      &-box {
+        position: absolute;
+        bottom: 0px;
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 40%;
+        border-bottom-left-radius: 10px;
+        &-text {
+          height: 73%;
+          color: rgb(255, 255, 255);
+          font-size: 24px;
+          font-weight: bold;
+          padding: 10px 20px 0;
+        }
+        &-like {
+          width: 100%;
+          height: 27%;
+          a {
+            img {
+              height: 100%;
+              margin-left: 20px;
+            }
+          }
+        }
       }
     }
+
+    // 右要素
     &--right {
-      width: 45%;
-      height: 300px;
-      margin: 50px 50px 0 20px;
-      border-radius: 10px;
+      width: 50%;
+      height: 100%;
       letter-spacing: 0.2em;
       font-size: 14px;
-      background: #CCFFFF;
-      box-shadow: 40px 20px 30px 15px rgba(0,0,0,0.08);
+      position: relative;
     }
   }
 }
+
+// 吹き出し部分
+.oppation__image {
+  position: absolute;
+  top:20px;
+  left: 0;
+  z-index: 5;
+  width: 100px;
+  height: 100px;
+  animation:blink 3s ease-in-out infinite alternate;
+}
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+.agree__image {
+  position: absolute;
+  top:10px;
+  right: -20px;
+  z-index: 5;
+  width: 150px;
+  height: 150px;
+  animation:blink 4s ease-in-out infinite alternate;
+}
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+// 吹きだし部分
+
 // 右側「討論中」
 .touron__right--contents {
   width: 100%;
-  text-align: center;
+  height: 15%;
   font-size: 30px;
-  background: #EEE;
-  border-top-left-radius: 10px;
+  background: #028000;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
   border-top-right-radius: 10px;
 }
 .touron__right--box {
   display: flex;
   height: 85%;
-  // 賛成コメント
-  .touron__box--agree {
-    width: 50%;
-    background: #CCFFFF;
-    border-bottom-left-radius: 10px;
-    .touron__left {
-      text-align: center;
-      background: #999;
-      margin: 0;
-    }
-    .touron__left--comments {
-      margin-top: 10px;
-      .touron__user {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin: 20px 0 0 10px;
-      }
-    }
-    .touron__right--agree {
-      width: 80%;
-      background: #fff;
-      border-radius: 5px;
-      margin: 0 0 0 20px;
-      padding: 2px;
-    }
-  }
   // 反対コメント
   .touron__box--opposition {
     width: 50%;
-    background: green;
-    border-bottom-right-radius: 10px;
-    .touron__right {
-      text-align: center;
-      background: #CC0000;
-      margin: 0;
+    background: whitesmoke;
+    .touron__left {
+      margin: 2px 0 0 2px;
     }
-    .touron__right--comments {
-      margin: 0;
+    .touron__left--comments {
+      position: relative;
       .touron__user {
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        margin: 40px 10px 0 0;
-        float: right;
+        position: absolute;
+        top: -22px;
+        left: 4px;
       }
     }
     .touron__right--opposition {
-      width: 80%;
-      background: #f5f5f5;
+      width:90%;
+      background: #E6CED0;
       border-radius: 5px;
-      margin: 5px 20px 0 0;
+      margin: 40px 0 0 10px;
       padding: 2px;
-      float: right;
+    }
+  }
+  // 賛成コメント
+  .touron__box--agree {
+    width: 50%;
+    background: whitesmoke;
+    border-bottom-right-radius: 10px;
+    .touron__right--comments {
+      position: relative;
+      .touron__user {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-inline-end: 0;
+        position: absolute;
+        top: -20px;
+        right: 5px;
+      }
+    }
+    .touron__right--agree {
+      width: 90%;
+      background: #BBC8D6;
+      border-radius: 5px;
+      margin-top: 30px;
+      padding: 2px;
+    }
+  }
+}
+
+// footer
+.home-footer {
+  width: 100%;
+  height: 350px;
+  background: #ffffff;
+  &-name {
+    width: 100%;
+    height: 10%;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 0 60px;
+  }
+  &-contents {
+    width: 100%;
+    height: calc(80% - 100px);
+    display: flex;
+    overflow: scroll;
+    a {
+      .contents {
+        width: 250px;
+        height: 100%;
+        margin-bottom: 32px;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-radius: 10px;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+      .fist {
+        margin-left: 200px;
+      }
+      .last {
+        margin-right: 200px;
+      }
+      .text-area {
+        position: absolute;
+        bottom: 0px;
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 40%;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        &-text {
+          color: rgb(255, 255, 255);
+          font-size: 18px;
+          font-weight: bold;
+          padding: 10px 20px 0;
+        }
+      }
     }
   }
 }

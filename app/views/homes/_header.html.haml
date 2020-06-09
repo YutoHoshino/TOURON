@@ -11,3 +11,10 @@
           =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
           =f.submit class:"header_nav-bar_search-image_submit"
   
+  .header_nav-bar_user
+    -if user_signed_in?
+      = link_to "マイページ", new_post_path, class: "header-btn__my-page"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn__log-out"
+    -else
+      = link_to "ログイン", new_user_session_path, class: "header-btn__log-in"
+      = link_to "新規登録", new_user_registration_path, class: "header-btn__sign-up"

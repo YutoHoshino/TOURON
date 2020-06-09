@@ -1,4 +1,8 @@
 @import "reset";
+@import "homes/header";
+@import "homes/topic-image";
+@import "homes/main";
+@import "homes/footer";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "homes/header";
@@ -7,3 +11,16 @@
 @import "homes/search";
 @import "talk/footer";
 @import "loading";
+@import "talk/talks";
+@import "talk/header";
+@import "mypages/header";
+@import "talk/side";
+@import "mypages/side";
+@import "mypages/main-room";
+@import "timer";
+@import "devise/btn";
+@import "devise/registrations.new";
+@import "devise/sessions.new";
+@import "rooms/main";
+@import "rooms/header";
+@import "rooms/footer";

@@ -2,16 +2,17 @@ class TalksController < ApplicationController
 
 
   def index
-    
+    @talks = Talk.all
   end
 
   def new
     @talk = Talk.new
+    @talks = Talk.all
   end
 
   def create
     Talk.create(talks_params)
-    redirect_to root_path
+    redirect_to new_talk_path
   end
 
 

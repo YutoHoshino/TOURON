@@ -1,0 +1,20 @@
+.sign-up-box
+  .logo
+    = image_tag("TOURON_logo-cutout.png", class:"top__image__1__photo",size:"400x110")
+  .sign-up-box__container
+    .form-sign-up
+      = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
+        %h2 Sign in
+        .field
+          = f.text_field :username, placeholder: "username"
+        .field
+          = f.email_field :email, placeholder: "email"
+        .field
+          = f.password_field :password, placeholder: "password"
+        .field
+          = f.label :パスワードを記録する
+          = f.check_box :remember_me
+          = f.submit "sign in", class: "sign-up-submit"
+    %p  既存ユーザーですか？
+    %p
+      = link_to "ログイン", "#" ,class: "edit-link"

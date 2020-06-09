@@ -8,5 +8,12 @@ Rails.application.routes.draw do
 
   resources :rooms, only:[:index]
 
+  devise_for :users
+  root to: "rooms#index"
+
   resources :talks, only: [:index, :new, :create]
+
+  resources :mypages, only: [:index]
+
+  resources :rooms, only: [:new, :create]
 end

@@ -5,6 +5,7 @@
 
 // 投稿フォーム
 .message-footer {
+  background: rgb(253, 253, 253);
   padding-top: 2px;
   border-top: 1px solid #b3b3b3;
   height: 180px;
@@ -88,11 +89,12 @@
 
 // 賛否ボタン
 .message-status {
+  
   width: 100vw;
   height: 50px;
   display: flex;
   padding-bottom: 30px;
-  background: #ffffff;
+  background: rgb(253, 253, 253);
 
   // agreeボタン
   &-agree {

@@ -1,0 +1,44 @@
+@mixin botton{
+  width: 150px;
+  margin: 0 0 2rem 10px;
+  padding: 5px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.header{
+  height:70px;
+  text-align: center;
+  .bottom{
+    display:flex;
+    background-color: #076938;
+    height:70px;
+    line-height: 90px;
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    &__center{
+      height:50px;
+      width:calc(100% - 50%);
+      padding-left: calc(100% - 85%);
+      border-radius: 5px;
+      line-height: 50px;
+      font-size: 30px;
+      margin-left: 170px;
+    }
+    &__right{
+      margin: 0 auto;
+    }
+  }
+}
+.open{
+  @include botton;
+  background-color: rgb(226, 124, 124);
+}
+.close{
+  @include botton;
+  background-color: #6699FF;
+}
