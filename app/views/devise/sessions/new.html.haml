@@ -2,6 +2,7 @@
   .logo
     = image_tag("TOURON_logo-cutout.png", class:"top__image__1__photo",size:"400x110")
   .login-box__container
+    = render 'layouts/error_messages', model: @user
     .form-login-box
       = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
         %h2 Login
@@ -21,4 +22,4 @@
       %span から
     .link-under
       %span 登録がお済みでない方は
-      = link_to "今すぐ作成", ""
+      = link_to "今すぐ作成", new_user_registration_path
