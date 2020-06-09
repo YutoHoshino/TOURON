@@ -4,4 +4,5 @@ class Room < ApplicationRecord
   belongs_to_active_hash :category
 
   
+
 end
