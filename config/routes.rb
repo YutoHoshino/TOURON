@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :rooms, only:[:index]
 
   devise_for :users
-  root to: "rooms#index"
+  root to: "homes#index"
 
   resources :talks, only: [:index, :new, :create]
 
