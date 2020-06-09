@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title TOURON
+    %script{src:"//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,4 +11,6 @@
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .loader-wrap
+      .loader
     = yield

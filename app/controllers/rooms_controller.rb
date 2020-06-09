@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  
   def new
     @room = Talk.new
     @rooms = Talk.all
