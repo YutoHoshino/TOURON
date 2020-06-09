@@ -5,7 +5,7 @@
   .header_nav-bar_search
     = search_form_for(@q, url: search_homes_path) do |f|
       .header_nav-bar_search-content
-        =f.search_field :name_cont, placeholder:"検索する文字を入力して下さい"
+        -# =f.search_field :name_cont, placeholder:"検索する文字を入力して下さい"
       .header_nav-bar_search-image
         %label
           =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
