@@ -69,3 +69,5 @@ gem 'mini_magick'
 gem 'ransack'
 gem 'rubocop', require: false
 gem 'active_hash'
+gem 'acts-as-taggable-on'
+gem 'rails-i18n'
