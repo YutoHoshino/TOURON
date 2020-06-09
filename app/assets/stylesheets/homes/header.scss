@@ -6,24 +6,37 @@
   &_image-logo{
   width:200px;
   height:auto;
+  margin-top:5px;
   }
 }
 
+.room_search{
+  display:flex;
+}
 .header_nav-bar_search{
   margin-left:30px;
   position:relative;
-  display:flex;
-  &-field{
-    margin-top:8px;
-    width:700px;
-    height:40px;
-  }
   &-field_image{
     height:20px;
     width:20px;
     position:absolute;
-    margin-left:95%;
-    margin-top:3%;
+    margin-top:2%;
+    right:4%;
+    
+  }
+  &-image_submit{
+    display:none;
   }
 }
 
+input[type="search"] {
+  width:700px;
+  height:50px;
+}
+
+.header_nav-bar_search-image_submit{
+    border: 0px;
+    width:204px;
+    height:55px;
+    background: url(/images/search.jpeg);
+}
