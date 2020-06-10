@@ -1,6 +1,7 @@
 body {
   width: 100%;
   height: 100%;
+  background: #f5f5f5;
 }
 
 a {
@@ -14,10 +15,9 @@ a {
   height: 160px;
   opacity: 0.7;
   text-align: center;
-  padding: 40px 0 20px;
+  padding: 40px 0 1px;
   font-family: 'Arial Narrow Bold', sans-serif;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.5);
   .h1 {
     font-size: 23px;
     margin-bottom: 20px;
@@ -48,166 +48,89 @@ a {
 
 .home-body {
   background: #f5f5f5;
+  margin: 0 auto;
+  width: 60%;
   height: 100%;
-  padding: 50px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .main {
-  width: 50%;
+  width: 30%;
   height: 300px;
-  margin: 30px auto 120px;;
+  margin: 30px 5px 50px;;
   background: orange;
-  box-shadow: 20px 20px 30px -15px rgba(0,0,0,0.3);
+  border: 1px solid #c7d1e6;
   border-radius: 10px;
+
   &__body {
     width: 100%;
     height: 100%;
     display: flex;
+    border-radius: 10px;
 
     // 左要素
     &--left {
-      width: 50%;
+      width: 100%;
       height: 100%;
       background: white;
       position: relative;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
+      border-radius: 10px;
       .touron__image {
-        height: 100%;
+        height: 50%;
         width: 100%;
         object-fit: cover;
         border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
       }
       &-box {
         position: absolute;
         bottom: 0px;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(255, 255, 255, 0.7);
         width: 100%;
-        height: 40%;
+        height: 50%;
         border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         &-text {
-          height: 73%;
-          color: rgb(255, 255, 255);
-          font-size: 24px;
+          height: 40%;
+          color: #333;
+          font-size: 15px;
           font-weight: bold;
-          padding: 10px 20px 0;
+          padding: 15px 20px 0;
         }
-        &-like {
+        &-tags {
           width: 100%;
-          height: 27%;
+          height: 30%;
+          padding: 15px 10px;
+          display: flex;
+          .tags {
+            width: 80px;
+            height: 20px;
+            background-color: rgb(241, 241, 241);
+            border-radius: 5px;
+            color: #333;
+            font-size: 11px;
+            text-align: center;
+            line-height: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+          }
+        }
+
+        &-likes {
+          width: 100%;
+          height: 30%;
+          padding: 5px 10px;
+          display: flex;
           a {
+            
             img {
-              height: 100%;
-              margin-left: 20px;
+              width: 30px;
+              height: 30px;
             }
           }
         }
       }
-    }
-
-    // 右要素
-    &--right {
-      width: 50%;
-      height: 100%;
-      letter-spacing: 0.2em;
-      font-size: 14px;
-      position: relative;
-    }
-  }
-}
-
-// 吹き出し部分
-.oppation__image {
-  position: absolute;
-  top:20px;
-  left: 0;
-  z-index: 5;
-  width: 100px;
-  height: 100px;
-  animation:blink 3s ease-in-out infinite alternate;
-}
-@keyframes blink{
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-.agree__image {
-  position: absolute;
-  top:10px;
-  right: -20px;
-  z-index: 5;
-  width: 150px;
-  height: 150px;
-  animation:blink 4s ease-in-out infinite alternate;
-}
-@keyframes blink{
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-// 吹きだし部分
-
-// 右側「討論中」
-.touron__right--contents {
-  width: 100%;
-  height: 15%;
-  font-size: 30px;
-  background: #028000;
-  color: #fff;
-  text-align: center;
-  line-height: 45px;
-  border-top-right-radius: 10px;
-}
-.touron__right--box {
-  display: flex;
-  height: 85%;
-  // 反対コメント
-  .touron__box--opposition {
-    width: 50%;
-    background: whitesmoke;
-    .touron__left {
-      margin: 2px 0 0 2px;
-    }
-    .touron__left--comments {
-      position: relative;
-      .touron__user {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        position: absolute;
-        top: -22px;
-        left: 4px;
-      }
-    }
-    .touron__right--opposition {
-      width:90%;
-      background: #E6CED0;
-      border-radius: 5px;
-      margin: 40px 0 0 10px;
-      padding: 2px;
-    }
-  }
-  // 賛成コメント
-  .touron__box--agree {
-    width: 50%;
-    background: whitesmoke;
-    border-bottom-right-radius: 10px;
-    .touron__right--comments {
-      position: relative;
-      .touron__user {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-inline-end: 0;
-        position: absolute;
-        top: -20px;
-        right: 5px;
-      }
-    }
-    .touron__right--agree {
-      width: 90%;
-      background: #BBC8D6;
-      border-radius: 5px;
-      margin-top: 30px;
-      padding: 2px;
     }
   }
 }
@@ -215,7 +138,7 @@ a {
 // footer
 .home-footer {
   width: 100%;
-  height: 350px;
+  height: 500px;
   background: #ffffff;
   &-name {
     width: 100%;
@@ -223,49 +146,25 @@ a {
     font-size: 23px;
     font-weight: bold;
     text-align: center;
-    padding: 30px 0 60px;
+    padding: 30px 0 20px;
   }
   &-contents {
-    width: 100%;
-    height: calc(80% - 100px);
+    width: 100vw;
+    height: 90%;
+    overflow-x: auto;
+    padding-left: 200px;
+    padding-top: 20px;
     display: flex;
-    overflow: scroll;
-    a {
-      .contents {
+
+    .main {
+      width: 250px ;
+      margin-left: 20px;
+      margin-right: 50px;
+      border: none;
+      
+      &__body {
         width: 250px;
-        height: 100%;
-        margin-bottom: 32px;
-        margin-left: 30px;
-        margin-right: 30px;
-        border-radius: 10px;
-        position: relative;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-        }
-      }
-      .fist {
-        margin-left: 200px;
-      }
-      .last {
-        margin-right: 200px;
-      }
-      .text-area {
-        position: absolute;
-        bottom: 0px;
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        height: 40%;
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        &-text {
-          color: rgb(255, 255, 255);
-          font-size: 18px;
-          font-weight: bold;
-          padding: 10px 20px 0;
-        }
+        border: 1px solid #c7d1e6;
       }
     }
   }
