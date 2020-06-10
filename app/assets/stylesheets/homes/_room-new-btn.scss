@@ -1,0 +1,103 @@
+.room-new-btn{
+  bottom: 32px;
+  font-size: 10px;
+  height: 200px;
+  right: 32px;
+  width: 200px;
+  position: fixed;
+  
+ &__box{
+  text-decoration: none;
+  // background:white;
+  color:black;
+  width: 200px;
+  height: 200px;
+  line-height: 50px;
+  // border: solid 1px;
+  // border-radius: 10px;
+  text-align: center;
+  padding-top:10px;
+ }
+}
+.room-new-btn__name {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px black, 0px 2px 0px black, 0px 3px 0px black;
+}
+
+.room-new-btn__name:active {
+  top: 4px;
+  text-shadow: none;
+}
+
+.room-new-btn-logo {
+  height: 120px;
+  padding-left: 30px;
+}
+
+@-webkit-keyframes room-new-btn {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes room-new-btn {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@-webkit-keyframes room-new-btn-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes room-new-btn-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+.room-new-btn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.room-new-btn:hover, .room-new-btn:focus, .room-new-btn:active {
+  -webkit-animation-name: room-new-btn-float, room-new-btn;
+  animation-name: room-new-btn-float, room-new-btn;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
