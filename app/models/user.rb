@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, password_length: 7..128 #devise元々のpasswordバリデーションを使用する
 
+  has_many :talks
+  has_many :room_users
+  has_many :rooms, through: :room_users
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }
   validates :username, presence: true, uniqueness: true
