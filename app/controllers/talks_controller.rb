@@ -17,7 +17,7 @@ class TalksController < ApplicationController
 
 
   def talks_params
-    params.require(:talk).permit(:text, :image)
+    params.require(:talk).permit(:text, :image, :status_id)
   end
 
 end

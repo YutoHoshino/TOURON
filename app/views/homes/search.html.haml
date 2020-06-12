@@ -4,11 +4,20 @@
   .result_count
     ="#{@results.count}件"
 
+.area
+  %input#tab1{:checked => "checked", :name => "tab_name", :type => "radio"}/
+  %label.tab_class{:for => "tab1"} ROOM
+  .content_class
+    %p.content_class-details
+      -if @results.any? 
+        -@results.each do |result| 
+          .result_name
+            ="ROOM名 : #{result.name}"
+      -else
+        検索ワードに該当する部屋はありません
+  %input#tab2{:name => "tab_name", :type => "radio"}/
+  %label.tab_class{:for => "tab2"} User
+  .content_class
+    %p.content_class-details
+      userを表示します
 
-
--if @results.any? 
-  -@results.each do |result| 
-    .result_name
-      ="ROOM名 : #{result.name}"
--else
-  検索ワードに該当する部屋はありません

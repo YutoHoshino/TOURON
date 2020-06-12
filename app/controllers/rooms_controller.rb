@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:image, :name, :description, :category_id, :period, :tag)
+    params.require(:room).permit(:image, :name, :description, :category_id, :period, :tag, :user_ids)
   end
 
 end
