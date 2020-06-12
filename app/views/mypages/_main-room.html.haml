@@ -1,68 +1,82 @@
-.main__contents
-  .main__contents--tabs
-    %ul.tabs__list
-      %li.tab__item
-        ="ホーム"
-      %li.tab__item
-        ="あなたの部屋"
-  .main__room--contents
-    .main__room
-      = link_to "" do
-        .main__body
-          .main__body--image
-            = image_tag "img1.jpg", class: "room__image"
-            .text__area
-              %p.image__body--text
-                = "日本の未来！！"
-            .main__icons
-              = link_to "", class: "icon__left" do
-                = "いいね数"
-                = icon("far fa-heart", class: "icon__hart")
-              = link_to "", class: "icon__left" do
-                = "touron数"
-                = icon("far fa-comments",class: "icon")
-    .main__room
-      = link_to "" do
-        .main__body
-          .main__body--image
-            = image_tag "img1.jpg", class: "room__image"
-            .text__area
-              %p.image__body--text
-                = "日本の未来！！"
-            .main__icons
-              = link_to "", class: "icon__left" do
-                = "いいね数"
-                = icon("far fa-heart", class: "icon__hart")
-              = link_to "", class: "icon__left" do
-                = "touron数"
-                = icon("far fa-comments",class: "icon")
-    .main__room
-      = link_to "" do
-        .main__body
-          .main__body--image
-            = image_tag "img1.jpg", class: "room__image"
-            .text__area
-              %p.image__body--text
-                = "日本の未来！！"
-            .main__icons
-              = link_to "", class: "icon__left" do
-                = "いいね数"
-                = icon("far fa-heart", class: "icon__hart")
-              = link_to "", class: "icon__left" do
-                = "touron数"
-                = icon("far fa-comments",class: "icon")
-    .main__room
-      = link_to "" do
-        .main__body
-          .main__body--image
-            = image_tag "img1.jpg", class: "room__image"
-            .text__area
-              %p.image__body--text
-                = "日本の未来！！"
-            .main__icons
-              = link_to "", class: "icon__left" do
-                = "いいね数"
-                = icon("far fa-heart", class: "icon__hart")
-              = link_to "", class: "icon__left" do
-                = "touron数"
-                = icon("far fa-comments",class: "icon")
+.main--mypages
+  .main--mypages-contents
+
+    -# タブ
+    .main--mypages-contents-tabs
+      .content-name.choice-contens 参加中の部屋
+      .content-name 自分の部屋
+      .content-name いいね部屋
+
+    -# メインボックス
+    .main--mypages-contents-main
+      .content-main
+        = link_to "" , class: "content-main-box" do
+          .content-main-box-img
+            = image_tag "img_1", class: "touron__image"
+          .content-main-box-text
+            .content-main-box-text-title
+              .room-title 星野源さん動画に総理が“自宅映像”投稿
+            .content-main-box-text-contents
+              .content
+                = icon('far fa-heart fa-3x', class: 'icon')
+                .number 76
+              .content
+                = icon('fas fa-user', class: 'icon')
+                .number 14
+
+        = link_to "" , class: "content-main-box" do
+          .content-main-box-img
+            = image_tag "img_2", class: "touron__image"
+          .content-main-box-text
+            .content-main-box-text-title
+              .room-title 星野源さん動画に総理が“自宅映像”投稿
+            .content-main-box-text-contents
+              .content
+                = icon('far fa-heart fa-3x', class: 'icon')
+                .number 76
+              .content
+                = icon('fas fa-user', class: 'icon')
+                .number 14
+
+        = link_to "" , class: "content-main-box" do
+          .content-main-box-img
+            = image_tag "img_3", class: "touron__image"
+          .content-main-box-text
+            .content-main-box-text-title
+              .room-title 星野源さん動画に総理が“自宅映像”投稿
+            .content-main-box-text-contents
+              .content
+                = icon('far fa-heart fa-3x', class: 'icon')
+                .number 76
+              .content
+                = icon('fas fa-user', class: 'icon')
+                .number 14
+
+        = link_to "" , class: "content-main-box" do
+          .content-main-box-img
+            = image_tag "img_4", class: "touron__image"
+          .content-main-box-text
+            .content-main-box-text-title
+              .room-title 星野源さん動画に総理が“自宅映像”投稿
+            .content-main-box-text-contents
+              .content
+                = icon('far fa-heart fa-3x', class: 'icon')
+                .number 76
+              .content
+                = icon('fas fa-user', class: 'icon')
+                .number 14
+
+        = link_to "" , class: "content-main-box" do
+          .content-main-box-img
+            = image_tag "img_5", class: "touron__image"
+          .content-main-box-text
+            .content-main-box-text-title
+              .room-title 星野源さん動画に総理が“自宅映像”投稿
+            .content-main-box-text-contents
+              .content
+                = icon('far fa-heart fa-3x', class: 'icon')
+                .number 76
+              .content
+                = icon('fas fa-user', class: 'icon')
+                .number 14
+
