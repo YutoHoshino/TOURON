@@ -32,4 +32,25 @@ $(document).on('turbolinks:load', ()=> {
     $(".content-main2").addClass("content-remove");
     $(".content-main3").removeClass("content-remove");
   })
+
+
+
+
+  // ユーザーedit
+
+  // $(".home-btn").on("click", function() {
+  //   $(".home-btn").addClass("choice-box");
+  //   $(".inquiry-mypage").removeClass("choice-box");
+  //   $(".mypage-main-box").removeClass("content-remove");
+  //   $(".mypage-main-box-home").addClass("content-remove");
+  // })
+  
+  // $(".inquiry-mypage").on("click", function() {
+  //   $(".inquiry-mypage").addClass("choice-box");
+  //   $(".home-btn").removeClass("choice-box");
+  //   $(".mypage-main-box").addClass("content-remove");
+  //   $(".mypage-main-box-home").removeClass("content-remove");
+  // })
+
+
 });
