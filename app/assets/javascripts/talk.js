@@ -80,7 +80,7 @@ $(function(){
     e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url)
+    // console.log(url)
     $.ajax({
       url: url,
       type: 'POST',
@@ -93,13 +93,32 @@ $(function(){
       var html = buildHTML(data);
       var elements1 = document.getElementById('box1');
       var elements2 = document.getElementById('box2');
-      if (elements1.checked === true) {
+      var toggleBtn = document.getElementById("menu-button");
+      // console.log(elements1.checked)
+      // console.log(elements2.checked)
+      if (data.status_id === 1) {
       $('.room-main-content__left').append(html);
-      } else if (elements2.checked === true) {
+      $('.room-main-content__left').animate({ scrollTop: 0});
+      elements1.checked = false ;
+      elements2.checked = true ;
+      } else if (data.status_id === 2) {
         $('.room-main-content__right').append(html);
+        $('.room-main-content__right').animate({ scrollTop: 0});
+        elements1.checked = true ;
+        elements2.checked = false ;
+        toggleBtn.classList.remove('close');
+        toggleBtn.classList.add('open');
+        
+        document.getElementById('menu-open').style.display="block";
+        document.getElementById('menu-close').style.display="none";
       };
       $('form')[0].reset();
+      $('.from-btn-submit').prop('disabled', false);
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+      $('.from-btn-submit').prop('disabled', false);
+  });
   })
 });
 

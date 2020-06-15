@@ -22,7 +22,7 @@ class TalksController < ApplicationController
 end
 
   def talks_params
-    params.require(:talk).permit(:text, :image, :status_id)
+    params.require(:talk).permit(:text, :image, :status_id).merge(user_id: current_user.id)
   end
 
 end

@@ -9,10 +9,7 @@ function onClickMenu(number){
   var elements1 = document.getElementById('box1');
   var elements2 = document.getElementById('box2');
   //ラジオボタンを取得
-
-  console.log(elements1)
-  //ラジオボタンのチェックのデフォルト値をAgreeに
-  if ( number == 2 && toggleBtnClass == "open") {
+  if ( number === 2 && toggleBtnClass == "open") {
     elements1.checked = false ;
     elements2.checked = true ;
     //Agree
@@ -27,9 +24,11 @@ function onClickMenu(number){
     //idのmenu-open部分を非表示に設定
     document.getElementById('menu-close').style.display="block";
     //idのmenu-close部分を表示に設定
-  } else if (number == 1 && toggleBtnClass == "close") {
-    elements2.checked = false ;
+    console.log(elements1.checked)
+    console.log(elements2.checked)
+  } else if (number === 1 && toggleBtnClass == "close") {
     elements1.checked = true ;
+    elements2.checked = false ;
     //Oposition
 
      //もしクラス名がopenでなければ下記を実行する
@@ -42,6 +41,8 @@ function onClickMenu(number){
      //idのmenu-open部分を表示に設定
      document.getElementById('menu-close').style.display="none";
      //idのmenu-close部分を非表示に設定
+     console.log(elements1.checked)
+     console.log(elements2.checked)
   } else {
     
   }
