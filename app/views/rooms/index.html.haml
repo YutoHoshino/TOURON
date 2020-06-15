@@ -13,8 +13,9 @@
             .tag-search__main-body__left__box__text
               = room.name
             .tag-search__main-body__left__box__tags
-              = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
-                = room.tag_list[0]
+              - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
+                  = room.tag_list[0]
               - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
                 = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
                   = room.tag_list[1]
