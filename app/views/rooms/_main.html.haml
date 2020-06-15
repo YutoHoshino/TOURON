@@ -3,6 +3,7 @@
     = form_with model:@rooms, local:true, class:"rooms-main-box" do |f|
       .title ルーム作成
       .rooms-from
+        = render 'layouts/error_messages', model: f.object
 
         -# 左の入力欄
         .rooms-from-text

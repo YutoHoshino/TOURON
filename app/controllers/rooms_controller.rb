@@ -13,11 +13,14 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @room = @user.rooms.build(room_params)
-    @room.save
-    redirect_to root_path
+    @rooms = Room.new(room_params)
+    if @rooms.valid?
+      @rooms.save
+      redirect_to root_path and return #同メソッド内でrender、またはredirect toを2度使用するために記載。
+  else
+    render "rooms/new"
   end
+end
 
 
   private
