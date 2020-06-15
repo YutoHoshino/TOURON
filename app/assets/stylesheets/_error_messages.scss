@@ -1,5 +1,9 @@
 .alert {
   color:#eb8282; 
-  text-align: center;
-  padding:12px; font-weight:850;
+}
+
+.alert ul {
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }

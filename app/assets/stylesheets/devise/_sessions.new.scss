@@ -3,7 +3,6 @@
   width: 100vw;
   background: url(bg.jpg) repeat;
   &__container {
-    position: relative;
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 20px;
@@ -18,12 +17,13 @@
 .form-login-box {
   width: 370px;
   height: 250px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   border-radius: 9px;
   padding: 8px 0 0 8px;
   form {
     width: 97%;
     height: 96%;
+    margin-left: 10px;
     background: #fff url(bg_form.jpg) repeat-x top left;
     border-radius: 4px;
   }
@@ -35,10 +35,10 @@
       line-height: 45px;
       margin-bottom: 25px;
       margin-left: 25px;
-    }
+  }
 }
 .field {
-  margin-left: 20px;
+  margin-left: 30px;
   margin-bottom: 20px;
 }
   input[type="email"] {
@@ -71,6 +71,10 @@
     border: 0px;
     float: right;
     margin-right: 24px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 .link-box {
   color: white;

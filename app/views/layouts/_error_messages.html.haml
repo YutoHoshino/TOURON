@@ -1,6 +1,5 @@
 -# model.error.any?とすることでどのモデルのバリデーションエラーメッセージも抽出可能です
--if model.errors.any? 
-  .alert
-    %ul
-      -model.errors.full_messages.each do |message| 
-        %li= message
+.alert
+  %ul
+    - errors.each do |message| 
+      %li= message
