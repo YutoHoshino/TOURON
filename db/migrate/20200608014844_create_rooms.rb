@@ -5,7 +5,6 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :category_id, null: false
       t.string :period
-      t.string :tag
       t.string :image
       t.timestamps
     end

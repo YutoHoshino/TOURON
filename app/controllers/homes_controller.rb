@@ -3,9 +3,7 @@ class HomesController < ApplicationController
   # before_action :user
 
   def index
-    @rooms = Room.last(10)
-    # @tags = Tag.find(params[:room_id])
-    #roomに紐付いたtagを@tagsへ
+    @rooms = Room.all.order(id: "DESC").first(10)
   end 
 
   def search
