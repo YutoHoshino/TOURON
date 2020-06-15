@@ -205,191 +205,24 @@
        
 
 .home-footer
-  .home-footer-name 新規の部屋
-  .home-footer-contents
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_1", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text ワンピース早めに終わった方がいい派？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags ワンピース
-                =link_to "#" do
-                  .tags ワンピース
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-                =link_to "#" do
-                  = image_tag "lock"
+  .home-footer__name 新規の部屋
+  .home-footer__main
+    - @rooms.each do |room|
+      .home-footer__main-body
+        .home-footer__main-body__left
+          = image_tag "#{room.image}", class: "touron__image"
+          .home-footer__main-body__left__box
+            .home-footer__main-body__left__box__text
+              = room.name
+            .home-footer__main-body__left__box__tags
+              = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
+                = room.tag_list[0]
+              - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
+                  = room.tag_list[1]
+            .home-footer__main-body__left__box__likes
+              =link_to "#" do
+                = image_tag "heart2"
+              =link_to "#" do
+                = image_tag "lock"
 
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_2", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 選手たちの人種差別反対行動に対し賛否両論…
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags 政治
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart"
-                =link_to "#" do
-                  = image_tag "lock"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_3", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 星野源さん動画に総理が“自宅映像”投稿
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags コロナ
-                =link_to "#" do
-                  .tags 内閣
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_4", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 戸塚ヨット体罰問題！あなたはどう思う？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags 戸塚ヨット
-                =link_to "#" do
-                  .tags 体罰
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_5", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 阿部のマスクって結局必要だったの？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags マスク
-                =link_to "#" do
-                  .tags コロナ
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_6", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text eスポーツはオリンピックに入れるべきか？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags オリンピック
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart"
-                =link_to "#" do
-                  = image_tag "lock"                
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_1", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text ワンピース早めに終わった方がいい派？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags ワンピース
-                =link_to "#" do
-                  .tags ワンピース
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-                =link_to "#" do
-                  = image_tag "lock"
-
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_2", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 選手たちの人種差別反対行動に対し賛否両論…
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags 政治
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart"
-                =link_to "#" do
-                  = image_tag "lock"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_3", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 星野源さん動画に総理が“自宅映像”投稿
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags コロナ
-                =link_to "#" do
-                  .tags 内閣
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_4", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 戸塚ヨット体罰問題！あなたはどう思う？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags 戸塚ヨット
-                =link_to "#" do
-                  .tags 体罰
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_5", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text 阿部のマスクって結局必要だったの？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags マスク
-                =link_to "#" do
-                  .tags コロナ
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart2"
-    .main
-      = link_to "" do
-        .main__body
-          .main__body--left
-            = image_tag "img_6", class: "touron__image"
-            .main__body--left-box
-              .main__body--left-box-text eスポーツはオリンピックに入れるべきか？
-              .main__body--left-box-tags
-                =link_to "#" do
-                  .tags オリンピック
-              .main__body--left-box-likes
-                =link_to "#" do
-                  = image_tag "heart"
-                =link_to "#" do
-                  = image_tag "lock"                
