@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   before_action :set_ransack
+  # before_action :user
 
   def index
   end 
@@ -16,4 +17,5 @@ class HomesController < ApplicationController
     def set_ransack
       @q = Room.ransack(params[:q])
     end
+
 end

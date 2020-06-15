@@ -1,0 +1,57 @@
+.mypage-main
+  .mypage-main-box
+    = form_for @user, url: updata_user_mypages_path, class:"edit_user", method: :put do |f|
+
+      -# タイトル
+      .edit_user-title
+        .edit_user-title-text ユーザー情報
+
+
+      -# メイン
+      .edit_user-form
+
+        -# 左ボックス
+        .edit_user-main-left
+          .edit_user-main-left-box
+            .edit_user-main-left-box-text
+              .edit_user-main-left-box-text-title お名前
+              = f.text_field :username, class: "edit_user-main-left-box-text-area"
+
+          .edit_user-main-left-box
+            .edit_user-main-left-box-text
+              .edit_user-main-left-box-text-title email
+              = f.text_field :email, class: "edit_user-main-left-box-text-area"
+
+          .edit_user-main-left-box
+            .edit_user-main-left-box-text
+              .edit_user-main-left-box-text-title パスワード
+              = f.password_field :password, autocomplete: "off", class: "edit_user-main-left-box-text-area"
+
+          .edit_user-main-left-box
+            .edit_user-main-left-box-text
+              .edit_user-main-left-box-text-title 確認パスワード
+              = f.password_field :password_confirmation, autocomplete: "off", class: "edit_user-main-left-box-text-area"
+
+        -# 右ボックス
+        .edit_user-main-right
+          .edit_user-main-right-img
+            .edit_user-main-right-img-area
+              = f.label :image, class: "rooms-from-img" do
+                =image_tag("#{@user.image}")
+                = f.file_field :image, clsss: "field"
+          .edit_user-main-right-text
+            .edit_user-main-right-text-box
+              = f.text_area :profile, class: "edit_user-main-right-text-box-area", placeholder:"例）よろしく！"
+              .edit_user-main-right-text-box-text 一言
+          
+
+      -# ボタンエリア
+      .edit_user-submit
+        = link_to mypages_path do
+          キャンセル
+        = f.submit "変更", class: "submit-form-btn"
+        
+
+
+
+      
