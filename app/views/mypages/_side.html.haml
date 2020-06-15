@@ -52,7 +52,7 @@
             = icon('fas fa-wrench', class: 'icon')
             .text 設定
 
-        = link_to do
+        = link_to destroy_user_session_path, method: :delete,data: {confirm: "本当にログアウトしますか？"} do
           .box 
             = icon('far fa-user-circle', class: 'icon')
             .text ログアウト
