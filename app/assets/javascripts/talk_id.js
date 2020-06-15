@@ -3,15 +3,14 @@ function onClickMenu(number){
   var toggleBtn = document.getElementById("menu-button");
   var toggleBtnClass = toggleBtn.getAttribute("class");
   //上部ボタンのidのクラスを取得
-  var tabBtn = document.getElementById("A");
-  var tabBtnid = tabBtn.getAttribute("id");
+  // var tabBtn = document.getElementById("A");
+  // var tabBtnid = tabBtn.getAttribute("id");
   //下部フォームのidを取得
   var elements1 = document.getElementById('box1');
   var elements2 = document.getElementById('box2');
   //ラジオボタンを取得
-  console.log(elements1.checked)
-  console.log(elements2.checked)
-  console.log(this)
+
+  console.log(elements1)
   //ラジオボタンのチェックのデフォルト値をAgreeに
   if ( number == 2 && toggleBtnClass == "open") {
     elements1.checked = false ;
@@ -27,8 +26,7 @@ function onClickMenu(number){
     document.getElementById('menu-open').style.display="none";
     //idのmenu-open部分を非表示に設定
     document.getElementById('menu-close').style.display="block";
-    idのmenu-close部分を表示に設定
-    // tabBtn.checked = false ;
+    //idのmenu-close部分を表示に設定
   } else if (number == 1 && toggleBtnClass == "close") {
     elements2.checked = false ;
     elements1.checked = true ;
@@ -44,7 +42,6 @@ function onClickMenu(number){
      //idのmenu-open部分を表示に設定
      document.getElementById('menu-close').style.display="none";
      //idのmenu-close部分を非表示に設定
-    //  tabBtn.checked = true ;
   } else {
     
   }
