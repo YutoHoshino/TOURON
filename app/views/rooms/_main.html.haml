@@ -23,13 +23,16 @@
             .text タグ
 
         -# 右入力欄
-        = f.label :image, class: "rooms-from-img" do
-          .rooms-from-img-text
-            = icon('fas fa-camera', class: 'icon')
-            画像をアップロード
-            %br
-            画像をクリックしてアップロード  
-          = f.file_field :image, clsss: "field"
+        .right-contents
+          = f.label :image, class: "rooms-from-img" do
+            .rooms-from-img-text
+              .text
+                = icon('fas fa-camera', class: 'icon')
+                ドラック&ドロップ
+                %br
+                画像をクリックしてアップロード  
+            = f.file_field :image, clsss: "field"
+
       .submit-form
         = link_to root_path do
           キャンセル
