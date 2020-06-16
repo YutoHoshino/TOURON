@@ -37,6 +37,7 @@
       padding: 30px;
       display: flex;
       box-shadow: none;
+      
 
       // 左
       .edit_user-main-left {
@@ -62,9 +63,9 @@
             }
 
             &-area {
+              padding-left: 10px;
               width: 90%;
               box-shadow: none;
-              border-radius: 2px;
               height: 100%;
               vertical-align: bottom;
               color: #333;
