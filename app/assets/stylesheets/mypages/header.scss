@@ -1,68 +1,71 @@
- * {
+* {
   box-sizing: border-box;
 }
-.my__header{  
-  width:700px;
-  height:140px;
-  background-color: white;
-  margin: 40px 0 0 50px;
-  box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.1);
-  &__content{
-    height:100px;
-    display:flex;
-    padding-top: 20px;
-    .left{
-      width:calc(700px/3);
-      height:100px;
-      .left__title{
-        height:20px;
-        text-align: center;
+
+.mypage-main {
+  width: 70%;
+  height: 100vh;
+  
+  &-box {
+    width: 100%;
+    height: 100%;
+  }
+  // header
+  .my__header {
+    width: 82%;
+    height: 18%;
+    background-color: white;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+    &__content {
+      height: 100%;
+      display:flex;
+      justify-content: space-around;
+      padding: 30px 0;
+
+      // ボックス
+      .box {
+        width: calc(100% / 3);
+        height: 100%;
+        padding: 0 30px;
+
+        // タイトル
+        &__title {
+          height: 40%;
+          font-size: 14px;
+          color: rgb(168, 168, 168);
+          padding-left: 10px;
+          padding-top: 10px;
+          font-weight: bold;
+        }
+
+        // 数字とアイコン
+        &__content {
+          height: 60%;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          justify-content: space-around;
+
+          &-text {
+            font-size: 25px;
+          }
+
+          .fa-heart {
+            font-size: 32px;
+            color: rgb(219, 180, 224);
+          }
+          .fa-comments {
+            font-size: 32px;
+            color: rgb(180, 224, 187);
+          }
+          .fa-thumbs-up {
+            font-size: 32px;
+            color: rgb(180, 192, 224);
+          }
+        }
       }
-      &__content{
-        display: flex;
-        height: 50px;
-        .fa-3x{
-          padding-left: 15px;
-        }
-        .calc_box{
-          height:30px;
-          width:100px;
-          margin-left: 40px;
-          margin-top: 10px;
-          font-size: x-large;
-        }
-      }
-    }
-    .center{
-      @extend.left;
-      border-left: solid 1px #cccccc;
-      &__title{
-        @extend.left__title
-      }
-      &__content{
-        @extend.left__content;
-        .fa-3x{
-          padding-left: 20px;
-        }
-        .calc_box{
-          @extend.calc_box;
-        }
-      }
-    }
-    .right{
-      @extend.left;
-      border-left: solid 1px #cccccc;
-      &__title{
-        @extend.left__title
-      }
-      &__content{
-        @extend.left__content;
-        .fa-3x{
-          padding-left: 20px;
-        }
-        .calc_box{
-          @extend.calc_box;
-        }
+      .line {
+        border-right: 1px solid rgb(168, 168, 168);
       }
     }
   }

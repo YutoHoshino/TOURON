@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   has_many :likes, dependent: :destroy
 
+  mount_uploader :image, ImageUploader
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }
   validates :username, presence: true, uniqueness: true

@@ -13,8 +13,9 @@ class Room < ApplicationRecord
   acts_as_taggable
 
   mount_uploader :image, ImageUploader
-  
+
   def likes_by?(user)
     likes.where(user_id: user.id).exists?
   end
+
 end
