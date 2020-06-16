@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "homes#index"
+
+  resources :rooms, only: [:index, :new, :create]
+  
+  resources :talks, only: [:index, :new, :create]
+
   resources :homes, only: [:index] do
     collection do
       get "search"
     end
   end
-
-  resources :rooms, only:[:index]
-
-  devise_for :users
-  root to: "homes#index"
-
-  resources :talks, only: [:index, :new, :create]
 
   resources :mypages, only: [:index] do
     collection do
@@ -21,5 +20,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rooms, only: [:new, :create]
+  
 end

@@ -16,5 +16,6 @@ class Room < ApplicationRecord
   validates :category_id, numericality: {only_integer: true, greater_than: 0, message: "を選択して下さい"}
   validates :name, length: { minimum: 1, maximum: 40, message: "は40文字以内で入力してください" }
   validates :description, length: { minimum: 1, maximum: 1000, message: "は1000文字以内で入力してください" }
+  validates :period, numericality: {only_integer: true, greater_than: 0, message: "を選択して下さい"}
   validates :image, presence: {message: "をアップロードして下さい"}
 end
