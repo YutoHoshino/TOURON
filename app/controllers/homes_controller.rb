@@ -7,6 +7,7 @@ class HomesController < ApplicationController
     @room = Room.all
     @room_random = @room.sample(9) #ランダムで９つ取得
     @category = Category.all
+
   end 
 
   def search
