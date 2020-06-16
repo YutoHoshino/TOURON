@@ -4,6 +4,8 @@ class HomesController < ApplicationController
 
   def index
     @rooms = Room.all.order(id: "DESC").first(10)
+    @room = Room.all
+    @room_random = @room.sample(9) #ランダムで９つ取得
     @category = Category.all
   end 
 
