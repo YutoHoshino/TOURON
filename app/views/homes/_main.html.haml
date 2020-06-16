@@ -28,10 +28,14 @@
               =link_to "#" do
                 .tags ワンピース
             .main__body--left-box-likes
-              =link_to "#" do
-                = image_tag "heart2"
-              =link_to "#" do
-                = image_tag "lock"
+              -@room.each do |room|
+                - if room.likes_by?(current_user)
+                  = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                    = image_tag "heart"
+                - else 
+                  = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                    = image_tag "heart2"
+                
 
   .main
     = link_to "" do

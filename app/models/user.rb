@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :talks
   has_many :room_users
   has_many :rooms, through: :room_users
+  has_many :likes, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }

@@ -2,6 +2,7 @@ class HomesController < ApplicationController
   before_action :set_ransack
 
   def index
+    @room = Room.all
   end 
 
   def search
