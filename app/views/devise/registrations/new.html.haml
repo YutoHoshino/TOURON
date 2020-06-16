@@ -17,7 +17,7 @@
 
             .input-area
               .input-area-box
-                = f.text_field :username, class: "input"
+                = f.text_field :username, autofocus: true, class: "input"
                 .input-area-box-title 名前
               = render 'devise/error_message', errors: @user.errors.full_messages_for(:username)
               .input-area-box
