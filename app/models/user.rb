@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :talks
   has_many :room_users
   has_many :rooms, through: :room_users
+  has_many :likes, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 

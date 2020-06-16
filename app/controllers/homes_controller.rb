@@ -3,8 +3,9 @@ class HomesController < ApplicationController
   # before_action :user
 
   def index
-    @rooms = Room.all.order(id: "DESC").first(10)
-    @category = Category.all
+
+    @room = Room.all
+
   end 
 
   def search
