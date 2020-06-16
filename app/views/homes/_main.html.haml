@@ -1,18 +1,10 @@
 .main__title
   .h1 全てのカテゴリー
-  .categorly
-    = link_to "" do
-      .categorly_text エンタメ
-    = link_to "" do
-      .categorly_text スポーツ
-    = link_to "" do
-      .categorly_text マンガ
-    = link_to "" do
-      .categorly_text 政治
-    = link_to "" do
-      .categorly_text 経済
-    = link_to "" do
-      .categorly_text テクノロジー
+  .category
+    -@category.each do |category|
+      .category__text
+        = link_to category_search_rooms_path(category_id: category.id) do
+          = category.name 
 
 .home-body
   .main

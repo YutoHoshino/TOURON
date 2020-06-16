@@ -22,24 +22,24 @@ a {
     font-size: 23px;
     margin-bottom: 20px;
   }
-  .categorly {
+  .category {
     margin: 0 auto;
-    width: 40%;
+    width: 70%;
     height: 60px;
     display: flex;
     justify-content: space-evenly;
     a {
-      color: #333;
+      color: rgba(43, 43, 41, 0.883);
       text-decoration: none;
       height: 30px;
-      background: rgb(212, 212, 212);
+      background: rgb(155, 156, 156);
       border-radius: 100px;
       padding: 0 15px;
-      .categorly_text {
+      .category__text {
         font-size: 13px;
         line-height: 30px;
       }
-      .categorly_text:hover {
+      .category__text:hover {
         color: rgb(51, 49, 185);
       }
     }
