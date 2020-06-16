@@ -4,6 +4,7 @@ class HomesController < ApplicationController
 
   def index
     @rooms = Room.all.order(id: "DESC").first(10)
+    @category = Category.all
   end 
 
   def search

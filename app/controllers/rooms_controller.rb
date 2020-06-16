@@ -7,6 +7,13 @@ class RoomsController < ApplicationController
     end
   end
 
+  def category_search
+    if params[:category_id]
+      @rooms = Room.where(category_id: "#{params[:category_id]}")
+    end
+  end
+
+
   def new
     @rooms = Room.new
   end

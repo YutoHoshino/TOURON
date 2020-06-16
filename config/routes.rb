@@ -6,10 +6,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rooms, only:[:index]
+  resources :rooms, only:[:index] do
+    collection do
+      get "category_search"
+    end
+  end
 
   devise_for :users
-  root to: "homes#index"
 
   resources :talks, only: [:index, :new, :create]
 
