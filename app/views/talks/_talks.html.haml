@@ -3,7 +3,7 @@
     .room-main-content__left
       .room-main-content__left__box
       - @talks.each do|talk|
-        .room-main-content__left__user
+        .room-main-content__left__user{data: {talk: {id: talk.id}}}
           -if talk.status_id == 1
             .room-main-content__left__user--image
             -if talk.text.length > 100 or talk.image.present?
@@ -19,7 +19,7 @@
                 = talk.text
     .room-main-content__right
       - @talks.each do|talk|
-        .room-main-content__right__user
+        .room-main-content__right__user{data: {talk: {id: talk.id}}}
           -if talk.status_id == 2
             .room-main-content__right__user--image
             -if talk.text.length > 100 or talk.image.present?
