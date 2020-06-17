@@ -210,7 +210,7 @@
     - @rooms.each do |room|
       .home-footer__main-body
         .home-footer__main-body__left
-          = image_tag "#{room.image}", class: "touron__image"
+          = link_to image_tag( "#{room.image}", class: "touron__image"), room_talks_path(room.id)
           .home-footer__main-body__left__box
             .home-footer__main-body__left__box__text
               = room.name

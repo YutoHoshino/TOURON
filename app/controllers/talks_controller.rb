@@ -1,17 +1,18 @@
 class TalksController < ApplicationController
-
+  before_action :set_room
 
   def index
-    @talks = Talk.all
+    @talk = Talk.new
+    @talks = @room.talks.includes(:user)
   end
 
   def new
     @talk = Talk.new
-    @talks = Talk.all
+    @talks = @room.talks.includes(:user)
   end
 
   def create
-    @talk = Talk.create(talks_params)
+    @talk = @room.talks.new(talks_params)
     if @talk.save
       respond_to do |format|
       format.json
@@ -25,4 +26,7 @@ end
     params.require(:talk).permit(:text, :image, :status_id).merge(user_id: current_user.id)
   end
 
+  def set_room
+    @room = Room.find(params[:room_id])
+  end
 end
