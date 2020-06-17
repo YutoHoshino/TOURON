@@ -1,0 +1,18 @@
+.search_result
+  %h1.content_search-result
+    検索結果
+
+  .contents_search
+    - @search.each do |search|
+      .content_search-main
+        =link_to root_path,class:"content_search-link" do
+          .content_search-main_title
+            ="・#{search.name}"
+          .content_serch-main_image
+          =image_tag search.image.url,width:"100px",height:"100px"
+      
+
+
+
+
+  

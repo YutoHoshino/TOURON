@@ -8,7 +8,6 @@
 @import "homes/header";
 @import "homes/main";
 @import "homes/footer";
-@import "homes/search";
 @import "homes/_room-new-btn";
 @import "talk/footer";
 @import "talk/talks";
@@ -23,5 +22,6 @@
 @import "devise/sessions.new";
 @import "error_messages";
 @import "rooms/main";
+@import "rooms/search/index";
 @import "rooms/header";
 @import "rooms/footer";

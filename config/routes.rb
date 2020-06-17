@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root to: "homes#index"
-  resources :homes, only: [:index] do
-    collection do
-      get "search"
-    end
+  namespace :rooms do
+    resources :search, only: :index
   end
 
-  resources :rooms, only:[:index]
+  root to: "homes#index"
+  resources :homes, only: [:index] 
+
+  resources :rooms, only: [:new,:create] 
 
   devise_for :users
   root to: "homes#index"
