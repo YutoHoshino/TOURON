@@ -10,8 +10,8 @@
 
   .header_nav-bar_user
     -if user_signed_in?
-      = link_to "マイページ", mypages_path, class: "header-btn__my-page"
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn__log-out"
+      = link_to mypages_path class:"user_btn" do
+        =image_tag("#{@user.image}")
     -else
       = link_to "ログイン", new_user_session_path, class: "header-btn__log-in"
       = link_to "新規登録", new_user_registration_path, class: "header-btn__sign-up"

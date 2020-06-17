@@ -2,8 +2,15 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      room: ルーム
     attributes:
       user:
         username: ニックネーム
         email: メールアドレス
         password: パスワード
+      room:
+        name: 部屋名
+        description: 部屋の説明
+        category_id: カテゴリー
+        image: 部屋のイメージ
+      
