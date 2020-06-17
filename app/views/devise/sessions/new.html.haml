@@ -8,7 +8,8 @@
         -# ロゴ
         .text-box-logo
           .text-box-logo-box
-            = image_tag("logo.png", class:"top__image__1__photo",size:"400x110")
+            = link_to root_path do
+              = image_tag("logo.png", class:"top__image__1__photo",size:"400x110")
 
         .text-box-area
           = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
