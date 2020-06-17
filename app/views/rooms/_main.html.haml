@@ -22,7 +22,7 @@
             = f.text_field :period, class: "text-area area2"
             .text 期間 (必須)
           .rooms-from-text-area.text-area_2
-            = f.text_field :tag_list, value: @rooms.tag_list.join(','), class: "text-area area2"
+            = f.text_field :tag_list, placeholder: "例）芸能,エンタメ", value: @rooms.tag_list.join(','), class: "text-area area2"
             .text タグ
 
         -# 右入力欄
