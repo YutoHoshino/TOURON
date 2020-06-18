@@ -91,32 +91,21 @@
         
                 
       .content-main2.content-remove
-        = link_to "" , class: "content-main-box" do
-          .content-main-box-img
-            = image_tag "img_3", class: "touron__image"
-          .content-main-box-text
-            .content-main-box-text-title
-              .room-title 星野源さん動画に総理が“自宅映像”投稿
-            .content-main-box-text-contents
-              .content
-                = icon('far fa-heart fa-3x', class: 'icon')
-                .number 76
-              .content
-                = icon('fas fa-user', class: 'icon')
-                .number 14
-        = link_to "" , class: "content-main-box" do
-          .content-main-box-img
-            = image_tag "img_4", class: "touron__image"
-          .content-main-box-text
-            .content-main-box-text-title
-              .room-title 戸塚ヨット体罰問題！あなたはどう思う？
-            .content-main-box-text-contents
-              .content
-                = icon('far fa-heart fa-3x', class: 'icon')
-                .number 76
-              .content
-                = icon('fas fa-user', class: 'icon')
-                .number 14
+        - current_user.rooms.each do |room|
+          = link_to "" , class: "content-main-box" do
+            .content-main-box-img
+              = image_tag "#{room.image}"
+            .content-main-box-text
+              .content-main-box-text-title
+                .room-title
+                  = room.name
+              .content-main-box-text-contents
+                .content
+                  = icon('far fa-heart fa-3x', class: 'icon')
+                  .number 76
+                .content
+                  = icon('fas fa-user', class: 'icon')
+                  .number 14
     
       .content-main3.content-remove 
         - current_user.like_rooms.each do |room|
@@ -125,7 +114,8 @@
               = image_tag "#{room.image}"
             .content-main-box-text
               .content-main-box-text-title
-                .room-title 阿部のマスクって結局必要だったの？
+                .room-title
+                  = room.name
               .content-main-box-text-contents
                 .content
                   = icon('far fa-heart fa-3x', class: 'icon')
