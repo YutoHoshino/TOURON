@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
 
   resources :rooms, only: [:index, :new, :create] do
-    resources :talks, only: [:index, :new, :create]
+    resources :talks, only: [:index, :create]
     namespace :api do
       resources :talks, only: [:index,:new], defaults: { format: 'json' }
     end
