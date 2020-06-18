@@ -1,0 +1,5 @@
+= @user.follow_count
+= link_to "フォロー", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get
+= @user.followers_count
+= link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id}, method: :get
+= render 'follow_form'

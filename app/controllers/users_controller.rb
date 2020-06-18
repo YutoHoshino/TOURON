@@ -1,23 +1,32 @@
 class UsersController < ApplicationController
-  #フォロー処理を行う
+
   def follow
     @user = User.find(params[:user_id])
     current_user.follow(@user)
     redirect_to user_path(@user)
   end
-  #フォロー解除処理を行う
+  #フォローする
+
   def unfollow
       @user = User.find(params[:user_id])
       current_user.stop_following(@user)
       redirect_to user_path(@user)
   end
+  #フォローを外す
 
 
   def follow_list
     @user = User.find(params[:user_id])
   end
+  #フォローしてる人の一覧ページ
 
   def follower_list
     @user = User.find(params[:user_id])
   end
+  #フォロワーの一覧ページ
+
+  def show
+    @user = User.find(params[:id])
+  end
+
 end

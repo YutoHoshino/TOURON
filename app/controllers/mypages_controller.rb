@@ -1,5 +1,6 @@
 class MypagesController < ApplicationController
   before_action :set_ransack
+  before_action :set_current
 
   def index
     # 検索
@@ -29,10 +30,18 @@ class MypagesController < ApplicationController
     end
   end
 
+  def follow
+  end
+
+
   private
   # 検索
   def set_ransack
     @q = Room.ransack(params[:q])
+  end
+
+  def set_current
+    @user = current_user
   end
 
   def updata_params

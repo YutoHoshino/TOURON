@@ -3,6 +3,7 @@ class HomesController < ApplicationController
   # before_action :user
 
   def index
+    @user = current_user
     @rooms = Room.all.order(id: "DESC").first(10)
     @room = Room.all
     @room_random = @room.sample(9) #ランダムで９つ取得

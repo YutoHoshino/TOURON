@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       get "edit_user"
       put "updata_user"
       get "info"
+      get "follow"
     end
   end
 
@@ -35,9 +36,13 @@ Rails.application.routes.draw do
 
   resources :rooms, only: [:new, :create]
 
-  put 'users/follow/:user_id',to: 'users#follow'
-  put 'users/unfollow/:user_id',to: 'users#unfollow'
-  get 'users/follow_list/:user_id',to: 'users#follow_list'
-  get 'users/follower_list/:user_id',to:'users#follower_list'
+  resources :users, only: [:index, :show]
+  put 'users/follow/:user_id' => 'users#follow'
+  put 'users/unfollow/:user_id' => 'users#unfollow'
+  #フォローとフォローを外すアクション
+  
+  get 'users/follow_list/:user_id' => 'users#follow_list'
+  get 'users/follower_list/:user_id' => 'users#follower_list'
+  #フォロー・フォロワーの一覧ページ
 
 end
