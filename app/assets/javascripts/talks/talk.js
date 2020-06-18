@@ -8,6 +8,7 @@ $(function(){
         </div>
         <div class="room-main-content__left__user--text">
           <div class="room-main-content__left__user--text--name">
+          ${talk.user_username}
           </div>
           ${talk.text}
           <img src=${talk.image} class="room-main-content__left__user--text--image">
@@ -20,6 +21,7 @@ $(function(){
         </div>
         <div class="room-main-content__left__user--text">
           <div class="room-main-content__left__user--text--name">
+          ${talk.user_username}
           </div>
           ${talk.text}
         </div>
@@ -32,6 +34,7 @@ $(function(){
         </div>
         <div class="room-main-content__left__user--text2">
           <div class="room-main-content__left__user--text--name">
+          ${talk.user_username}
           </div>
         ${talk.text}
         </div>
@@ -44,6 +47,7 @@ $(function(){
         </div>
         <div class="room-main-content__right__user--text">
           <div class="room-main-content__right__user--text--name">
+          ${talk.user_username}
           </div>
           ${talk.text}
           <img src=${talk.image} class="room-main-content__right__user--text--image">
@@ -57,6 +61,7 @@ $(function(){
         </div>
         <div class="room-main-content__right__user--text">
           <div class="room-main-content__right__user--text--name">
+          ${talk.user_username}
           </div>
           ${talk.text}
         </div>
@@ -69,6 +74,7 @@ $(function(){
         </div>
         <div class="room-main-content__right__user--text2">
           <div class="room-main-content__right__user--text--name">
+          ${talk.user_username}
           </div>
           ${talk.text}
         </div>

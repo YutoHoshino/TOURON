@@ -18,7 +18,9 @@ class TalksController < ApplicationController
       format.json
       end
     else
-    redirect_to new_talk_path
+      @messages = @group.messages.includes(:user)
+      flash.now[:alert] = 'メッセージを入力してください。'
+      redirect_to room_talks_path(room.id)
   end
 end
 
