@@ -2,7 +2,7 @@
 
 .category-search
   .category-search__name
-    = "#{params[:category_id]}"
+    = @category_id.name
     のカテゴリー検索結果一覧
   .category-search__main
     - @rooms.each do |room|

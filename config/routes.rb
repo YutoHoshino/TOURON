@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   root to: "homes#index"
 
   resources :rooms, only: [:index, :new, :create] do
-     collection do
+    resources :talks, only: [:index, :new, :create]
+    namespace :api do
+      resources :talks, only: [:index,:new], defaults: { format: 'json' }
+    end
+    collection do
       get "category_search"
     end
   end
   
-  resources :talks, only: [:index, :new, :create]
-
   resources :homes, only: [:index] do
     collection do
       get "search"
@@ -24,8 +26,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-  resources :rooms, only: [:new, :create]
 
   # resources :likes, only: [:create, :destroy]
   post "likes/:room_id/create", to: "likes#create", constraints: {room_id: /\d+/}, as: :likes_create
