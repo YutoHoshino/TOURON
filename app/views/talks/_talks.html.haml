@@ -3,26 +3,35 @@
     .room-main-content__left
       .room-main-content__left__box
       - @talks.each do|talk|
-        .room-main-content__left__user
+        .room-main-content__left__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           -if talk.status_id == 1
             .room-main-content__left__user--image
             -if talk.text.length > 100 or talk.image.present?
               .room-main-content__left__user--text
+                .room-main-content__left__user--text--name
+                  user
                 = talk.text
                 = image_tag talk.image.url, size: "300x300", class: "room-main-content__left__user--text--image" if talk.image.present?
             -else 
               .room-main-content__left__user--text2
+                .room-main-content__left__user--text--name
+                  user
                 = talk.text
     .room-main-content__right
       - @talks.each do|talk|
-        .room-main-content__right__user
+        .room-main-content__right__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           -if talk.status_id == 2
             .room-main-content__right__user--image
             -if talk.text.length > 100 or talk.image.present?
               .room-main-content__right__user--text
+                .room-main-content__right__user--text--name
+                  user
                 = talk.text
                 = image_tag talk.image.url, size: "300x300", class: "room-main-content__right__user--text--image" if talk.image.present?
             -else
               .room-main-content__right__user--text2
+                .room-main-content__right__user--text--name
+                  user
                 = talk.text
         .room-main-content__right__box
+        

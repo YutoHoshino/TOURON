@@ -1,25 +1,51 @@
-.login-box
-  .logo
-    = image_tag("TOURON_logo-cutout.png", class:"top__image__1__photo",size:"400x110")
-  .login-box__container
-    = render 'layouts/error_messages', model: @user
-    .form-login-box
-      = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
-        %h2 Login
-        .field
-          = f.email_field :email, autofocus: true, placeholder: "email" 
-        .field
-          = f.password_field :password, autocomplete: "off", placeholder: "password"
-        -# - if devise_mapping.rememberable?
-        .field
-          = f.label :パスワードを記録する
-          = f.check_box :remember_me
-          = f.submit "" , class: "login-submit" #valueを空に
-  .link-box
-    .link-top
-      %span パスワードをお忘れですか？  再設定は
-      = link_to "こちら", ""
-      %span から
-    .link-under
-      %span 登録がお済みでない方は
-      = link_to "今すぐ作成", new_user_registration_path
+.sign-up-box
+  .sign-up-box-area
+
+    -# 左ボックス
+    .sign-up-box-area-box
+      .text-box
+
+        -# ロゴ
+        .text-box-logo
+          .text-box-logo-box
+            = link_to root_path do
+              = image_tag("logo.png", class:"top__image__1__photo",size:"400x110")
+
+        .text-box-area
+          = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
+            
+            .title-area ログイン
+
+            .input-area
+              .input-area-box
+                = f.email_field :email, autofocus: true, class: "input"
+                .input-area-box-title メールアドレス
+              .input-area-box
+                = f.password_field :password, autocomplete: "off", class: "input"
+                .input-area-box-title パスワード
+              .input-area-submit
+                = f.submit "log in", class: "sign-up-submit"
+              
+              .link-box
+                .link-top
+                  %span パスワードをお忘れですか？  再設定は
+                  = link_to "こちら", ""
+                  %span から
+                .link-under
+                  %span 登録がお済みでない方は
+                  = link_to "今すぐ作成", new_user_registration_path
+  
+
+    // 右ボックス
+    .sign-up-box-area-view
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            = image_tag "h1.jpg"
+          .swiper-slide
+            = image_tag "h2.jpg"
+          .swiper-slide
+            = image_tag "h3.jpg"
+        .swiper-pagination
+        .swiper-button-prev
+        .swiper-button-next

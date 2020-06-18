@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, password_length: 7..128 #devise元々のpasswordバリデーションを使用する
 
   has_many :talks
-  has_many :room_users
-  has_many :rooms, through: :room_users
+  has_many :rooms
+  has_many :likes, dependent: :destroy
+  has_many :like_rooms, through: :likes, source: :room
 
   mount_uploader :image, ImageUploader
 

@@ -38,9 +38,10 @@
             = icon('far fa-address-card', class: 'icon')
             .text プロフィール
 
-        .box.inquiry-mypage
-          = icon('far fa-comment-alt', class: 'icon')
-          .text お問い合わせ
+        = link_to info_mypages_path, data: {"turbolinks" => false}  do
+          .box.inquiry-mypage
+            = icon('far fa-comment-alt', class: 'icon')
+            .text お問い合わせ
 
         = link_to do
           .box
