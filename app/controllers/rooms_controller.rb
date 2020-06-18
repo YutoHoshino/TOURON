@@ -7,17 +7,8 @@ class RoomsController < ApplicationController
     end
   end
 
-  def category_search
-    if params[:category_id]
-      @rooms = Room.where(category_id: "#{params[:category_id]}")
-      @category_id = Category.find(params[:category_id].to_i)
-    end
-  end
-
-
   def new
     @rooms = Room.new
-    @rooms.users << current_user
   end
 
   def create
@@ -30,12 +21,10 @@ class RoomsController < ApplicationController
   end
 end
 
-
-  private
+private
   def room_params
 
-    params.require(:room).permit(:image, :name, :description, :category_id, :period, :tag_list).merge(user_id: current_user.id)
-
+    params.require(:room).permit(:image, :name, :description, :category_id, :period, :tag_list, :user_ids)
   end
 
 end

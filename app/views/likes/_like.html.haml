@@ -1,7 +1,0 @@
-
-.like_button_on
-    = link_to "いいね済み", likes_delete_path(room_id: @room.id), {method: "post", remote: true}
-    = @like_count
-.like_button
-    = link_to "いいね", likes_create_path(room_id: @room.id), {method: "post", remote: true}
-    = @like_count
