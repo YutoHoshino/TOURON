@@ -4,8 +4,7 @@ class Room < ApplicationRecord
   belongs_to_active_hash :category
 
   has_many :talks
-  has_many :room_users
-  has_many :users, through: :room_users
+  belongs_to :user
   has_many :likes, dependent: :destroy
   
   #親であるroomにタグ付する意味のエイリアス
