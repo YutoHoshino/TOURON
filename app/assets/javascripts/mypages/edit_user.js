@@ -39,4 +39,10 @@ $(document).on('turbolinks:load', ()=> {
     $(".choice-box_edit").addClass("choice-box");
   }
 
+
+  if(url == "http://localhost:3000/mypages/info"){
+    $(".home-btn").removeClass("choice-box");
+    $(".inquiry-mypage").addClass("choice-box");
+  }
+
 });
