@@ -32,4 +32,12 @@ Rails.application.routes.draw do
   post "likes/:room_id/delete", to: "likes#delete", constraints: {room_id: /\d+/}, as: :likes_delete
 
 
+
+  resources :rooms, only: [:new, :create]
+
+  put 'users/follow/:user_id',to: 'users#follow'
+  put 'users/unfollow/:user_id',to: 'users#unfollow'
+  get 'users/follow_list/:user_id',to: 'users#follow_list'
+  get 'users/follower_list/:user_id',to:'users#follower_list'
+
 end

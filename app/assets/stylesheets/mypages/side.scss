@@ -25,7 +25,7 @@
         &-box {
           width: 105px;
           height: 105px;
-          margin: auto;
+          margin: 19px auto 5px;
           img {
             border-radius: 50%;
             width: 105px;
@@ -75,13 +75,24 @@
           justify-content: space-around;
           font-size: 13px;
           height: 50%;
+          padding-left: 15px;
+          padding-right: 15px;
+
         }
         // フォロー数
         &-number {
+          padding-left: 15px;
+          padding-right: 15px;
           display: flex;
           justify-content: space-around;
-          font-size: 16px;
+          font-size: 17px;
           height: 50%;
+          a {
+            text-decoration: none;
+            .number-follow {
+              color :#4886ff;
+            }
+          }
         }
       }
     }
