@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function () {
   
   var swiper = new Swiper('.swiper-container', {
     navigation: {
