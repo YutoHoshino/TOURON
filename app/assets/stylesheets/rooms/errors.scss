@@ -1,0 +1,22 @@
+.errors_message {
+  &_error {
+    font-size: 13px;
+    color: rgb(235, 130, 130);
+
+
+  }
+}
+
+.field_with_errors {
+  display: contents;
+
+
+  
+  .text-area:valid {
+    border: 1px solid rgb(240, 177, 177);
+  }
+
+  select:valid {
+    border: 1px solid rgb(240, 177, 177);
+  }
+}
