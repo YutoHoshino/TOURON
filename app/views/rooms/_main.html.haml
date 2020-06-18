@@ -1,5 +1,4 @@
 .body
-  = render 'layouts/error_message', errors: @rooms.errors.full_messages
   .rooms-main 
     = form_with model:@rooms, local:true, class:"rooms-main-box" do |f|
       .title ルーム作成

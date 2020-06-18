@@ -6,7 +6,6 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.integer :category_id, null: false
       t.string :period, null: false
       t.string :image, null: false
-      t.references :user, foreign_key: true
       t.timestamps
     end
   end
