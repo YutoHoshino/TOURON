@@ -1,0 +1,8 @@
+.talk__rightside
+  .talk__rightside--time
+    = render "./timer"
+  
+  -# 一覧（Each）
+  .talk__rightside--title
+    = link_to root_path do
+      =image_tag 'user', size: "200x200", class: "talk__image"
