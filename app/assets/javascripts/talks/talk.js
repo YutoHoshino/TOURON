@@ -92,7 +92,8 @@ $(document).on('turbolinks:load',(function(){
       data: formData,  
       dataType: 'json',
       processData: false,
-      contentType: false
+      contentType: false,
+      timeout:3000,
     })
     .done(function(data){
       var html = buildHTML(data);
@@ -157,10 +158,11 @@ $(document).on('turbolinks:load',(function(){
       }
     })
     .fail(function() {
+      // xhr.abort()
     });
   };
   if (document.location.href.match(/\/rooms\/\d+\/talks/)) {
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 3000);
   }
 }));
 
