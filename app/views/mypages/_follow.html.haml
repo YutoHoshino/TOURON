@@ -1,0 +1,25 @@
+.mypage-main
+  .mypage-main-box
+    .follow-user
+      .follow-user-title 
+        .follow-user-title-follow.follow-tabs.follow-btn フォロー中
+        .follow-user-title-follow.follower-tabs フォロワー
+
+      .follow-user-main.follow-list
+        - current_user.followings.each do |user|
+          .follow-user-main-area
+            .follow-user-main-area-image
+              = image_tag("#{user.image}")
+            .follow-user-main-area-user
+              = user.username
+              = render "relationships/follow_button", user: user
+              
+      .follow-user-main.follower-list.content-remove
+        - current_user.followers.each do |user|
+          .follow-user-main-area
+            .follow-user-main-area-image
+              = image_tag("#{user.image}")
+            .follow-user-main-area-user
+              = user.username
+              = render "relationships/follow_button", user: user
+

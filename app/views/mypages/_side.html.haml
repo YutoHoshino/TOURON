@@ -16,10 +16,12 @@
           .box-follow フォロー中
           .box-follow フォロワー
         .side-top-follow-number
-          =link_to do
-            .number-follow 20
-          =link_to do
-            .number-follow 28
+          =link_to follow_mypages_path do
+            .number-follow
+              = @user.followings.length
+          =link_to follow_mypages_path do
+            .number-follow
+              = @user.followers.length
 
     -# 各種ボタン
     .side-info

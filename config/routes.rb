@@ -23,18 +23,13 @@ Rails.application.routes.draw do
       get "edit_user"
       put "updata_user"
       get "info"
+      get "follow"
     end
   end
 
+  resources :relationships, only: [:create, :destroy]
 
-  # resources :likes, only: [:create, :destroy]
   post "likes/:room_id/create", to: "likes#create", constraints: {room_id: /\d+/}, as: :likes_create
   post "likes/:room_id/delete", to: "likes#delete", constraints: {room_id: /\d+/}, as: :likes_delete
-
-
-  put 'users/follow/:user_id',to: 'users#follow'
-  put 'users/unfollow/:user_id',to: 'users#unfollow'
-  get 'users/follow_list/:user_id',to: 'users#follow_list'
-  get 'users/follower_list/:user_id',to:'users#follower_list'
 
 end
