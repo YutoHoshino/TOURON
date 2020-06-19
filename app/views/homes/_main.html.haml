@@ -35,6 +35,14 @@
                     = image_tag "heart2"
               -else
                 = room.likes.to_s
+              -# -# いいねマーク
+              -# - if room.likes_by?(current_user)
+              -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+              -#     = image_tag "heart"
+              -# - else
+              -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+              -#     = image_tag "heart2"
+
               -# 鍵マーク
               =link_to "#" do
                 = image_tag "lock"
@@ -59,12 +67,12 @@
                 = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
                   = room.tag_list[1]
             .home-footer__main-body__left__box__likes
-              - if room.likes_by?(current_user)
-                = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                  = image_tag "heart"
-              - else
-                = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                  = image_tag "heart2"
+              -# - if room.likes_by?(current_user)
+              -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+              -#     = image_tag "heart"
+              -# - else
+              -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+              -#     = image_tag "heart2"
 
 
 

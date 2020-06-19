@@ -5,6 +5,8 @@ class TalksController < ApplicationController
     @talk = Talk.new
     @talks = @room.talks.includes(:user)
     @user = Talk.where(room_id: params[:room_id].to_i).includes(:user)
+    @rooms = Room.find(params[:room_id])
+    gon.room = @rooms.period
   end
   
   def create
