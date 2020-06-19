@@ -12,8 +12,8 @@ class Room < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  def likes_by?(user)
-    likes.where(user_id: user.id).exists?
+  def likes_by?(user_id)
+    likes.where(user_id: user_id).exists?
   end
 
 end

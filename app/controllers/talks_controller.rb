@@ -4,6 +4,7 @@ class TalksController < ApplicationController
   def index
     @talk = Talk.new
     @talks = @room.talks.includes(:user)
+    @user = Talk.where(room_id: params[:room_id].to_i).includes(:user)
   end
   
   def create
