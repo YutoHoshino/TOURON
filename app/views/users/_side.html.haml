@@ -1,0 +1,24 @@
+.mypage-side
+  .side
+    -# ユーザー
+    .side-top
+      .side-top-img
+        .side-top-img-box 
+          = link_to mypages_path do
+            =image_tag("#{@other.image}")
+      .side-top-name
+        .name 
+          =@other.username
+        .introduction
+          =@other.profile
+      .side-top-follow
+        .side-top-follow-box
+          .box-follow フォロー中
+          .box-follow フォロワー
+        .side-top-follow-number
+          =link_to follow_mypages_path do
+            .number-follow
+              = @other.followings.length
+          =link_to follow_mypages_path do
+            .number-follow
+              = @other.followers.length

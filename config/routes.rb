@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:show]
+
   resources :relationships, only: [:create, :destroy]
 
   post "likes/:room_id/create", to: "likes#create", constraints: {room_id: /\d+/}, as: :likes_create

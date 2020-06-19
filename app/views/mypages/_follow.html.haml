@@ -9,17 +9,22 @@
         - current_user.followings.each do |user|
           .follow-user-main-area
             .follow-user-main-area-image
-              = image_tag("#{user.image}")
+              = link_to user_path(user.id) do
+                = image_tag("#{user.image}")
             .follow-user-main-area-user
-              = user.username
+              = link_to user_path(user.id) do
+                = user.username
               = render "relationships/follow_button", user: user
               
       .follow-user-main.follower-list.content-remove
         - current_user.followers.each do |user|
           .follow-user-main-area
             .follow-user-main-area-image
-              = image_tag("#{user.image}")
+              = link_to user_path(user.id) do
+                = image_tag("#{user.image}")
             .follow-user-main-area-user
-              = user.username
+              = link_to user_path(user.id) do
+                .follow-user-main-area-user-name
+                  = user.username
               = render "relationships/follow_button", user: user
 

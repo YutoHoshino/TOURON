@@ -53,6 +53,7 @@
           width: 62px;
           height: 62px;
           border-radius: 50%;
+          object-fit: cover;
         }
       } 
       &-user {
@@ -62,6 +63,8 @@
         justify-content: space-between;
         align-items: center;
         font-size: 16px;
+        font-weight: bold;
+        padding-left: 20px;
       }
     }
 
@@ -87,19 +90,23 @@
 
 
 .follow-now {
+  cursor: pointer;
   border: 1px solid #e8e8e8;
   background: #f9f9f9;
   color: #666;
   border-radius: 5px;
-  width: 85px;
-  height: 25px;
-  font-size: 15px;
+  width: 95px;
+  height: 30px;
+  font-size: 13px;
 }
+
 .follows {
+  cursor: pointer;
   background-color: #3897f0;
   color: #fff;
   border-radius: 5px;
-  width: 100px;
+  width: 95px;
   height: 30px;
-  border: none;
+  font-size: 13px;
+  border: 1px solid #3897f0;
 }

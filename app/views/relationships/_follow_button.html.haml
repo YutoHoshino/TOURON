@@ -6,4 +6,4 @@
   - else
     = form_for(current_user.relationships.build) do |f|
       = f.hidden_field :follow_id, value: user.id
-      = f.submit 'フォロー', class: 'follows'
+      = f.submit 'フォローする', class: 'follows'
