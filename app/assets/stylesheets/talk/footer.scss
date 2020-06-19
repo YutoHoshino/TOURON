@@ -5,11 +5,10 @@
 
 // // 投稿フォーム
 .message-footer {
-  background: rgb(253, 253, 253);
+  background: white;
   padding-top: 2px;
   border-top: 1px solid #b3b3b3;
-  height: 180px;
-  width: 100%;
+  height: 15%;
   &-area {
     display: flex;
     padding: 0 20px;
@@ -80,7 +79,7 @@
       }
       .cp_tab .cp_tabpanels {
         position: relative;
-        min-height: 150px;/* エリアの高さ */
+        min-height: 100px;/* エリアの高さ */
       }
       .cp_tab .cp_tabpanel {
         position: absolute;
@@ -100,12 +99,12 @@
       }
       .cp_tab > input:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child {
         background-color: rgb(226, 124, 124);
-        height: 150px;
+        height: 100px;
         border-radius: 0px 5px 5px 5px;
       }
       .cp_tab > input:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2) {
         background-color: #6699FF;
-        height: 150px;
+        height: 100px;
         border-radius: 0px 5px 5px 5px;
       }
       .cp_tab > label {

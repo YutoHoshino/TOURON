@@ -1,5 +1,8 @@
-= render "header"
-= render "./timer"
--# = render "sidebar"
-= render "talks"
-= render "footer"
+.talk-main
+  = render "header"
+  .all-box
+    = render "left-sidebar"
+    .message-box
+      = render "talks"
+      = render "footer"
+    = render "right-sidebar"

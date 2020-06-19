@@ -4,10 +4,10 @@
 }
 
 .room-main {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  margin-bottom: 30px;
   .room-main-content {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     overflow: scroll;
@@ -15,12 +15,12 @@
     &__left {
       background-color:whitesmoke;
       height: 100%;
-      width: 50vw;
+      width: 50%;
       display: flex;
       flex-direction: column-reverse;
       overflow: scroll;
       &__box {
-        // height: 60px;
+        height: 60px;
       }
       &__user {
         overflow: visible;
@@ -76,7 +76,7 @@
     &__right {
       background-color: whitesmoke;
       height: 100%;
-      width: 50vw;
+      width: 50%;
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-end;
@@ -133,4 +133,21 @@
       }
     }
   }
+}
+
+.talk-main {
+  width: 100%;
+  height: 100%;
+}
+
+.all-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.message-box {
+  width: 60%;
+  height: 100%;
 }
