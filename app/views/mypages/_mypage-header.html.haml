@@ -14,9 +14,10 @@
             .box__content-text 29
             = icon("fas fa-comments",class: "icon")
         .box
-          .box__title いいねされた数
+          .box__title フォロワーの数
           .box__content
-            .box__content-text 88
+            .box__content-text
+              = @user.followers.length
             = icon("fas fa-thumbs-up",class: "icon")
 
     = render "main-room"

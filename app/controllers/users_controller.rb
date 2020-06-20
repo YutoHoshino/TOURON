@@ -1,23 +1,14 @@
 class UsersController < ApplicationController
-  #フォロー処理を行う
-  def follow
-    @user = User.find(params[:user_id])
-    current_user.follow(@user)
-    redirect_to user_path(@user)
-  end
-  #フォロー解除処理を行う
-  def unfollow
-      @user = User.find(params[:user_id])
-      current_user.stop_following(@user)
-      redirect_to user_path(@user)
-  end
+  def show
+    @q = Room.ransack(params[:q])
+    @search = Room.ransack(params[:q]) 
+    @search = Talk.ransack(params[:q]) 
+    @results = @search.result 
 
-
-  def follow_list
-    @user = User.find(params[:user_id])
-  end
-
-  def follower_list
-    @user = User.find(params[:user_id])
+    @user = current_user
+    @other = User.find(params[:id])
+    if @other == current_user
+      redirect_to mypages_path
+    end
   end
 end

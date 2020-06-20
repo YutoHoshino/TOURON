@@ -12,6 +12,10 @@ class MypagesController < ApplicationController
   def info
   end
 
+  def follow
+    @users = User.all
+  end
+
   def edit_user
     # 検索
     @search = Room.ransack(params[:q]) 
