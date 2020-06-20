@@ -1,10 +1,12 @@
 .main__title
-  .h1 全てのカテゴリー
+  %h1
+    全てのカテゴリー
   .category
-    -@category.each do |category|
-      .category__text
-        = link_to category_search_rooms_path(category_id: category.id) do
-          = category.name 
+    %ul
+      -@category.each do |category|
+        %li.category__text
+          = link_to category_search_rooms_path(category_id: category.id) do
+            = category.name 
 
 -# メイン
 .home-body
@@ -37,10 +39,12 @@
               =link_to "#" do
                 = image_tag "lock"
 
-       
+.home-bar
 -# フッター
 .home-footer
-  .home-footer__name 新規の部屋
+  .home-footer__name
+    %h2
+      新規の部屋
   .home-footer__main
     - @rooms.each do |room|
       .home-footer__main-body

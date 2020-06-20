@@ -2,8 +2,9 @@
 
 .category-search
   .category-search__name
-    = "#{params[:category_id]}"
-    のカテゴリー検索結果一覧
+    - @categories.each do |category|
+      = category.name
+      のカテゴリー検索結果一覧
   .category-search__main
     - @rooms.each do |room|
       .category-search__main-body

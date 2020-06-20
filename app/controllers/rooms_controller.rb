@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   def category_search
     if params[:category_id]
       @rooms = Room.where(category_id: "#{params[:category_id]}")
+      @categories = Category.where(id: "#{params[:category_id]}")
     end
   end
 
