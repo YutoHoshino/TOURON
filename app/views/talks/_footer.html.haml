@@ -1,6 +1,6 @@
 .message-footer
   .message-footer-area
-    = form_with model:@talk, local:true, class:"from" do |f|
+    = form_with model:[@room, @talk], class:"from" do |f|
       .from-btn
         .from-btn-sutamp
         = link_to root_path do
@@ -22,4 +22,3 @@
             = f.text_area :text, class:"tab-content"
           #second_tab03.cp_tabpanel
             = f.text_area :text, class:"tab-content2"
-

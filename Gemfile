@@ -72,4 +72,5 @@ gem 'rubocop', require: false
 gem 'active_hash'
 gem 'acts-as-taggable-on'
 gem 'rails-i18n'
-
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+gem 'gon'

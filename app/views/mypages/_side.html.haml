@@ -16,8 +16,10 @@
           .box-follow フォロー中
           .box-follow フォロワー
         .side-top-follow-number
-          .number-follow 20
-          .number-follow 28
+          =link_to do
+            .number-follow 20
+          =link_to do
+            .number-follow 28
 
     -# 各種ボタン
     .side-info
@@ -38,9 +40,10 @@
             = icon('far fa-address-card', class: 'icon')
             .text プロフィール
 
-        .box.inquiry-mypage
-          = icon('far fa-comment-alt', class: 'icon')
-          .text お問い合わせ
+        = link_to info_mypages_path, data: {"turbolinks" => false}  do
+          .box.inquiry-mypage
+            = icon('far fa-comment-alt', class: 'icon')
+            .text お問い合わせ
 
         = link_to do
           .box

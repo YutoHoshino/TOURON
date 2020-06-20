@@ -4,22 +4,23 @@
 }
 
 .room-main {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  margin-bottom: 30px;
   .room-main-content {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
-
+    overflow: scroll;
     // 左側（反対）
     &__left {
       background-color:whitesmoke;
       height: 100%;
-      width: 50vw;
+      width: 50%;
       display: flex;
       flex-direction: column-reverse;
+      overflow: scroll;
       &__box {
-        // height: 60px;
+        height: 60px;
       }
       &__user {
         overflow: visible;
@@ -50,6 +51,10 @@
           border-radius: 50px;
           padding: 10px 50px 10px 100px;
           font-size: 20px;
+          &--name {
+            font-size: 8px;
+            border-bottom: 1px solid black;
+          }
           &--image {
             margin: 0 10px;
             border-radius: 20px;
@@ -71,10 +76,11 @@
     &__right {
       background-color: whitesmoke;
       height: 100%;
-      width: 50vw;
+      width: 50%;
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-end;
+      overflow: scroll;
       &__user {
         overflow: visible;
         // height: calc(100% - 85vh);
@@ -104,6 +110,12 @@
           border-radius: 50px;
           padding: 10px 100px 10px 30px;
           font-size: 20px;
+          &--name {
+            font-size: 8px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: flex-end;
+          }
           &--image {
             margin: 0 10px;
             border-radius: 20px;
@@ -121,4 +133,21 @@
       }
     }
   }
+}
+
+.talk-main {
+  width: 100%;
+  height: 100%;
+}
+
+.all-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.message-box {
+  width: 60%;
+  height: 100%;
 }
