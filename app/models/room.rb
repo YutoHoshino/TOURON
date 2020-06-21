@@ -19,7 +19,6 @@ class Room < ApplicationRecord
     return Room.all unless search
     Room.where('name LIKE(?)', "%#{search}%")
   end
-end
 
   def likes_by?(user)
     likes.where(user_id: user.id).exists?
