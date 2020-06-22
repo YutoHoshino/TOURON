@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-
+  
   def index
     #タグ絞り込み
     if params[:tag_name]

@@ -4,6 +4,7 @@ class TalksController < ApplicationController
   def index
     @talk = Talk.new
     @talks = @room.talks.includes(:user)
+    @rooms = Room.all
     @rooms = Room.find(params[:room_id])
     gon.room = @rooms.period
   end
