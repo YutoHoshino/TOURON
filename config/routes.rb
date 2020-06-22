@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
 
   resources :rooms, only: [:index, :new, :create] do
-    resources :talks, only: [:index, :new, :create]
+    resources :talks, only: [:index, :create]
     namespace :api do
       resources :talks, only: [:index,:new], defaults: { format: 'json' }
     end
@@ -31,9 +31,6 @@ Rails.application.routes.draw do
   post "likes/:room_id/create", to: "likes#create", constraints: {room_id: /\d+/}, as: :likes_create
   post "likes/:room_id/delete", to: "likes#delete", constraints: {room_id: /\d+/}, as: :likes_delete
 
-
-
-  resources :rooms, only: [:new, :create]
 
   put 'users/follow/:user_id',to: 'users#follow'
   put 'users/unfollow/:user_id',to: 'users#unfollow'

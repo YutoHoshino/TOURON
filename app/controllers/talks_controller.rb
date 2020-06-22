@@ -8,12 +8,7 @@ class TalksController < ApplicationController
     @rooms = Room.find(params[:room_id])
     gon.room = @rooms.period
   end
-
-  def new
-    @talk = Talk.new
-    @talks = @room.talks.includes(:user)
-  end
-
+  
   def create
     @talk = @room.talks.new(talks_params)
     if @talk.save
@@ -34,4 +29,5 @@ end
   def set_room
     @room = Room.find(params[:room_id])
   end
+  
 end

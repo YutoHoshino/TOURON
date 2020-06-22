@@ -1,5 +1,5 @@
 
-$(function(){
+$(document).on('turbolinks:load',(function(){
   function buildHTML(talk){
     if ( talk.status_id === 1 && talk.image ) {
       var html =
@@ -86,7 +86,6 @@ $(function(){
     e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    // console.log(url)
     $.ajax({
       url: url,
       type: 'POST',
@@ -141,7 +140,6 @@ $(function(){
           }
     })
     .done(function(talks) {
-      // console.log(talks.id)
       if (talks.length !== 0) {
         var insertHTML = '';
         $.each(talks, function(i, talk) {
@@ -159,11 +157,10 @@ $(function(){
       }
     })
     .fail(function() {
-      alert('error');
     });
   };
   if (document.location.href.match(/\/rooms\/\d+\/talks/)) {
     setInterval(reloadMessages, 5000);
   }
-});
+}));
 
