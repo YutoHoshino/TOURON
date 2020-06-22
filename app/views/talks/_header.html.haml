@@ -2,9 +2,6 @@
   .bottom
     .bottom__center
       = @room.name
-      - @user.each do|user|
-        - users = User.find(user.user_id)
-        = users.username
     .bottom__right
       %button#menu-button.open{:onclick => "onClickMenu()"}
         %span#menu-open{:style => "display: block"} Agree
