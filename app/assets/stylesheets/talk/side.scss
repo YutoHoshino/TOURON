@@ -1,7 +1,7 @@
 .talk_side {
-  width: 25%;
+  width: 22%;
   height: 620px;
-  background: #e6e6e6;
+  background: #f0f8ff;
 
   // テキストBOX
   &-box {
@@ -43,23 +43,6 @@
       font-size: 10px;
       line-height: 76px;
       padding-left: 10px;
-    }
-  }
-}
-
-
-// 右側のサイドバー
-.talk__rightside {
-  width: 25%;
-  height: 620px;
-  background: #e6e6e6;
-  &--time {
-    margin: 20px 45px;
-  }
-  &--title {
-    margin: 10px 50px;
-    .talk__image {
-      border-radius: 10px;
     }
   }
 }

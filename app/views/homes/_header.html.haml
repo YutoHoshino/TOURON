@@ -3,13 +3,13 @@
     =link_to root_path do
       = image_tag("TOURON_logo.png" , class: "header_nav-bar_image-logo")
   .header_nav-bar_search
-    = search_form_for(@q, url: search_homes_path) do |f|
-      .header_nav-bar_search-content
-        -# =f.search_field :name_cont, placeholder:"検索する文字を入力して下さい"
-      .header_nav-bar_search-image
-        %label
-          =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
-          =f.submit class:"header_nav-bar_search-image_submit"
+    -# = search_form_for(@q, url: search_homes_path) do |f|
+    .header_nav-bar_search-content
+      -# =f.search_field :name_cont, placeholder:"検索する文字を入力して下さい"
+    .header_nav-bar_search-image
+      -# %label
+      -#   =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
+      -#   =f.submit class:"header_nav-bar_search-image_submit"
   
   .header_nav-bar_user
     -if user_signed_in?
