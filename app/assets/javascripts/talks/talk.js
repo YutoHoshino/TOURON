@@ -16,6 +16,7 @@ $(document).on('turbolinks:load',(function(){
         </div>`
       return html;
     } else if (talk.status_id === 1 && talk.text.length > 100) {
+      var html =
       `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__left__user--image">
         </div>
