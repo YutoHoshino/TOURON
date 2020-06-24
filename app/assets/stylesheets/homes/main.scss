@@ -162,9 +162,10 @@ a {
               height: 100%;
 
               &-area {
-                width: 100%;
-                height: 60%;
+                width: 282px;
+                height: 540px;
                 margin: 40px 0;
+
 
                 &-current {
                   height: 15%;
@@ -348,6 +349,13 @@ a {
       }
     }
   }
+}
+
+.fixed{
+  position: fixed;
+  top: 80px;
+  right: 130px;
+  z-index: 1;
 }
 
 
