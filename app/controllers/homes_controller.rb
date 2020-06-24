@@ -4,10 +4,10 @@ class HomesController < ApplicationController
 
   def index
     @rooms = Room.all.order(id: "DESC").first(10)
-    @room = Room.all
-    @room_random = @room.sample(9) #ランダムで９つ取得
-    @category = Category.all
-
+    @room = Room.all.first(9)
+    @room_random = Room.order("RAND()") #ランダムで９つ取得
+    @category = Category.order("RAND()").first(4)
+    @users = User.where.not(id: current_user.id)
   end 
 
   def search
