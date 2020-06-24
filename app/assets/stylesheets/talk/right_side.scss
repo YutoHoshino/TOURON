@@ -1,0 +1,39 @@
+// 右側のサイドバー
+.talk__rightside {
+  width: 22%;
+  height: 620px;
+  background: #f0f8ff;
+  &--time {
+    margin: 20px 40px;
+  }
+  &--title {
+    margin: 10px 50px;
+    .talk__image {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &--name {
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--description {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  }
+}

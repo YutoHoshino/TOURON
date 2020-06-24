@@ -5,9 +5,9 @@
 
 .room-main {
   height: 100%;
-  margin-bottom: 30px;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
   .room-main-content {
-    height: 90%;
     width: 100%;
     display: flex;
     overflow: scroll;
