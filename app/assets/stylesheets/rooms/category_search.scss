@@ -1,106 +1,105 @@
 .category-search {
   width: 100%;
-  height: 600px;
-  background: #ffffff;
-  overflow-y: scroll;
+  height: 100%;
 
   &__name {
+
     width: 100%;
-    height: 10%;
+    height: 100px;
     font-size: 23px;
     font-weight: bold;
     text-align: center;
-    padding: 30px 0 20px;
+    line-height: 140px;
   }
 
   &__main {
-      width: 100vw;
-      height: 90%;
-      flex-wrap: wrap;
-      padding-top: 20px;
-      border: none;
-      display: flex;
-      justify-content: center;
-    }
-}
-  
-.category-search__main-body {
-  width: 200px;
-  height: 300px;
-  border: 1px solid #c7d1e6;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  border-radius: 10px;
-
-    &__left {
-    width: 198px;
-    height: 300px;
-    position: relative;
-
-      &__box {
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        height: 50%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-top: 1px solid #c7d1e6;
-
-        &__text {
-          height: 30%;
-          color: #333;
-          font-size: 15px;
-          font-weight: bold;
-          margin: 5px 20px 5px;
-          overflow: hidden;
-          display: -webkit-box; //display属性をフレキシブルに
-          -webkit-box-orient: vertical; //並び方向を指定
-          -webkit-line-clamp: 2; //2行目まで表示、以降をクランプ
-        }
-
-        &__tags {
-          width: 100%;
-          height: 30%;
-          padding: 0px 10px;
-          a {
-            width: 120px;
-            height: 20px;
-            background-color: #fffaf4;
-            border-radius: 5px;
-            color: #494949;
-            font-size: 11px;
-            text-align: center;
-            line-height: 20px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            border-left: solid 5px #b6b7ee;/*左線*/
-            border-bottom: solid 3px #d7d7d7;/*下線*/ 
-          }
-        }
-
-        &__likes {
-          width: 100%;
-          height: 30%;
-          padding: 5px 10px;
-          display: flex;
-
-          img {
-            height: 30px;
-            width: 30px;
-          }
-        }
-        }
-      }
-    }
+    width: 100vw;
+    height: calc(100% - 100px);
+    padding: 0 220px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border: none;
     
-    .touron__image {
-      height: 50%;
-      width: 199px;
-      object-fit: cover;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+    .room-contents {
+      padding-top: 20px;
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        text-decoration: none;
       }
+      &-box {
+        width: calc(720px/3);
+        margin: 0 auto;
+        height: 350px;
+        background: #fff;
+        border-radius: 20px;
+        margin: 0 0 50px 50px;
+        border: 1px solid #a9badd;
+        &-img {
+          height: 45%;
+          img {
+            height: 100%;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+          }
+        }
+        &-text {
+          height: 25%;
+          padding: 10px 20px;
+          color: #333;
+          font-size: 16px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+        &-tags {
+          padding: 0 20px;
+          height: 20%;
+          .tags {
+            color: #333;
+            font-size: 11px;
+            padding: 3px 15px;
+            margin-bottom: 5px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: fit-content;
+            display: block;
+          }
+        }
+        &-likes {
+          height: 10%;
+          display: flex;
+          align-items: center;
+          padding-bottom: 10px;
+          padding-left: 20px;
+          
+
+          .likes-icon {
+            margin-right: 10px;
+            img {
+              width: 33px;
+              height: 33px;
+            }
+          }
+        }
+      }
+
+      &-area {
+        width: 100%;
+        height: calc(100vh - 300px - 110px - 100px);
+        &-no {
+          margin-top: 10px;
+          font-size: 22px;
+          font-weight: 500;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
