@@ -11,7 +11,7 @@ class HomesController < ApplicationController
     @users = User.where.not(id: current_user.id)
     @room_random1 = Room.where(category_id: "1")
     @room_random2 = Room.where(category_id: "2")
-    @room_random3 = Room.where(category_id: "3")
+    @room_random3 = Room.where(category_id: "4")
 
     render
   end 
