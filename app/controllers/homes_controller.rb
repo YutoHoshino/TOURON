@@ -1,13 +1,19 @@
 class HomesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_ransack
   # before_action :user
 
   def index
     @rooms = Room.all.order(id: "DESC").first(10)
-    @room = Room.all
-    @room_random = @room.sample(9) #ランダムで９つ取得
-    @category = Category.all
+    @room = Room.all.first(9)
+    @room_random = Room.order("RAND()") #ランダムで９つ取得
+    @category = Category.order("RAND()").first(4)
+    @users = User.where.not(id: current_user.id)
+    @room_random1 = Room.where(category_id: "1")
+    @room_random2 = Room.where(category_id: "2")
+    @room_random3 = Room.where(category_id: "3")
 
+    render
   end 
 
   def search
