@@ -51,5 +51,5 @@ production:
   <<: *default
   database: TOURON_production
   username: root
-  password: <%= ENV['TOURON_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
