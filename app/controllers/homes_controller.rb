@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ransack
+  
   # before_action :user
 
   def index

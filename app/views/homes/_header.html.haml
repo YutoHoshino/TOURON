@@ -1,6 +1,4 @@
 .header_nav-bar
-  .header_nav-bar_user
-    -if user_signed_in?
   .header_nav-bar-box
     .header_nav-bar-box-logo
       = link_to root_path do
@@ -9,7 +7,7 @@
       = form_with(url: search_homes_path, local: true, method: :get, class: "room_search") do |form|
         .header_nav-bar-box-input-area
           = form.text_field :search, placeholder: "部屋を検索する", class: "search-input"
-          =f.submit class:"searh_submit"
+          =form.submit class:"searh_submit"
 
     .header_nav-bar-box-icon
       = link_to mypages_path class:"user_btn" do
