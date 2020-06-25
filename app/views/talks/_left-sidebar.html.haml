@@ -1,15 +1,13 @@
 .talk_side
   = link_to root_path, class: "talk_side-box" do
     = icon('fas fa-home', class: 'icon')
-    .text 参加しているROOM
+    .text
+      = @rooms.name
   
   -# 一覧（Each）
-  = link_to root_path, class: "talk_side-group" do
-    =image_tag 'user'
-    .name あなたはラーメ...
-  = link_to root_path, class: "talk_side-group" do
-    =image_tag 'touron_image'
-    .name 転売ヤーについて...
-  = link_to root_path, class: "talk_side-group" do
-    =image_tag 'TOURON_logo'
-    .name このアプリは高校生...
+  -# - @users.each do|user|
+  -#   - users = User.find_by(id:user.user_id)
+  -#   = link_to root_path, class: "talk_side-group" do
+  -#     = image_tag users.image_url
+  -#     .name
+  -#       = users.username

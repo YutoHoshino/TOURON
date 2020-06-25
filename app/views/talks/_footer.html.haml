@@ -7,7 +7,7 @@
           = icon('far fa-smile fa-2x', class: 'icon')
         = f.label :image, class: 'clip' do
           = icon('fas fa-paperclip fa-2x', class: 'icon')
-          -# = f.file_field :image, class: 'clip'
+          = f.file_field :image, class: 'clip'
         = f.submit "送信", class: "from-btn-submit"
 
       .cp_tab
@@ -22,3 +22,4 @@
             = f.text_area :text, class:"tab-content"
           #second_tab03.cp_tabpanel
             = f.text_area :text, class:"tab-content2"
+

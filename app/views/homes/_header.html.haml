@@ -1,20 +1,45 @@
 .header_nav-bar
-  .header_nav-bar_image
-    =link_to root_path do
-      = image_tag("TOURON_logo.png" , class: "header_nav-bar_image-logo")
-  .header_nav-bar_search
-    = form_with(url: search_homes_path, local: true, method: :get, class: "room_search") do |form|
-      .header_nav-bar_search-content
-        = form.text_field :search, placeholder: "部屋を検索する", class: "search-input"
-      .header_nav-bar_search-image
-        %label
-          =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
-          =form.submit class:"header_nav-bar_search-image_submit"
-  
   .header_nav-bar_user
     -if user_signed_in?
+  .header_nav-bar-box
+    .header_nav-bar-box-logo
+      = link_to root_path do
+        = image_tag("TOURON_logo")
+    .header_nav-bar-box-input
+      = form_with(url: search_homes_path, local: true, method: :get, class: "room_search") do |form|
+        .header_nav-bar-box-input-area
+          = form.text_field :search, placeholder: "部屋を検索する", class: "search-input"
+          =f.submit class:"searh_submit"
+
+    .header_nav-bar-box-icon
       = link_to mypages_path class:"user_btn" do
         =image_tag("#{@user.image}")
-    -else
-      = link_to "ログイン", new_user_session_path, class: "header-btn__log-in"
-      = link_to "新規登録", new_user_registration_path, class: "header-btn__sign-up"
+      = link_to new_room_path class:"user_btn" do
+        .room_new_btn ＋ 部屋作成
+
+
+
+
+
+-# .header_nav-bar
+-#   .header_nav-bar_image
+-#     =link_to root_path do
+-#       = image_tag("TOURON_logo.png" , class: "header_nav-bar_image-logo")
+-#   .header_nav-bar_search
+-#     = search_form_for(@q, url: search_homes_path) do |f|
+-#       .header_nav-bar_search-content
+-#         =f.search_field :name_cont, placeholder:"検索する文字を入力して下さい"
+-#       .header_nav-bar_search-image
+-#         %label
+-#           =image_tag("search.jpeg", class: "header_nav-bar_search-field_image") 
+-#           =f.submit class:"header_nav-bar_search-image_submit"
+  
+-#   .header_nav-bar_user
+-#     = link_to mypages_path class:"user_btn" do
+-#       =image_tag("#{@user.image}")
+-#     = link_to  rooms_path do
+-#       .room_new_btn
+-#         room作成
+-#     -# -else
+-#     -#   = link_to "ログイン", new_user_session_path, class: "header-btn__log-in"
+-#     -#   = link_to "新規登録", new_user_registration_path, class: "header-btn__sign-up"

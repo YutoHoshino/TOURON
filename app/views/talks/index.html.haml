@@ -1,8 +1,13 @@
+= render "homes/load"
 .talk-main
   = render "homes/header"
+  = render "homes/nav"
   .all-box
     = render "left-sidebar"
     .message-box
       = render "talks"
-      = render "footer"
+      - if @stasu.status.present?
+        = render "end_footer"
+      - else
+        = render "footer"
     = render "right-sidebar"
