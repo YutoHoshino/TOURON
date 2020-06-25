@@ -5,7 +5,6 @@ $(document).on('turbolinks:load', function () {
   
   let startTime = new Date();
   let endTime = new Date(Date.now() + time * 60);
-  console.log(endTime)
   $(function () {
     diff = endTime - startTime;
     countDown(diff);
