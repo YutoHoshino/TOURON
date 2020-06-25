@@ -1,26 +1,31 @@
-.header
-  .header__content
-    .left
-      .left__title
-        いいねした数
-      .left__content
-        = icon("far fa-heart fa-3x ",class: "icon")
-        .calc_box
-          999
-    .center
-      .center__title
-        参加TOURON数
-      .center__content
-        = icon("far fa-comments fa-3x",class: "icon")
-        .calc_box
-          999
-    .right
-      .right__title
-        いいねされた数
-      .right__content
-        = icon("far fa-thumbs-up fa-3x",class: "icon")
-        .calc_box
-          999
+.mypage-main
+  .mypage-main-box
+    .my__header
+      .my__header__content
+        .box.line
+          .box__title いいねした数
+          .box__content
+            .box__content-text
+              = @user.likes.length
+            = icon("fas fa-heart ",class: "icon")
+        .box.line
+          .box__title 参加TOURON数
+          .box__content
+            .box__content-text 29
+            = icon("fas fa-comments",class: "icon")
+        .box
+          .box__title フォロワーの数
+          .box__content
+            .box__content-text
+              = @user.followers.length
+            = icon("fas fa-thumbs-up",class: "icon")
 
-  = render "main-room"
+    = render "main-room"
+
+
+
+  -# = render "inquiry-mypage"
+
+
+
 

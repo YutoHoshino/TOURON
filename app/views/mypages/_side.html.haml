@@ -1,36 +1,63 @@
-.side
-  -# ユーザー
-  .side-top
-    = link_to mypages_path do
-      =image_tag 'user'
-    .name トウロン君
-    .introduction こんなアカウントです。
-    .box
-      .box-follow フォロー中
-      .box-follow フォロワー
-    .number
-      .number-follow 20
-      .number-follow 28
+.mypage-side
+  .side
+    -# ユーザー
+    .side-top
+      .side-top-img
+        .side-top-img-box 
+          = link_to mypages_path do
+            =image_tag("#{@user.image}")
+      .side-top-name
+        .name 
+          =@user.username
+        .introduction
+          =@user.profile
+      .side-top-follow
+        .side-top-follow-box
+          .box-follow フォロー中
+          .box-follow フォロワー
+        .side-top-follow-number
+          =link_to follow_mypages_path do
+            .number-follow
+              = @user.followings.length
+          =link_to follow_mypages_path do
+            .number-follow
+              = @user.followers.length
 
-  -# 各種ボタン
-  .side-info
-    = link_to do
-      .box 
-        = icon('fas fa-home', class: 'icon')
-        .text ホーム
-    = link_to do
-      .box 
-        = icon('far fa-paper-plane', class: 'icon')
-        .text 部屋を作る
-    = link_to do
-      .box 
-        = icon('fas fa-question-circle', class: 'icon')
-        .text ヘルプ
-    = link_to do
-      .box 
-        = icon('fas fa-wrench', class: 'icon')
-        .text 設定
-    = link_to do
-      .box 
-        = icon('far fa-user-circle', class: 'icon')
-        .text ログアウト
+    -# 各種ボタン
+    .side-info
+      .side-info-box
+
+        = link_to mypages_path, data: {"turbolinks" => false}  do
+          .box.home-btn.choice-box
+            = icon('fas fa-tv', class: 'icon')
+            .text ホーム
+
+        = link_to new_room_path  do
+          .box
+            = icon('far fa-paper-plane', class: 'icon')
+            .text 部屋を作る
+
+        = link_to edit_user_mypages_path, data: {"turbolinks" => false}  do
+          .box.choice-box_edit
+            = icon('far fa-address-card', class: 'icon')
+            .text プロフィール
+
+        = link_to info_mypages_path, data: {"turbolinks" => false}  do
+          .box.inquiry-mypage
+            = icon('far fa-comment-alt', class: 'icon')
+            .text お問い合わせ
+
+        = link_to do
+          .box
+            = icon('fas fa-question-circle', class: 'icon')
+            .text ヘルプ
+
+        = link_to do
+          .box 
+            = icon('fas fa-wrench', class: 'icon')
+            .text 設定
+
+        = link_to destroy_user_session_path, method: :delete,data: {confirm: "本当にログアウトしますか？"} do
+          .box 
+            = icon('far fa-user-circle', class: 'icon')
+            .text ログアウト

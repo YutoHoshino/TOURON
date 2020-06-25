@@ -1,29 +1,24 @@
--# .a
-
--# 投稿フォーム
 .message-footer
   .message-footer-area
-    = form_with model:@talk, local:true, class:"from" do |f|
+    = form_with model:[@room, @talk], class:"from" do |f|
       .from-btn
         .from-btn-sutamp
-          = link_to root_path do
-            = icon('far fa-smile', class: 'icon')
-          = f.label :image, class: 'clip' do
-            = icon('fas fa-paperclip', class: 'icon')
-            = f.file_field :image, class: 'clip'
+        = link_to root_path do
+          = icon('far fa-smile fa-2x', class: 'icon')
+        = f.label :image, class: 'clip' do
+          = icon('fas fa-paperclip fa-2x', class: 'icon')
+          = f.file_field :image, class: 'clip'
         = f.submit "送信", class: "from-btn-submit"
-      .from-area
-        = f.text_area :text, class: "from-area-input", placeholder: "メッセージ内容を入力"
 
--# 賛否ボタン
--# .message-status
--#   .message-status-agree
--#     = link_to root_path do
--#       .agree Agree
--#       = image_tag "message/red5.png", size: "60x60"
--#   .message-status-opposition
--#     = link_to root_path do
--#       .opposition Opposition
--#       = image_tag "message/blue5.png", size: "60x60"
-
-
+      .cp_tab
+        %input#tab3_1{"aria-controls" => "first_tab03", :checked => "checked", :name => "cp_tab", :type => "radio", :onclick => "onClickMenu(1)"}/
+        %label{:for => "tab3_1", id: "A"} Agree
+        %input#tab3_2{"aria-controls" => "second_tab03", :name => "cp_tab", :type => "radio", :onclick => "onClickMenu(2)"}/
+        %label{:for => "tab3_2", id: "O"} Oposition
+        = f.radio_button :status_id,"1",id:"box1", checked: "checked"
+        = f.radio_button :status_id,"2",id:"box2"
+        .cp_tabpanels
+          #first_tab03.cp_tabpanel
+            = f.text_area :text, class:"tab-content"
+          #second_tab03.cp_tabpanel
+            = f.text_area :text, class:"tab-content2"

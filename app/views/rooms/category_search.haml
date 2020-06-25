@@ -1,0 +1,37 @@
+= render "homes/load"
+= render "homes/header"
+= render "homes/nav"
+.category-search
+  .category-search__name
+    = "”#{@category_id.name}”"
+    のカテゴリ一覧
+  .category-search__main
+    .room-contents
+      - if @rooms.present?
+        - @rooms.each do |room|
+          = link_to room_talks_path(room.id) do
+            .room-contents-box
+              .room-contents-box-img
+                =image_tag("#{room.image}")
+              .room-contents-box-text
+                = room.name
+              .room-contents-box-tags
+                - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                  = link_to rooms_path(tag_name: room.tag_list[0]), class:"tags" do
+                    = room.tag_list[0]
+                - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                  = link_to rooms_path(tag_name: room.tag_list[1]), class:"tags" do
+                    = room.tag_list[1]
+              .room-contents-box-likes
+                .likes-icon
+                  - if room.likes_by?(current_user)
+                    = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                      = image_tag "heart"
+                  - else
+                    = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                      = image_tag "heart2"
+      - else 
+        .room-contents-area
+          .room-contents-area-no 表示するものがありません
+              
+= render "homes/footer"

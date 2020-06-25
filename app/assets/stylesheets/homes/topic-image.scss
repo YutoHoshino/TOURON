@@ -1,6 +1,8 @@
 .topic__image {
   width: 100%;
-  height: 360px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .swiper-container {
@@ -16,7 +18,6 @@
   z-index: 5;
   &::before{
     content: ' ';
-    background-color: rgba(0,0,0,0.4);
     position: absolute;
     top: 0;
     right: 0;
@@ -27,7 +28,6 @@
 
 .swiper-slide img {
   width: 100%;
-  min-height: 150px;
   object-fit: cover;
   z-index: 5;
 }

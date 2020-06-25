@@ -1,29 +1,23 @@
-.a {
-  width: 100%;
-  height: 100vh;
-}
+// .a {
+//   width: 100%;
+//   height: 100vh;
+// }
 
-// 投稿フォーム
+// // 投稿フォーム
 .message-footer {
-  background: rgb(253, 253, 253);
+  background: white;;
   padding-top: 2px;
   border-top: 1px solid #b3b3b3;
-  height: 180px;
-  width: 100%;
   &-area {
     display: flex;
     padding: 0 20px;
-    width: calc(100% - 40px);
+    // width: calc(100% - 40px);
     height: 100%;
     .from {
       width: 100%;
-
       // ボタン系配置
       &-btn {
-        height: 25%;
-        display: flex;
-        justify-content: space-between;
-
+        float: right;
         // スタンプ系
         &-sutamp {
           width: 20%;
@@ -57,7 +51,6 @@
           color: #fff;
           width: 90px;
           border:0;
-          margin: 5px 0;
           margin-right: 10px;
           font-size: 20px;
         }
@@ -65,93 +58,100 @@
           opacity: 90%;
         }
       }
-
-      // テキストBOX配置
-      &-area {
-        height:75%;
-        &-input {
-          width: calc(100% - 24px);
-          height: calc(100% - 38px);
-          border-radius: 4px;
-          border: 2px solid rgb(128, 128, 128);
-          resize: none;
-          padding: 10px;
-          font-size: 18px;
-        }
-        &-input::placeholder {
-          padding-left: 6px;
-          font-size: 20px;
-        }
+      .cp_tab *, .cp_tab *:before, .cp_tab *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
       }
-    }
-  }
-}
-
-// 賛否ボタン
-.message-status {
-  
-  width: 100vw;
-  height: 50px;
-  display: flex;
-  padding-bottom: 30px;
-  background: rgb(253, 253, 253);
-
-  // agreeボタン
-  &-agree {
-    width: 50%;
-    position: relative;
-    a {
-      text-decoration: none;
-      font-size: 20px;
-      text-align: center;
-      line-height: 40px;
-      color: #fff;
-      font-weight: bold;
-      .agree {
-        width: 85%;
-        height: 85%;
-        border-radius: 5px;
-        box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
-        background: rgb(226, 124, 124);
-        margin: 0 auto;
-        margin-right: 30px;
-        margin-top: 10px;
-        border: 2px solid rgb(104, 104, 104);
+      .cp_tab {
+        margin: 1em auto;
       }
-      img {
+      .cp_tab > input[type='radio'] {
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        background: none;
+        -webkit-appearance: none;
+                appearance: none;
+        display: none;
+      }
+      .cp_tab .cp_tabpanels {
+        position: relative;
+        min-height: 100px;/* エリアの高さ */
+      }
+      .cp_tab .cp_tabpanel {
         position: absolute;
-        top: -3px;
-        right: 86%;
+        width: 100%;
+        opacity: 0;
+        padding: 0.5em 1em;
+        transform: translateY(-10px);
+        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
       }
-    }
-  }
-
-  // oppositionボタン
-  &-opposition {
-    width: 50%;
-    position: relative;
-    a {
-      text-decoration: none;
-      font-size: 20px;
-      text-align: center;
-      line-height: 40px;
-      color: #fff;
-      font-weight: bold;
-      .opposition {
-        width: 85%;
-        height: 85%;
-        border-radius: 5px;
-        box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
-        background: rgb(86, 129, 228);
-        margin: 0 auto;
-        margin-left: 30px;
-        margin-top: 10px;
-        border: 2px solid rgb(104, 104, 104);
+      .cp_tab > input:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child,
+      .cp_tab > input:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2),{
+        opacity: 1;
+        transform: translateY(0px);
       }
-      img {
-        position: absolute;
-        top: -3px;
-        left: 86%;
+      .cp_tab > input:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child {
+        background-color: rgb(226, 124, 124);
+        height: 100px;
+        border-radius: 0px 5px 5px 5px;
+      }
+      .cp_tab > input:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2) {
+        background-color: #6699FF;
+        height: 100px;
+        border-radius: 0px 5px 5px 5px;
+      }
+      .cp_tab > label {
+        position: relative;
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 6px 6px 0 0;
+        font-weight: bold;
+      }
+      .cp_tab > input:first-child + label {
+        background-color: rgb(226, 124, 124);
+        color: white;
+      }
+      .cp_tab > input:nth-child(3) + label {
+        background-color: #6699FF;
+        color: white;
+      }
+      .cp_tab > label:hover {
+        color: #0066cc;
+      }
+      .cp_tab > input:focus + label {
+        color: #ffffff;
+      }
+      .cp_tab > input:checked + label {
+        margin-bottom: -1px;
+      }
+      @media (max-width: 480px) {
+        .cp_tab {
+          width: 100%;
+          font-size: 0.8em;
+        }
+        .cp_tab label {
+          padding: 0.5em;
+        }
+      }
+      
+      .tab-content{
+        width: 100%;
+        height: calc(100% - 5px);
+        border-radius: 4px;
+        border: 2px solid rgb(128, 128, 128);
+        resize: none;
+        font-size: 18px;
+        margin-top: 3px;
+      }
+      .tab-content2{
+        @extend.tab-content;
       }
     }
   }

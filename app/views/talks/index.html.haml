@@ -1,3 +1,9 @@
-= render "header"
-= render "talks"
-= render "footer"
+= render "homes/load"
+.talk-main
+  = render "homes/header"
+  .all-box
+    = render "left-sidebar"
+    .message-box
+      = render "talks"
+      = render "footer"
+    = render "right-sidebar"
