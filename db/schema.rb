@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_072009) do
     t.integer "category_id", null: false
     t.string "period", null: false
     t.string "image", null: false
+    t.string "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

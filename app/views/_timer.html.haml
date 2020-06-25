@@ -1,2 +1,6 @@
 .time-image
   %p#Timer.time
+    =  form_with  url: edit2_room_talks_path, local:true, class:"display-hiidden", method: :put do |f|
+      = f.text_field :status, value: 1
+      = f.submit '送信', class: 'customButton'
+
