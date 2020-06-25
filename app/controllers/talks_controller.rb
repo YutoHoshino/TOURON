@@ -1,7 +1,5 @@
 class TalksController < ApplicationController
   before_action :set_room
-  before_action :set_ransack
-  before_action :set_search
 
   def index
     @talk = Talk.new
@@ -45,16 +43,6 @@ class TalksController < ApplicationController
     params.require(:room).permit(:status)
   end
   
-  def set_ransack
-    @q = Room.ransack(params[:q])
-  end
-
-  def set_search
-      @search = Room.ransack(params[:q]) 
-      @search = Talk.ransack(params[:q]) 
-      # roomsテーブルを検索する@serchを生成
-      @results = @search.result 
-      # 結果を@resultに代入
-  end
+ 
 
 end

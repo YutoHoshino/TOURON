@@ -4,6 +4,28 @@ nav {
   background: #fff;
 }
 
+.room_search{
+  display:flex;
+}
+.header_nav-bar_search{
+  margin-left:30px;
+  position:relative;
+  &-field_image{
+    height:20px;
+    width:20px;
+    position:absolute;
+    margin-top:2%;
+    right:4%;
+  }
+  &-image_submit{
+    display:none;
+  }
+}
+
+input[type="text"] {
+  width:700px;
+  height:50px;
+}
 .header_nav-bar {
   background: #fff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
