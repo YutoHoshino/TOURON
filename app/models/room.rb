@@ -16,4 +16,9 @@ class Room < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
+  def self.search(search)
+    return Room.all unless search
+    Room.where("name LIKE(?)", "%#{search}%")
+  end
+
 end
