@@ -6,37 +6,32 @@
         .room-main-content__left__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           -if talk.status_id == 1
             .room-main-content__left__user--image
-              = image_tag talk.user.image.url, class: "room-main-content__left__user--image--main"
             -if talk.text.length > 100 or talk.image.present?
               .room-main-content__left__user--text
                 .room-main-content__left__user--text--name
-                  = talk.user.username
-                .room-main-content__left__user--text--content
-                  = talk.text
-                  = image_tag talk.image.url, size: "150x150", class: "room-main-content__left__user--text--content--image" if talk.image.present?
+                  user
+                = talk.text
+                = image_tag talk.image.url, size: "300x300", class: "room-main-content__left__user--text--image" if talk.image.present?
             -else 
               .room-main-content__left__user--text2
                 .room-main-content__left__user--text--name
-                  = talk.user.username
+                  user
                 = talk.text
     .room-main-content__right
       - @talks.each do|talk|
         .room-main-content__right__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           -if talk.status_id == 2
             .room-main-content__right__user--image
-              = image_tag talk.user.image.url, class: "room-main-content__right__user--image--main"
             -if talk.text.length > 100 or talk.image.present?
               .room-main-content__right__user--text
                 .room-main-content__right__user--text--name
-                  = talk.user.username
-                .room-main-content__right__user--text--content
-                  %p
-                    = talk.text
-                  = image_tag talk.image.url, size: "150x150", class: "room-main-content__right__user--text--content--image" if talk.image.present?
+                  user
+                = talk.text
+                = image_tag talk.image.url, size: "300x300", class: "room-main-content__right__user--text--image" if talk.image.present?
             -else
               .room-main-content__right__user--text2
                 .room-main-content__right__user--text--name
-                  = talk.user.username
+                  user
                 = talk.text
         .room-main-content__right__box
         
