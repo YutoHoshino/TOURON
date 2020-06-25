@@ -29,6 +29,9 @@ class RoomsController < ApplicationController
   else
     render "rooms/new"
   end
+
+  def edit
+  end
 end
 
 
