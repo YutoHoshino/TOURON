@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function () {
   let time = gon.room;
   
   let startTime = new Date();
-  let endTime = new Date(Date.now() + time * 60000);
+  let endTime = new Date(Date.now() + time * 60);
   console.log(endTime)
   $(function () {
     diff = endTime - startTime;
@@ -28,9 +28,7 @@ $(document).on('turbolinks:load', function () {
       //終了した時のテキスト
       $("#Timer").text('終了！'),
       $('.message-footer').remove(),
-      $(function(){
-        console.log("hello")
-      });
+      $('.customButton').click();
     }
   };
 
