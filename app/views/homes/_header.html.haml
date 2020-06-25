@@ -6,7 +6,7 @@
     .header_nav-bar-box-input
       = form_with(url: search_homes_path, local: true, method: :get, class: "room_search") do |form|
         .header_nav-bar-box-input-area
-          = form.text_field :search, placeholder: "部屋を検索する", class: "search-input"
+          = form.text_field :search,:type => "search",  placeholder: "部屋を検索する", class: "search-input"
           =form.submit class:"searh_submit"
 
     .header_nav-bar-box-icon
