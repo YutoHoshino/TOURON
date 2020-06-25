@@ -5,25 +5,32 @@ $(document).on('turbolinks:load',(function(){
       var html =
       `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__left__user--image">
+          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
         </div>
         <div class="room-main-content__left__user--text">
           <div class="room-main-content__left__user--text--name">
-          ${talk.user_username}
+            ${talk.user_username}
           </div>
-          ${talk.text}
-          <img src=${talk.image} class="room-main-content__left__user--text--image">
+          <div class="room-main-content__left__user--text--content">
+            ${talk.text}
+            <img src=${talk.image} class="room-main-content__left__user--text--content--image">
+          </div>
         </div>
         </div>`
       return html;
     } else if (talk.status_id === 1 && talk.text.length > 100) {
+      var html =
       `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__left__user--image">
+          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
         </div>
         <div class="room-main-content__left__user--text">
           <div class="room-main-content__left__user--text--name">
-          ${talk.user_username}
+            ${talk.user_username}
           </div>
-          ${talk.text}
+          <div class="room-main-content__left__user--text--content">
+            ${talk.text}
+          </div>
         </div>
         </div>`
       return html;
@@ -31,6 +38,7 @@ $(document).on('turbolinks:load',(function(){
       var html =
       `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__left__user--image">
+          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
         </div>
         <div class="room-main-content__left__user--text2">
           <div class="room-main-content__left__user--text--name">
@@ -44,13 +52,16 @@ $(document).on('turbolinks:load',(function(){
       var html =
       `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__right__user--image">
+          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
         </div>
         <div class="room-main-content__right__user--text">
           <div class="room-main-content__right__user--text--name">
-          ${talk.user_username}
+            ${talk.user_username}
           </div>
-          ${talk.text}
-          <img src=${talk.image} class="room-main-content__right__user--text--image">
+          <div class="room-main-content__right__user--text--content">
+            ${talk.text}
+            <img src=${talk.image} class="room-main-content__right__user--text--content--image">
+          </div>
         </div>
         </div>`
       return html;
@@ -58,12 +69,15 @@ $(document).on('turbolinks:load',(function(){
       var html =
       `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__right__user--image">
+          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
         </div>
         <div class="room-main-content__right__user--text">
           <div class="room-main-content__right__user--text--name">
           ${talk.user_username}
           </div>
-          ${talk.text}
+          <div class="room-main-content__right__user--text--content">
+            ${talk.text}
+          </div>
         </div>
         </div>`
       return html;
@@ -71,6 +85,7 @@ $(document).on('turbolinks:load',(function(){
       var html =
       `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
         <div class="room-main-content__right__user--image">
+          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
         </div>
         <div class="room-main-content__right__user--text2">
           <div class="room-main-content__right__user--text--name">
