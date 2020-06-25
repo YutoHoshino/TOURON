@@ -19,6 +19,10 @@
                 .room-contents-box
                   .room-contents-box-img
                     =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
                   .room-contents-box-text
                     = room.name
                   .room-contents-box-tags
@@ -80,6 +84,10 @@
                 .room-contents-box
                   .room-contents-box-img
                     =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
                   .room-contents-box-text
                     = room.name
                   .room-contents-box-tags
@@ -112,6 +120,10 @@
                 .room-contents-box
                   .room-contents-box-img
                     =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end                    
                   .room-contents-box-text
                     = room.name
                   .room-contents-box-tags
@@ -143,6 +155,10 @@
                 .room-contents-box
                   .room-contents-box-img
                     =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
                   .room-contents-box-text
                     = room.name
                   .room-contents-box-tags

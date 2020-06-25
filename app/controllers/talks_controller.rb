@@ -9,6 +9,8 @@ class TalksController < ApplicationController
     @rooms = Room.all
     @rooms = Room.find(params[:room_id])
     gon.room = @rooms.period
+
+    @stasu = Room.find(params[:room_id])
   end
   
   def create
@@ -21,15 +23,26 @@ class TalksController < ApplicationController
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
       redirect_to room_talks_path(room.id)
+    end
   end
-end
 
+  def edit2
+    @stasu = Room.find(params[:room_id])
+    @stasu.update(status: params[:status])
+  end
+
+  private
   def talks_params
     params.require(:talk).permit(:text, :image, :status_id).merge(user_id: current_user.id)
   end
 
   def set_room
     @room = Room.find(params[:room_id])
+  end
+  
+
+  def room_params
+    params.require(:room).permit(:status)
   end
   
   def set_ransack
