@@ -36,10 +36,10 @@
                     .likes-icon
                       - if room.likes_by?(current_user)
                         = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart"
+                          = image_tag "heart.png"
                       - else
                         = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2"
+                          = image_tag "heart2.png"
 
                   
 
@@ -101,10 +101,10 @@
                     .likes-icon
                       - if room.likes_by?(current_user)
                         = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart"
+                          = image_tag "heart.png"
                       - else
                         = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2"
+                          = image_tag "heart2.png"
         -# サイドユーザー
         .home-body-main-popular-contents-user
         
@@ -137,10 +137,10 @@
                     .likes-icon
                       - if room.likes_by?(current_user)
                         = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart"
+                          = image_tag "heart.png"
                       - else
                         = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2"
+                          = image_tag "heart2.png"
         -# サイドユーザー
         .home-body-main-popular-contents-user
 
@@ -172,10 +172,10 @@
                     .likes-icon
                       - if room.likes_by?(current_user)
                         = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart"
+                          = image_tag "heart.png"
                       - else
                         = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2"
+                          = image_tag "heart2.png"
         -# サイドユーザー
         .home-body-main-popular-contents-user
 
@@ -190,47 +190,47 @@
       .home-body-footer-main-box
         = link_to category_search_rooms_path(category_id: "1") do
           .room-contents-box
-            = image_tag "categoly_1"
+            = image_tag "categoly_1.jpg"
             .black 新型ウイルス 
         = link_to category_search_rooms_path(category_id: "2") do
           .room-contents-box
-            = image_tag "categoly_2"
+            = image_tag "categoly_2.jpg"
             .black エンタメ
         = link_to category_search_rooms_path(category_id: "3") do
           .room-contents-box
-            = image_tag "categoly_3"
+            = image_tag "categoly_3.jpg"
             .black スポーツ
         = link_to category_search_rooms_path(category_id: "4") do
           .room-contents-box
-            = image_tag "categoly_4"
+            = image_tag "categoly_4.jpg"
             .black 政治
         = link_to category_search_rooms_path(category_id: "5") do
           .room-contents-box
-            = image_tag "categoly_5"
+            = image_tag "categoly_5.jpg"
             .black テクノロジー
         = link_to category_search_rooms_path(category_id: "6") do
           .room-contents-box
-            = image_tag "categoly_6"
+            = image_tag "categoly_6.jpg"
             .black アニメ
         = link_to category_search_rooms_path(category_id: "7") do
           .room-contents-box
-            = image_tag "categoly_7"
+            = image_tag "categoly_7.jpg"
             .black キャリア
         = link_to category_search_rooms_path(category_id: "8") do
           .room-contents-box
-            = image_tag "categoly_8"
+            = image_tag "categoly_8.jpg"
             .black ゲーム
         = link_to category_search_rooms_path(category_id: "9") do
           .room-contents-box
-            = image_tag "categoly_9"
+            = image_tag "categoly_9.jpg"
             .black 恋愛
         = link_to category_search_rooms_path(category_id: "10") do
           .room-contents-box
-            = image_tag "categoly_10"
+            = image_tag "categoly_10.jpg"
             .black 国際
         = link_to category_search_rooms_path(category_id: "11") do
           .room-contents-box
-            = image_tag "categoly_11"
+            = image_tag "categoly_11.jpg"
             .black グルメ
 
 
