@@ -159,6 +159,7 @@ $(document).on('turbolinks:load',(function(){
         var insertHTML = '';
         $.each(talks, function(i, talk) {
           insertHTML += buildHTML(talk)
+          console.log(talk)
           if (talk.status_id === 1) {
             $('.room-main-content__left').append(insertHTML);
             $('.room-main-content__left').animate({ scrollTop: 0});
