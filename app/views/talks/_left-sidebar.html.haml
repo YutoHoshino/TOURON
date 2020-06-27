@@ -1,6 +1,6 @@
 .talk_side
   .talk_side__footer
-    = link_to root_path do
+    = link_to root_path, , class: "talk_side-box" do
       = icon('fas fa-home', class: 'icon')
     .text 参加しているユーザー
   .talk_side__bar
@@ -12,3 +12,4 @@
         = image_tag users.image.url
         .talk_side__group__name
           =users.username
+

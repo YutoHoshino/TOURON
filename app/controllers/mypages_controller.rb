@@ -1,11 +1,6 @@
 class MypagesController < ApplicationController
-  before_action :set_ransack
-
+  
   def index
-    # 検索
-    @search = Room.ransack(params[:q]) 
-    @search = Talk.ransack(params[:q]) 
-    @results = @search.result 
 
   end
 
@@ -17,10 +12,6 @@ class MypagesController < ApplicationController
   end
 
   def edit_user
-    # 検索
-    @search = Room.ransack(params[:q]) 
-    @search = Talk.ransack(params[:q]) 
-    @results = @search.result 
 
     # ユーザー
     @user = current_user
@@ -33,12 +24,12 @@ class MypagesController < ApplicationController
     end
   end
 
-  private
-  # 検索
-  def set_ransack
-    @q = Room.ransack(params[:q])
+  def search
+    @rooms = Room.search(params[:search])
   end
 
+  private
+ 
   def updata_params
     params.require(:user).permit(:username, :email, :image, :profile)
   end

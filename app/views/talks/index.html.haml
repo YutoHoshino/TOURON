@@ -1,3 +1,4 @@
+= render "homes/load"
 .talk-main
   .header_nav-bar
   .header_nav-bar_image
@@ -20,9 +21,14 @@
       = link_to "ログイン", new_user_session_path, class: "header-btn__log-in"
       = link_to "新規登録", new_user_registration_path, class: "header-btn__sign-up"
 
+  = render "homes/nav"
+
   .all-box
     = render "left-sidebar"
     .message-box
       = render "talks"
-      = render "footer"
+      - if @stasu.status.present?
+        = render "end_footer"
+      - else
+        = render "footer"
     = render "right-sidebar"

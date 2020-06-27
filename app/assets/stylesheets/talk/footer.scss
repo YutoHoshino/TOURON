@@ -156,3 +156,21 @@
     }
   }
 }
+
+.hidden{
+  display:none;
+}
+
+.end_message-footer {
+  width: 829px;
+  height: 160px;
+  background-color: whitesmoke;
+  border-top: 1px solid #333;
+  &-text {
+    line-height: 160px;
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+  }
+}

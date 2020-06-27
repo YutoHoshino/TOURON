@@ -1,76 +1,323 @@
-.main__title
-  %h1
-    全てのカテゴリー
-  .category
-    %ul
-      -@category.each do |category|
-        %li.category__text
-          = link_to category_search_rooms_path(category_id: category.id) do
-            = category.name 
-
--# メイン
 .home-body
-  .home-body__main
-    - @room_random.each do |room|
-      .home-body__main-body
-        .home-body__main-body__left
-          = link_to image_tag( "#{room.image}", class: "touron__image"), room_talks_path(room.id)
-          .home-body__main-body__left__box
-            .home-body__main-body__left__box__text
-              = room.name
-            .home-body__main-body__left__box__tags
-              - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
-                = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
-                  = room.tag_list[0]
-              - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
-                = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
-                  = room.tag_list[1]
-            .home-body__main-body__left__box__likes
+  .home-body-main
+    .home-body-main-popular
+      .home-body-main-popular-title
+        %h2 人気カテゴリ
+        .category
+          - @category.each do |category|
+            = link_to category_search_rooms_path(category_id: category.id) do
+              .category-text
+                = category.name 
+      .home-body-main-popular-contents
 
-              -# -# いいねマーク
-              -# - if room.likes_by?(current_user)
-              -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-              -#     = image_tag "heart"
-              -# - else
-              -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-              -#     = image_tag "heart2"
+        -# メインコンテンツ
+        .home-body-main-popular-contents-main
+          .room-title 全て
+          .room-contents
+            - @room_random[0..5].each do |room|
+              = link_to room_talks_path(room.id) do
+                .room-contents-box
+                  .room-contents-box-img
+                    =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
+                  .room-contents-box-text
+                    = room.name
+                  .room-contents-box-tags
+                    - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[0]), class:"tags" do
+                        = room.tag_list[0]
+                    - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[1]), class:"tags" do
+                        = room.tag_list[1]
+                  .room-contents-box-likes
+                    .likes-icon
+                      - if room.likes_by?(current_user)
+                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart.png"
+                      - else
+                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart2.png"
 
-              -# 鍵マーク
-              =link_to "#" do
-                = image_tag "lock"
-
-.home-bar
--# フッター
-.home-footer
-  .home-footer__name
-    %h2
-      新規の部屋
-  .home-footer__main
-    - @rooms.each do |room|
-      .home-footer__main-body
-        .home-footer__main-body__left
-          = link_to image_tag( "#{room.image}", class: "touron__image"), room_talks_path(room.id)
-          .home-footer__main-body__left__box
-            .home-footer__main-body__left__box__text
-              = room.name
-            .home-footer__main-body__left__box__tags
-              - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
-                = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
-                  = room.tag_list[0]
-              - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
-                = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
-                  = room.tag_list[1]
-            .home-footer__main-body__left__box__likes
-              -# - if room.likes_by?(current_user)
-              -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-              -#     = image_tag "heart"
-              -# - else
-              -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-              -#     = image_tag "heart2"
+                  
 
 
 
+        -# サイドユーザー
+        .home-body-main-popular-contents-user
+          .home-body-main-popular-contents-user-area
+            .user-side-box-area
+              .user-side-box-area-current
+                .user-side-box-area-current-img
+                  = link_to mypages_path do
+                    = image_tag("#{@user.image}")
+                .user-side-box-area-current-name
+                  = link_to mypages_path do
+                    .username
+                      =@user.username
+                  .userprpfile
+                    =@user.profile
+              .user-side-box-area-good
+                .all-follow おすすめ
+                = link_to "全てを見る"
+              .user-side-box-area-follow
+                - @users[0..5].each do |user|
+                  .users-box
+                    .users-box-img
+                      =image_tag("#{user.image}")
+                    .users-box-name
+                      = user.username
+                    .users-box-follow
+                      = render "relationships/follow_home_button", user: user
 
-              =link_to "#" do
-                = image_tag "lock"
+
+      .home-body-main-popular-contents
+
+        -# メインコンテンツ
+        .home-body-main-popular-contents-main
+          .room-title 新型ウイルス
+          .room-contents
+            - @room_random1[0..5].each do |room|
+              = link_to room_talks_path(room.id) do
+                .room-contents-box
+                  .room-contents-box-img
+                    =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
+                  .room-contents-box-text
+                    = room.name
+                  .room-contents-box-tags
+                    - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[0]), class:"tags" do
+                        = room.tag_list[0]
+                    - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[1]), class:"tags" do
+                        = room.tag_list[1]
+                  .room-contents-box-likes
+                    .likes-icon
+                      - if room.likes_by?(current_user)
+                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart.png"
+                      - else
+                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart2.png"
+        -# サイドユーザー
+        .home-body-main-popular-contents-user
+        
+
+      .home-body-main-popular-contents
+
+        -# メインコンテンツ
+        .home-body-main-popular-contents-main
+          .room-title エンタメ
+          .room-contents
+            - @room_random2[0..5].each do |room|
+              = link_to room_talks_path(room.id) do
+                .room-contents-box
+                  .room-contents-box-img
+                    =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end                    
+                  .room-contents-box-text
+                    = room.name
+                  .room-contents-box-tags
+                    - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[0]), class:"tags" do
+                        = room.tag_list[0]
+                    - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[1]), class:"tags" do
+                        = room.tag_list[1]
+                  .room-contents-box-likes
+                    .likes-icon
+                      - if room.likes_by?(current_user)
+                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart.png"
+                      - else
+                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart2.png"
+        -# サイドユーザー
+        .home-body-main-popular-contents-user
+
+      .home-body-main-popular-contents
+
+        -# メインコンテンツ
+        .home-body-main-popular-contents-main
+          .room-title 政治
+          .room-contents
+            - @room_random3[0..5].each do |room|
+              = link_to room_talks_path(room.id) do
+                .room-contents-box
+                  .room-contents-box-img
+                    =image_tag("#{room.image}")
+                    -if room.status.present?
+                      .room-end タイムアウト
+                    -else 
+                      .room-no-end
+                  .room-contents-box-text
+                    = room.name
+                  .room-contents-box-tags
+                    - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[0]), class:"tags" do
+                        = room.tag_list[0]
+                    - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+                      = link_to rooms_path(tag_name: room.tag_list[1]), class:"tags" do
+                        = room.tag_list[1]
+                  .room-contents-box-likes
+                    .likes-icon
+                      - if room.likes_by?(current_user)
+                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart.png"
+                      - else
+                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+                          = image_tag "heart2.png"
+        -# サイドユーザー
+        .home-body-main-popular-contents-user
+
+
+
+
+  -# フッター
+  .home-body-footer
+    .home-body-footer-title
+      .footer-title カテゴリ一覧
+    .home-body-footer-main
+      .home-body-footer-main-box
+        = link_to category_search_rooms_path(category_id: "1") do
+          .room-contents-box
+            = image_tag "categoly_1.jpg"
+            .black 新型ウイルス 
+        = link_to category_search_rooms_path(category_id: "2") do
+          .room-contents-box
+            = image_tag "categoly_2.jpg"
+            .black エンタメ
+        = link_to category_search_rooms_path(category_id: "3") do
+          .room-contents-box
+            = image_tag "categoly_3.jpg"
+            .black スポーツ
+        = link_to category_search_rooms_path(category_id: "4") do
+          .room-contents-box
+            = image_tag "categoly_4.jpg"
+            .black 政治
+        = link_to category_search_rooms_path(category_id: "5") do
+          .room-contents-box
+            = image_tag "categoly_5.jpg"
+            .black テクノロジー
+        = link_to category_search_rooms_path(category_id: "6") do
+          .room-contents-box
+            = image_tag "categoly_6.jpg"
+            .black アニメ
+        = link_to category_search_rooms_path(category_id: "7") do
+          .room-contents-box
+            = image_tag "categoly_7.jpg"
+            .black キャリア
+        = link_to category_search_rooms_path(category_id: "8") do
+          .room-contents-box
+            = image_tag "categoly_8.jpg"
+            .black ゲーム
+        = link_to category_search_rooms_path(category_id: "9") do
+          .room-contents-box
+            = image_tag "categoly_9.jpg"
+            .black 恋愛
+        = link_to category_search_rooms_path(category_id: "10") do
+          .room-contents-box
+            = image_tag "categoly_10.jpg"
+            .black 国際
+        = link_to category_search_rooms_path(category_id: "11") do
+          .room-contents-box
+            = image_tag "categoly_11.jpg"
+            .black グルメ
+
+
+
+
+
+
+  
+
+
+
+
+
+
+-# .main__title
+-#   %h1
+-#     全てのカテゴリー
+-#   .category
+-#     %ul
+-#       -@category.each do |category|
+-#         %li.category__text
+-#           = link_to category_search_rooms_path(category_id: category.id) do
+-#             = category.name 
+
+-# -# メイン
+-# .home-body
+-#   .home-body__main
+-#     - @room_random.each do |room|
+-#       .home-body__main-body
+-#         .home-body__main-body__left
+-#           = link_to image_tag( "#{room.image}", class: "touron__image"), room_talks_path(room.id)
+-#           .home-body__main-body__left__box
+-#             .home-body__main-body__left__box__text
+-#               = room.name
+-#             .home-body__main-body__left__box__tags
+-#               - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+-#                 = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
+-#                   = room.tag_list[0]
+-#               - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+-#                 = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
+-#                   = room.tag_list[1]
+-#             .home-body__main-body__left__box__likes
+
+-#               -# -# いいねマーク
+-#               -# - if room.likes_by?(current_user)
+-#               -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+-#               -#     = image_tag "heart"
+-#               -# - else
+-#               -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+-#               -#     = image_tag "heart2"
+
+-#               -# 鍵マーク
+-#               =link_to "#" do
+-#                 = image_tag "lock"
+
+-# .home-bar
+-# -# フッター
+-# .home-footer
+-#   .home-footer__name
+-#     %h2
+-#       新規の部屋
+-#   .home-footer__main
+-#     - @rooms.each do |room|
+-#       .home-footer__main-body
+-#         .home-footer__main-body__left
+-#           = link_to image_tag( "#{room.image}", class: "touron__image"), room_talks_path(room.id)
+-#           .home-footer__main-body__left__box
+-#             .home-footer__main-body__left__box__text
+-#               = room.name
+-#             .home-footer__main-body__left__box__tags
+-#               - if room.tag_list[0].present? #1番目のタグが存在すれば表示する。
+-#                 = link_to rooms_path(tag_name: room.tag_list[0]), class: "text-white" do
+-#                   = room.tag_list[0]
+-#               - if room.tag_list[1].present? #2番目のタグが存在すれば表示する。
+-#                 = link_to rooms_path(tag_name: room.tag_list[1]), class: "text-white" do
+-#                   = room.tag_list[1]
+-#             .home-footer__main-body__left__box__likes
+-#               -# - if room.likes_by?(current_user)
+-#               -#   = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
+-#               -#     = image_tag "heart"
+-#               -# - else
+-#               -#   = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
+-#               -#     = image_tag "heart2"
+
+
+
+
+-#               =link_to "#" do
+-#                 = image_tag "lock"
 
