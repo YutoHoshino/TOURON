@@ -1,11 +1,15 @@
 .talk__rightside
+  %h2 残り時間
   .talk__rightside--time
     = render "./timer"
 
   .talk__rightside--title
-    = link_to "" do
+    %h3 イメージ
+    .talk__rightside--image
       = image_tag @room.image.url, class: "talk__image"
+    %h4 タイトル
     .talk__rightside--name
       = @room.name
+    %h5 説明
     .talk__rightside--description
       = @room.description

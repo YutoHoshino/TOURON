@@ -1,10 +1,10 @@
 .talk_side
   .talk_side__footer
-    = link_to root_path, , class: "talk_side-box" do
+    = link_to root_path, class: "talk_side-box" do
       = icon('fas fa-home', class: 'icon')
     .text 参加しているユーザー
   .talk_side__bar
-    - @users.each do |user|
+    - @talk_sort.each do |user|
       - talks = Talk.find_by(id:user[1]) #ハッシュの2番目の値でid検索
       - users = User.find_by(id:talks.user_id)
       = link_to mypages_path(users), class: "talk_side__group", data:{id:(talks.user_id)}  do
