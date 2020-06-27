@@ -7,6 +7,7 @@ class HomesController < ApplicationController
     @room = Room.all.first(9)
     @room_random = Room.order("RAND()") #ランダムで９つ取得
     @category = Category.order("RAND()").first(4)
+    @user = User.find_by(id: current_user.id)
     @users = User.where.not(id: current_user.id).order("RAND()")
     @room_random1 = Room.where(category_id: "1")
     @room_random2 = Room.where(category_id: "2")
