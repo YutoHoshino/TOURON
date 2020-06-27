@@ -1,13 +1,15 @@
 .talk_side
-  = link_to root_path, class: "talk_side-box" do
-    = icon('fas fa-home', class: 'icon')
-    .text
-      = @rooms.name
-  
-  -# 一覧（Each）
-  -# - @users.each do|user|
-  -#   - users = User.find_by(id:user.user_id)
-  -#   = link_to root_path, class: "talk_side-group" do
-  -#     = image_tag users.image_url
-  -#     .name
-  -#       = users.username
+  .talk_side__footer
+    = link_to root_path, , class: "talk_side-box" do
+      = icon('fas fa-home', class: 'icon')
+    .text 参加しているユーザー
+  .talk_side__bar
+    - @users.each do |user|
+      - talks = Talk.find_by(id:user[1]) #ハッシュの2番目の値でid検索
+      - users = User.find_by(id:talks.user_id)
+      = link_to mypages_path(users), class: "talk_side__group", data:{id:(talks.user_id)}  do
+        .talk_side__group__image
+        = image_tag users.image.url
+        .talk_side__group__name
+          =users.username
+
