@@ -1,15 +1,68 @@
 .talk__rightside
-  %h2 残り時間
-  .talk__rightside--time
-    = render "./timer"
+  .talk__rightside-box
 
-  .talk__rightside--title
-    %h3 イメージ
-    .talk__rightside--image
-      = image_tag @room.image.url, class: "talk__image"
-    %h4 タイトル
-    .talk__rightside--name
-      = @room.name
-    %h5 説明
-    .talk__rightside--description
-      = @room.description
+    -# ルーム写真&タイマー
+    .talk__rightside-box-time
+      .talk__rightside-box-time-box
+        = image_tag @room.image.url
+        .talk__rightside-box-time-box-time
+          .time-text-box
+            残り時間
+          = render "./timer"
+      
+
+
+    -# 
+    .talk__rightside-box-name
+
+      -# 部屋名
+      .talk__rightside-box-name-name
+        .room___contents---title
+          部屋名
+        .room_name
+          = @room.name
+
+      -# カテゴリ
+      .talk__rightside-box-name-categoly
+        .room___contents---title
+          カテゴリ
+        .room_categoly
+          = @room.category_id
+
+      -# タグ
+      .talk__rightside-box-name-tags
+        .room___contents---title
+          タグ
+        .room_tags
+          - if @room.tag_list[0].present? 
+            = link_to rooms_path(tag_name: @room.tag_list[0]), class:"tags" do
+              = @room.tag_list[0]
+          - if @room.tag_list[1].present?
+            = link_to rooms_path(tag_name: @room.tag_list[1]), class:"tags" do
+              = @room.tag_list[1]
+          - if @room.tag_list[2].present?
+            = link_to rooms_path(tag_name: @room.tag_list[2]), class:"tags" do
+              = @room.tag_list[2]
+          - if @room.tag_list[3].present?
+            = link_to rooms_path(tag_name: @room.tag_list[3]), class:"tags" do
+              = @room.tag_list[3]
+
+      -# 説明
+      .talk__rightside-box-name-description
+        .room___contents---title
+          部屋の説明
+        .room_description
+          =@room.description
+
+
+-# .talk__rightside
+-#   .talk__rightside--time
+-#     = render "./timer"
+
+-#   .talk__rightside--title
+-#     = link_to "" do
+-#       = image_tag @room.image.url, class: "talk__image"
+-#     .talk__rightside--name
+-#       = @room.name
+-#     .talk__rightside--description
+-#       = @room.description
