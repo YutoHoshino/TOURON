@@ -1,30 +1,37 @@
 .talk_side {
-  width: 20%;
-  // height: 620px;
-  background: #f0f8ff;
-  // border: 1px solid #b3b3b3;;
+  width: 17%;
+  background: #fff;
 
-  // テキストBOX
-  &__footer {
-    background: rgb(52, 53, 52);
-    width: 100%;
-    height: 45px;
-    font-size: 12px;
-    color: #fff;
-    padding: 0 20px;
-    font-family: verdana, sans-serif;
-    display: flex;
-    justify-content: flex-start;
-    .fas {
-      line-height: 50px;
-      font-size: 15px;
-      padding-right: 15px;
-      padding-left: 10px;
-    }
-    .text {
-      line-height: 50px;
-    }
+  .talk_side__group{
+    padding: 10px;
   }
+
+  .talk_side__group:hover {
+    background: rgb(190, 190, 190);
+    opacity: 0.5;
+  }
+
+  // // テキストBOX
+  // &__footer {
+  //   background: rgb(52, 53, 52);
+  //   width: 100%;
+  //   height: 45px;
+  //   font-size: 12px;
+  //   color: #fff;
+  //   padding: 0 20px;
+  //   font-family: verdana, sans-serif;
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   .fas {
+  //     line-height: 50px;
+  //     font-size: 15px;
+  //     padding-right: 15px;
+  //     padding-left: 10px;
+  //   }
+  //   .text {
+  //     line-height: 50px;
+  //   }
+  // }
 
   // ルーム
   &__group {
@@ -32,19 +39,24 @@
     height: 50px;
     display: flex;
     justify-content: flex-start;
-    padding-left: 20px;
+    padding-left: 10px;
     img {
-      margin: auto 0;
       width: 40px;
       height: 40px;
       border-radius: 50%;
+      object-fit: cover;
     }
     &__name {
+      width: 100%;
       color: #333;
-      font-size: 15px;
-      line-height: 50px;
       padding-left: 10px;
-      font-weight: bold;
+      height: 40px;
+      &-name {
+        line-height: 40px;
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
