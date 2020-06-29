@@ -1,5 +1,6 @@
 // 右側のサイドバー
 .talk__rightside {
+  height: calc(100vh - 60px);
   width: 25%;
   background: #f0f8ff;
   &-box {
