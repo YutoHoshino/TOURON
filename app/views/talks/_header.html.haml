@@ -1,4 +1,35 @@
-.header
-  .bottom
-    .bottom__center
-      %h2 TOURONテーマ
+.talks_room_header
+  .talks_room_header-icon
+    = link_to root_path do
+      = image_tag("TOURON_logo-cutout.png")
+      -# = image_tag("logo_black.png")
+  .talks_room_header-box
+  .talks_room_header-image
+    = link_to mypages_path do
+      = image_tag("#{@user.image}")
+    .new-btn
+      + 部屋作成
+
+  
+-# .talk-second_header
+
+-#   .talk-second_header-left
+-#     .talk-second_header-left-image
+-#       = icon('fas fa-user', class: 'icon')
+-#     .talk-second_header-left-text
+-#       参加しているユーザー
+
+-#   .talk-second_header-center
+-#     .talk-second_header-left-image
+-#       = icon('fas fa-home', class: 'icon')
+-#     .talk-second_header-left-text
+-#       参加している部屋
+
+
+-#   .talk-second_header-right 
+-#     .talk-second_header-left-image
+-#       = icon('fas fa-home', class: 'icon')
+-#     .talk-second_header-left-text
+-#       参加している部屋
+
+

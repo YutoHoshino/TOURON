@@ -1,40 +1,160 @@
 // 右側のサイドバー
 .talk__rightside {
-  width: 22%;
-  // height: 620px;
+  height: calc(100vh - 60px);
+  width: 25%;
   background: #f0f8ff;
-  // border: 1px solid #b3b3b3;;
-  &--time {
-    margin: 20px 40px;
-  }
-  &--title {
-    margin: 10px 50px;
-    .talk__image {
-      width: 200px;
-      height: 200px;
-      border-radius: 10px;
-      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  &-box {
+    width: 100%;
+    height: 100%;
+    background:rgb(255, 255, 255);
+
+    &-time {
+      height: 30%;
+      background:rgb(168, 167, 163);
+
+      &-box {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        &-time {
+          padding: 0 35px;
+          display: flex;
+          justify-content: flex-end;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          width: 100%;
+          height: 60px;
+          background: rgba(31, 31, 31, 0.8);
+          .time-text-box {
+            font-family: 'Source Sans Pro', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: bold;
+            color: #fff;
+            margin-right: 20px;
+            font-size: 18px;
+            line-height: 72px;
+          }
+        }
+      }
+    }
+
+    &-name {
+      height: 70%;
+      padding: 0 20px;
+      overflow-y: scroll;
+
+      // 各部屋のタイトル
+      .room___contents---title {
+        color: #b3b3b3;
+        font-size: 12px;
+      }
+
+      // 部屋名
+      &-name {
+        padding: 15px 0px;
+        border-bottom: 1px solid #b3b3b3;
+        .room_name {
+          padding: 5px 10px;
+          font-size: 16px;
+          line-height: 1.7;
+        }
+      }
+
+      &-categoly {
+        padding: 15px 0px;
+        border-bottom: 1px solid #b3b3b3;
+        .room_categoly {
+          font-size: 14px;
+          color: #333;
+          line-height: 30px;
+          margin: 0px 10px;
+        }
+      }
+
+      &-tags {
+        padding: 15px 0px;
+        border-bottom: 1px solid #b3b3b3;
+        .room_tags {
+          padding: 5px 10px;
+          .tags {
+            font-size: 12px;
+            border-radius: 5px;
+            width: max-content;
+            display: block;
+            padding: 3px 10px;
+            background: rgb(185, 185, 185);
+            color: #333;
+            margin: 10px 0;
+          }
+        }
+      }
+
+      &-description {
+        padding: 15px 0px;
+        border-bottom: 1px solid #b3b3b3;
+        .room_description {
+          padding: 5px 10px;
+          font-size: 13px;
+          color: rgb(95, 95, 95);
+          line-height: 1.7;
+        }
+      }
+    }
+    /*スクロールバー*/
+    &-name::-webkit-scrollbar {
+      width: 10px;
+    }
+    /*スクロールバーの軌道*/
+    &-name::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+    }
+    /*スクロールバーの動く部分*/
+    &-name::-webkit-scrollbar-thumb {
+    background-color: rgba(131, 131, 131, 0.5);
+    border-radius: 5px;
+    box-shadow:0 0 0 1px rgba(255, 255, 255, 0.3);
     }
   }
-  &--name {
-    width: 200px;
-    height: 50px;
-    margin-top: 10px;
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 50px;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-  }
-  &--description {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    letter-spacing: 2px;
-    margin-top: 20px;
-    background-color: white;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.3);
-  }
 }
+
+//   &--time {
+//     margin: 20px 40px;
+//   }
+//   &--title {
+//     margin: 10px 50px;
+//     .talk__image {
+//       width: 200px;
+//       height: 200px;
+//       border-radius: 10px;
+//       box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+//     }
+//   }
+//   &--name {
+//     width: 200px;
+//     height: 50px;
+//     margin-top: 10px;
+//     background-color: white;
+//     border-radius: 10px;
+//     text-align: center;
+//     line-height: 50px;
+//     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+//   }
+//   &--description {
+//     width: 200px;
+//     height: 200px;
+//     padding: 10px;
+//     letter-spacing: 2px;
+//     margin-top: 20px;
+//     background-color: white;
+//     border-radius: 10px;
+//     text-align: left;
+//     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.3);
+//   }
+// }
