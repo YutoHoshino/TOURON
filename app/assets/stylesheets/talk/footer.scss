@@ -5,6 +5,7 @@
 
 // // 投稿フォーム
 .message-footer {
+  height: calc(100vh - 60px - 560px);
   background: white;;
   padding-top: 2px;
   border-top: 1px solid #b3b3b3;

@@ -1,11 +1,10 @@
 .room-main {
-  height: 100%;
-  padding-bottom: 50px;
   background-color: whitesmoke;
   .room-main-content {
     width: 100%;
     display: flex;
-    height: 520px;
+    height: 560px;
+    
     // 左側（賛成）
     &__left {
       background-color:whitesmoke;
@@ -64,8 +63,6 @@
             flex-wrap: wrap;
             position: static;
 
-            p {
-            }
             &--image {
               margin: 5px 10px;
               border-radius: 20px;
@@ -175,10 +172,12 @@
 .all-box {
   display: flex;
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 60px);
 }
+
 .message-box {
-  width: 55%;
-  height: 100%;
-  border: 1px solid #b3b3b3;;
+  width: 63%;
+  height: calc(100vh - 60px);
+  border-right: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
 }
