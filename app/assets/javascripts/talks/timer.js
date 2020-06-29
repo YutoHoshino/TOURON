@@ -4,12 +4,11 @@ $(document).on('turbolinks:load', function () {
   let time = gon.room;
   
   let startTime = new Date();
-  let endTime = new Date(Date.now() + time * 60);
+  let endTime = new Date(Date.now() + time * 600);
   $(function () {
     diff = endTime - startTime;
     countDown(diff);
   });
-  
   
   function countDown(diff) {
     startTime = new Date();
@@ -26,8 +25,8 @@ $(document).on('turbolinks:load', function () {
     } else {
       //終了した時のテキスト
       $("#Timer").text('終了！'),
-      $('.message-footer').remove(),
-      $('.customButton').click();
+      $('.customButton').click(),
+      $('#main-modal').addClass('modal-active');
     }
   };
 
