@@ -71,13 +71,8 @@
         border-bottom: 1px solid #b3b3b3;
         .room_categoly {
           font-size: 14px;
-          color: #fff;
-          text-align: center;
+          color: #333;
           line-height: 30px;
-          width: 100px;
-          height: 30px;
-          border-radius: 5px;
-          background: rgb(15, 78, 15);
           margin: 5px 10px;
         }
       }
@@ -88,7 +83,7 @@
         .room_tags {
           padding: 5px 10px;
           .tags {
-            font-size: 14px;
+            font-size: 12px;
             border-radius: 5px;
             width: max-content;
             display: block;
