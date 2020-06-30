@@ -97,6 +97,18 @@ $(document).on('turbolinks:load',(function(){
       return html;
     };
   }
+  function buildHTML2(talk){
+    var html2 =
+    `<a href="/mypages.${talk.user_id}">
+       <div class="talk_side__group" data-status-id=${talk.status_id} data-talk-id=${talk.id} data-id=${talk.user_id}>
+         <img src=${talk.user_image} class="talk_side__group__image">
+         <div class="talk_side__group__name">
+         ${talk.user_username}
+         </div>
+       </div>
+     </a>`
+     return html2;
+   }
   $('.from').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -111,6 +123,9 @@ $(document).on('turbolinks:load',(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      var html2 = buildHTML2(data);
+      $('[data-id = ' + data.user_id + ']').remove(); //同じuser_idを持ったブロック要素を削除 ※変数展開が独特
+      $(".talk_side__bar").prepend(html2);
       // var elements1 = document.getElementById('box1');
       // var elements2 = document.getElementById('box2');
       // var toggleBtn = document.getElementById("menu-button");
