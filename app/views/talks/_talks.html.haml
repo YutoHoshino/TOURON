@@ -1,42 +1,74 @@
 .room-main
   .room-main-content
-    .room-main-content__left
-      .room-main-content__left__box
-      - @talks.each do|talk|
-        .room-main-content__left__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
-          -if talk.status_id == 1
-            .room-main-content__left__user--image
-              = image_tag talk.user.image.url, class: "room-main-content__left__user--image--main"
-            -if talk.text.length > 100 or talk.image.present?
-              .room-main-content__left__user--text
-                .room-main-content__left__user--text--name
-                  = talk.user.username
-                .room-main-content__left__user--text--content
-                  = talk.text
-                  = image_tag talk.image.url, size: "150x150", class: "room-main-content__left__user--text--content--image" if talk.image.present?
-            -else 
-              .room-main-content__left__user--text2
-                .room-main-content__left__user--text--name
-                  = talk.user.username
-                = talk.text
-    .room-main-content__right
-      - @talks.each do|talk|
-        .room-main-content__right__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
-          -if talk.status_id == 2
-            .room-main-content__right__user--image
-              = image_tag talk.user.image.url, class: "room-main-content__right__user--image--main"
-            -if talk.text.length > 100 or talk.image.present?
-              .room-main-content__right__user--text
-                .room-main-content__right__user--text--name
-                  = talk.user.username
-                .room-main-content__right__user--text--content
-                  %p
-                    = talk.text
-                  = image_tag talk.image.url, size: "150x150", class: "room-main-content__right__user--text--content--image" if talk.image.present?
-            -else
-              .room-main-content__right__user--text2
-                .room-main-content__right__user--text--name
-                  = talk.user.username
-                = talk.text
-        .room-main-content__right__box
+    - @talks.each do|talk|
+      - if talk.status_id == 1
+        .room-main-content__left{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
+          .room-main-content__left-image
+            = image_tag talk.user.image.url
+          .room-main-content__left-text
+            .room-main-content__left-text-box
+              = talk.text
+              - if talk.image.present?
+                = image_tag talk.image.url
+            .room-main-content__left-text-time
+              = talk.updated_at.strftime("%Y-%m-%d %H:%M")
+
+
+      - elsif talk.status_id == 2
+        .room-main-content__right{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
+          .room-main-content__right-text
+            .room-main-content__right-text-box
+              = talk.text
+              - if talk.image.present?
+                = image_tag talk.image.url
+            .room-main-content__right-text-time
+              = talk.updated_at.strftime("%Y-%m-%d %H:%M")
+          .room-main-content__right-image
+            = image_tag talk.user.image.url
+          
+
+
+
+
+
+
+    -# .room-main-content__left
+    -#   .room-main-content__left__box
+    -#   - @talks.each do|talk|
+    -#     .room-main-content__left__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
+    -#       -if talk.status_id == 1
+    -#         .room-main-content__left__user--image
+    -#           = image_tag talk.user.image.url, class: "room-main-content__left__user--image--main"
+    -#         -if talk.text.length > 100 or talk.image.present?
+    -#           .room-main-content__left__user--text
+    -#             .room-main-content__left__user--text--name
+    -#               = talk.user.username
+    -#             .room-main-content__left__user--text--content
+    -#               = talk.text
+    -#               = image_tag talk.image.url, size: "150x150", class: "room-main-content__left__user--text--content--image" if talk.image.present?
+    -#         -else 
+    -#           .room-main-content__left__user--text2
+    -#             .room-main-content__left__user--text--name
+    -#               = talk.user.username
+    -#             = talk.text
+    -# .room-main-content__right
+    -#   - @talks.each do|talk|
+    -#     .room-main-content__right__user{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
+    -#       -if talk.status_id == 2
+    -#         .room-main-content__right__user--image
+    -#           = image_tag talk.user.image.url, class: "room-main-content__right__user--image--main"
+    -#         -if talk.text.length > 100 or talk.image.present?
+    -#           .room-main-content__right__user--text
+    -#             .room-main-content__right__user--text--name
+    -#               = talk.user.username
+    -#             .room-main-content__right__user--text--content
+    -#               %p
+    -#                 = talk.text
+    -#               = image_tag talk.image.url, size: "150x150", class: "room-main-content__right__user--text--content--image" if talk.image.present?
+    -#         -else
+    -#           .room-main-content__right__user--text2
+    -#             .room-main-content__right__user--text--name
+    -#               = talk.user.username
+    -#             = talk.text
+    -#     .room-main-content__right__box
         
