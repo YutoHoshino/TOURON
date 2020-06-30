@@ -3,95 +3,99 @@ $(document).on('turbolinks:load',(function(){
   function buildHTML(talk){
     if ( talk.status_id === 1 && talk.image ) {
       var html =
-      `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__left__user--image">
-          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
+      `<div class="room-main-content__left" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+        <div class="room-main-content__left-image">
+          <img src=${talk.user_image} >
         </div>
-        <div class="room-main-content__left__user--text">
-          <div class="room-main-content__left__user--text--name">
-            ${talk.user_username}
-          </div>
-          <div class="room-main-content__left__user--text--content">
+        <div class="room-main-content__left-text">
+          <div class="room-main-content__left-text-box">
             ${talk.text}
-            <img src=${talk.image} class="room-main-content__left__user--text--content--image">
+            <img src=${talk.image} >
+          </div>
+          <div class="room-main-content__left-text-time">
+          ${talk.updated_at}
           </div>
         </div>
         </div>`
       return html;
-    } else if (talk.status_id === 1 && talk.text.length > 100) {
-      var html =
-      `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__left__user--image">
-          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
-        </div>
-        <div class="room-main-content__left__user--text">
-          <div class="room-main-content__left__user--text--name">
-            ${talk.user_username}
-          </div>
-          <div class="room-main-content__left__user--text--content">
-            ${talk.text}
-          </div>
-        </div>
-        </div>`
-      return html;
+    // } else if (talk.status_id === 1 && talk.text.length > 100) {
+    //   var html =
+    //   `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+    //     <div class="room-main-content__left__user--image">
+    //       <img src=${talk.user_image} class="room-main-content__left__user--image--main">
+    //     </div>
+    //     <div class="room-main-content__left__user--text">
+    //       <div class="room-main-content__left__user--text--name">
+    //         ${talk.user_username}
+    //       </div>
+    //       <div class="room-main-content__left__user--text--content">
+    //         ${talk.text}
+    //       </div>
+    //     </div>
+    //     </div>`
+    //   return html;
     } else if (talk.status_id === 1){
       var html =
-      `<div class="room-main-content__left__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__left__user--image">
-          <img src=${talk.user_image} class="room-main-content__left__user--image--main">
+      `<div class="room-main-content__left" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+        <div class="room-main-content__left-image">
+          <img src=${talk.user_image} >
         </div>
-        <div class="room-main-content__left__user--text2">
-          <div class="room-main-content__left__user--text--name">
-          ${talk.user_username}
+        <div class="room-main-content__left-text">
+          <div class="room-main-content__left-text-box">
+            ${talk.text}
           </div>
-        ${talk.text}
+          <div class="room-main-content__left-text-time">
+          ${talk.updated_at}
+          </div>
         </div>
         </div>`
       return html;
     } else if ( talk.status_id === 2 && talk.image ) {
       var html =
-      `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__right__user--image">
-          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
-        </div>
-        <div class="room-main-content__right__user--text">
-          <div class="room-main-content__right__user--text--name">
-            ${talk.user_username}
-          </div>
-          <div class="room-main-content__right__user--text--content">
+      `<div class="room-main-content__right" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+        <div class="room-main-content__right-text">
+          <div class="room-main-content__right-text-box">
             ${talk.text}
-            <img src=${talk.image} class="room-main-content__right__user--text--content--image">
+            <img src=${talk.image} >
           </div>
+          <div class="room-main-content__right-text-time">
+            ${talk.updated_at}
+          </div>
+        </div>
+        <div class="room-main-content__right-image">
+          <img src=${talk.user_image} >
         </div>
         </div>`
       return html;
-    } else if ( talk.status_id === 2 && talk.text.length > 100) {
-      var html =
-      `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__right__user--image">
-          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
-        </div>
-        <div class="room-main-content__right__user--text">
-          <div class="room-main-content__right__user--text--name">
-          ${talk.user_username}
-          </div>
-          <div class="room-main-content__right__user--text--content">
-            ${talk.text}
-          </div>
-        </div>
-        </div>`
-      return html;
+    // } else if ( talk.status_id === 2 && talk.text.length > 100) {
+    //   var html =
+    //   `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+    //     <div class="room-main-content__right__user--image">
+    //       <img src=${talk.user_image} class="room-main-content__right__user--image--main">
+    //     </div>
+    //     <div class="room-main-content__right__user--text">
+    //       <div class="room-main-content__right__user--text--name">
+    //       ${talk.user_username}
+    //       </div>
+    //       <div class="room-main-content__right__user--text--content">
+    //         ${talk.text}
+    //       </div>
+    //     </div>
+    //     </div>`
+      // return html;
     } else if ( talk.status_id === 2) {
       var html =
-      `<div class="room-main-content__right__user" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
-        <div class="room-main-content__right__user--image">
-          <img src=${talk.user_image} class="room-main-content__right__user--image--main">
-        </div>
-        <div class="room-main-content__right__user--text2">
-          <div class="room-main-content__right__user--text--name">
-          ${talk.user_username}
+      `<div class="room-main-content__right" data-status-id=${talk.status_id} data-talk-id=${talk.id}>
+        <div class="room-main-content__right-text">
+          <div class="room-main-content__right-text-box">
+            ${talk.text}
           </div>
-          ${talk.text}
+          <div class="room-main-content__right-text-time">
+          ${talk.updated_at}
+          </div>
+        </div>
+        <div class="room-main-content__right-image">
+          <img src=${talk.user_image} >
         </div>
         </div>`
       return html;
@@ -119,7 +123,8 @@ $(document).on('turbolinks:load',(function(){
       data: formData,  
       dataType: 'json',
       processData: false,
-      contentType: false
+      contentType: false,
+      timeout: 10000
     })
     .done(function(data){
       var html = buildHTML(data);
@@ -131,14 +136,17 @@ $(document).on('turbolinks:load',(function(){
       // var toggleBtn = document.getElementById("menu-button");
       // console.log(elements1.checked)
       // console.log(elements2.checked)
+      var html2 = buildHTML2(data);
+      $('[data-id = ' + data.user_id + ']').remove(); //同じuser_idを持ったブロック要素を削除 ※変数展開が独特
+      $(".talk_side__bar").prepend(html2);
       if (data.status_id === 1) {
-      $('.room-main-content__left').append(html);
-      $('.room-main-content__left').animate({ scrollTop: 0});
+      $('.room-main-content').append(html);
+      $('.room-main-content').animate({ scrollTop: $('.room-main-content')[0].scrollHeight});
       // elements1.checked = false ;
       // elements2.checked = true ;
       } else if (data.status_id === 2) {
-        $('.room-main-content__right').append(html);
-        $('.room-main-content__right').animate({ scrollTop: 0});
+      $('.room-main-content').append(html);
+      $('.room-main-content').animate({ scrollTop: $('.room-main-content')[0].scrollHeight});
         // elements1.checked = true ;
         // elements2.checked = false ;
         // toggleBtn.classList.remove('close');
@@ -148,6 +156,8 @@ $(document).on('turbolinks:load',(function(){
         // document.getElementById('menu-close').style.display="none";
       };
       $('form')[0].reset();
+      $('.clip').val("");
+      $('.oposition-area').val("");
       $('.from-btn-submit').prop('disabled', false);
     })
     .fail(function() {
@@ -156,17 +166,17 @@ $(document).on('turbolinks:load',(function(){
   });
   })
   var reloadMessages = function() {
-    var last_talk_id = $('.room-main-content__left__user:last').data("talk-id");
-    var last_talk_id2 = $('.room-main-content__right__user:last').data("talk-id");
-    var status_id = $('.room-main-content__right__user:last').data("status-id")
+    var last_talk_id = $('.room-main-content__left:last').data("talk-id");
+    var last_talk_id2 = $('.room-main-content__right:last').data("talk-id");
+    // var status_id = $('.room-main-content__right:last').data("status-id")
     $.ajax({
       url: "api/talks",
       type: 'get',
       dataType: 'json',
       data: {
         id: last_talk_id,
-        id2:last_talk_id2,
-        status_id: status_id
+        id2:last_talk_id2
+        // ,status_id: status_id
           }
     })
     .done(function(talks) {
@@ -174,16 +184,9 @@ $(document).on('turbolinks:load',(function(){
         var insertHTML = '';
         $.each(talks, function(i, talk) {
           insertHTML += buildHTML(talk)
-          if (talk.status_id === 1) {
-            $('.room-main-content__left').append(insertHTML);
-            $('.room-main-content__left').animate({ scrollTop: 0});
-            return
-            } else if (talk.status_id === 2) {
-            $('.room-main-content__right').append(insertHTML);
-            $('.room-main-content__right').animate({ scrollTop: 0});
-            return
-            }
         });
+        $('.room-main-content').append(insertHTML);
+        $('.room-main-content').animate({ scrollTop: $('.room-main-content')[0].scrollHeight});
       }
     })
     .fail(function() {

@@ -1,4 +1,4 @@
-= form_with model:[@room, @talk], class:"from", id: "new-talk_post" do |f|
+= form_with model:[@room, @talk], remote: false ,class:"from", id: "new-talk_post" do |f|
   .message-footer
     .message-footer-area
 
@@ -13,7 +13,6 @@
         -# ボタン
         .message-footer-area-btn-submit
           = f.label :image, class: 'file_area' do
-            = icon('far fa-file-image', class: 'icon')
             = f.file_field :image, class: 'clip'
           = f.submit "送信", class: "from-btn-submit"
 
@@ -22,7 +21,7 @@
         = f.text_field :status_id, value: 1, class: "display-hidden"
 
 
-= form_with model:[@room, @talk], class:"from", id: "new-talk_post content-remove" do |f|
+= form_with model:[@room, @talk], remote: false ,class:"from", id: "new-talk_post content-remove" do |f|
   .message-footer2.content-remove
     .message-footer-area
 
@@ -37,9 +36,8 @@
         -# ボタン
         .message-footer-area-btn-submit
           = f.label :image, class: 'file_area' do
-            = icon('far fa-file-image', class: 'icon')
             = f.file_field :image, class: 'clip'
-          = f.submit "送信", class: "from-btn-submit"
+          = f.submit "送信", class: "from-btn-submit submit"
 
       .message-footer-area-box
         = f.text_area :text, class:"talks-message oposition-area"
