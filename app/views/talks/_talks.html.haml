@@ -6,19 +6,26 @@
           .room-main-content__left-image
             = image_tag talk.user.image.url
           .room-main-content__left-text
-            = talk.text
-            - if talk.image.present?
-              = image_tag talk.image.url
+            .room-main-content__left-text-box
+              = talk.text
+              - if talk.image.present?
+                = image_tag talk.image.url
+            .room-main-content__left-text-time
+              = talk.updated_at.strftime("%Y-%m-%d %H:%M")
 
 
       - elsif talk.status_id == 2
         .room-main-content__right
-          .room-main-content__left-text
-            = talk.text
-            - if talk.image.present?
-              = image_tag talk.image.url
-          .room-main-content__left-image
+          .room-main-content__right-text
+            .room-main-content__right-text-box
+              = talk.text
+              - if talk.image.present?
+                = image_tag talk.image.url
+            .room-main-content__right-text-time
+              = talk.updated_at.strftime("%Y-%m-%d %H:%M")
+          .room-main-content__right-image
             = image_tag talk.user.image.url
+          
 
 
 
