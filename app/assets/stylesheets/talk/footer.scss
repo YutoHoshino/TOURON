@@ -101,6 +101,9 @@
           padding: 10px;
           resize: none;
         }
+        .talks-message::placeholder {
+          color: rgb(158, 158, 158);
+        }
         .agree-area {
           border: 4px solid rgb(226, 124, 124);
         }

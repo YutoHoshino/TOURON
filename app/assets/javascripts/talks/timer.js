@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function () {
   
   let diff = 0;
-  let time = gon.room;
+  let time = (gon.room - (Date.now() - gon.create);
   
   let startTime = new Date();
   let endTime = new Date(Date.now() + time * 60);
