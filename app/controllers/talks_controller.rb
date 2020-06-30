@@ -15,7 +15,6 @@ class TalksController < ApplicationController
     @image = current_user.image
     @rooms = Room.find(params[:room_id])
     gon.room = @rooms.period
-    gon.create = @rooms.created_at
 
     @stasu = Room.find(params[:room_id])
   end

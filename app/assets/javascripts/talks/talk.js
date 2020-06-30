@@ -133,6 +133,8 @@ $(document).on('turbolinks:load',(function(){
         // document.getElementById('menu-close').style.display="none";
       };
       $('form')[0].reset();
+      $('.clip').val("");
+      $('.oposition-area').val("");
       $('.from-btn-submit').prop('disabled', false);
     })
     .fail(function() {

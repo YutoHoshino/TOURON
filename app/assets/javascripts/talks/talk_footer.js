@@ -22,8 +22,6 @@ $(document).on('turbolinks:load', ()=> {
     $(".message-footer2").addClass("content-remove");
     $(".oposition").removeClass("tabs-swith-tbjs");
   })
-  
-
 
 
 });
