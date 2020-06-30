@@ -1,4 +1,4 @@
-= form_with model:[@room, @talk], class:"from", id: "new-talk_post" do |f|
+= form_with model:[@room, @talk], remote: false ,class:"from", id: "new-talk_post" do |f|
   .message-footer
     .message-footer-area
 
@@ -17,12 +17,12 @@
           = f.submit "送信", class: "from-btn-submit"
 
       .message-footer-area-box
-        = f.text_area :text, placeholder: "例）私は〇〇なので賛成です。",class:"talks-message agree-area"
+        = f.text_area :text, class:"talks-message agree-area"
         = f.text_field :status_id, value: 1, class: "display-hidden"
 
 
-= form_with model:[@room, @talk], class:"from", id: "new-talk_post2" do |f|
-  .message-footer2
+= form_with model:[@room, @talk], remote: false ,class:"from", id: "new-talk_post content-remove" do |f|
+  .message-footer2.content-remove
     .message-footer-area
 
       -# ボタンエリア
@@ -40,7 +40,7 @@
           = f.submit "送信", class: "from-btn-submit submit"
 
       .message-footer-area-box
-        = f.text_area :text, placeholder: "例）私は〇〇なので反対です。",class:"talks-message oposition-area"
+        = f.text_area :text, class:"talks-message oposition-area"
         = f.text_field :status_id, value: 2, class: "display-hidden"
 
 
@@ -62,8 +62,8 @@
 -#         %label{:for => "tab3_1", id: "A"} Agree
 -#         %input#tab3_2{"aria-controls" => "second_tab03", :name => "cp_tab", :type => "radio", :onclick => "onClickMenu(2)"}/
 -#         %label{:for => "tab3_2", id: "O"} Oposition
-        -# = f.radio_button :status_id,"1",id:"box1", checked: "checked"
-        -# = f.radio_button :status_id,"2",id:"box2"
+        = f.radio_button :status_id,"1",id:"box1", checked: "checked"
+        = f.radio_button :status_id,"2",id:"box2"
 -#         .cp_tabpanels
 -#           #first_tab03.cp_tabpanel
 -#             = f.text_area :text, class:"tab-content"
