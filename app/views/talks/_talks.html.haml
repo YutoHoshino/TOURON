@@ -2,7 +2,7 @@
   .room-main-content
     - @talks.each do|talk|
       - if talk.status_id == 1
-        .room-main-content__left
+        .room-main-content__left{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           .room-main-content__left-image
             = image_tag talk.user.image.url
           .room-main-content__left-text
@@ -15,7 +15,7 @@
 
 
       - elsif talk.status_id == 2
-        .room-main-content__right
+        .room-main-content__right{data: {talk: {id: talk.id},status: {id:talk.status_id}}}
           .room-main-content__right-text
             .room-main-content__right-text-box
               = talk.text
