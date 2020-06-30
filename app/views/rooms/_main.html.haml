@@ -20,7 +20,6 @@
           = render 'layouts/error_message', errors: @rooms.errors.full_messages_for(:period)
           .rooms-from-text-area.text-area_2
             = f.text_field :period, placeholder: "例）10000 ➡︎ 10分", class: "text-area area2"
-            .text 期間 (必須)
           .rooms-from-text-area.text-area_2
             = f.text_field :tag_list, placeholder: "例）芸能,エンタメ", value: @rooms.tag_list.join(','), class: "text-area area2"
             .text タグ

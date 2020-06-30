@@ -13,9 +13,8 @@ class TalksController < ApplicationController
     @talk_sort = @talk_group.sort_by{ |_, v| v }.reverse
     #value(talkの主キー)順でソートして降順にするためreverse。
     @image = current_user.image
-    @rooms = Room.find(params[:room_id])
+    @rooms = Room.find_by(params[:room_id])
     gon.room = @rooms.period
-
     @stasu = Room.find(params[:room_id])
   end
   

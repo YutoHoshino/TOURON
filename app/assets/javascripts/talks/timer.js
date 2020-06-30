@@ -4,11 +4,12 @@ $(document).on('turbolinks:load', function () {
   let time = gon.room;
   
   let startTime = new Date();
-  let endTime = new Date(Date.now() + time * 600);
-  $(function () {
+  let endTime = new Date(Date.now() + time * 60000);
+
+  $('.talk__rightside-box-time').click(function () {
     diff = endTime - startTime;
     countDown(diff);
-  });
+  }),$("#Timer").text('Push Start');
   
   function countDown(diff) {
     startTime = new Date();
@@ -29,5 +30,4 @@ $(document).on('turbolinks:load', function () {
       $('#main-modal').addClass('modal-active');
     }
   };
-
 });
