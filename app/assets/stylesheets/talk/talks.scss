@@ -12,6 +12,15 @@
       width: 100%;
       height: fit-content;
       display: flex;
+      flex-direction: column-reverse;
+      overflow: scroll;
+      &__box {
+        // height: 60px;
+      }
+      &__user {
+        overflow: visible;
+        // height: 120px;
+        width: 90%;
       align-items: center;
       position: relative;
 
@@ -33,6 +42,32 @@
           border: 1px solid #fababa;
           box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
         }
+      
+        &--text {
+          // width: 100%;
+          overflow: visible;
+          // text-align: center;
+          // line-height: 80%;
+          // height: auto;
+          display: flex;
+          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+          background-color: #E6CED0;
+          border-radius: 50px;
+          padding: 10px 50px 10px 100px;
+          font-size: 20px;
+          &--image {
+            margin: 0 10px;
+            border-radius: 20px;
+          }
+        }
+        &--text2 {
+          width: 100%;
+          overflow: visible;
+          // text-align: center;
+          // line-height: 80%;
+          // height: auto;
+          display: flex;
+          flex-direction: column;
       }
 
       &-text {
@@ -124,8 +159,8 @@
     }
   }
 }
-
-
+  }
+}
 // .room-main {
 //   background-color: whitesmoke;
 //   .room-main-content {
@@ -288,7 +323,7 @@
 //     }
 //   }
 // }
-
+  
 .talk-main {
   width: 100%;
   height: 100%;
@@ -306,3 +341,5 @@
   border-right: 1px solid #b3b3b3;
   border-left: 1px solid #b3b3b3;
 }
+
+

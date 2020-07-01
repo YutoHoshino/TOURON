@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-
+  before_action :set_class
   # def create
   #   @room = Room.find(params[:room_id])
   #   @room.iine(current_user)
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
     @like.save
     @room = Room.find_by(id: @like.room_id)
     @like_count = Like.where(room_id: params[:room_id]).count
-    redirect_to '/homes'
+    # redirect_to '/homes'
   end
   
   def delete
@@ -23,6 +23,14 @@ class LikesController < ApplicationController
     @room = Room.find_by(id: @like.room_id)
     @like.destroy
     @like_count = Like.where(room_id: params[:room_id]).count
-    redirect_to '/homes'
+    # redirect_to '/homes'
   end
+
+  private
+
+  def set_class
+    @room = Room.find(params[:room_id])
+    @class = "#likes_icon_#{@room.id}"
+  end
+
 end

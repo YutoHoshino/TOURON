@@ -1,7 +1,4 @@
-
-.like_button_on
-    = link_to "いいね済み", likes_delete_path(room_id: @room.id), {method: "post", remote: true}
-    = @like_count
-.like_button
-    = link_to "いいね", likes_create_path(room_id: @room.id), {method: "post", remote: true}
-    = @like_count
+- if room.likes_by?(current_user)
+    = link_to image_tag("heart.png"), likes_delete_path(id: room.id, room_id: room.id), method: :post, remote: true
+- else
+    = link_to image_tag("heart2.png"),likes_create_path(id: room.id, room_id: room.id), method: :post, remote: true
