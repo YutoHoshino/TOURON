@@ -12,9 +12,9 @@
 
         -# メインコンテンツ
         .home-body-main-popular-contents-main
-          .room-title 全て
+          .room-title 教育
           .room-contents
-            - @room_random[0..5].each do |room|
+            - @room_random4[0..5].each do |room|
               = link_to room_talks_path(room.id) do
                 .room-contents-box
                   .room-contents-box-img
