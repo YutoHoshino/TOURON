@@ -2,17 +2,15 @@ $(document).on('turbolinks:load', function () {
   
   let diff = 0;
   let time = gon.room
+  console.log(time);
   
   let startTime = new Date();
   let endTime = new Date(Date.now() + time * 60000);
-
-
-  $('.talk__rightside-box-time').click(function () {
   $(function () {
-
     diff = endTime - startTime;
     countDown(diff);
-  }),$("#Timer").text('Push Start');
+  });
+  
   
   function countDown(diff) {
     startTime = new Date();
@@ -29,8 +27,9 @@ $(document).on('turbolinks:load', function () {
     } else {
       //終了した時のテキスト
       $("#Timer").text('終了！'),
-      $('.customButton').click(),
-      $('#main-modal').addClass('modal-active');
+      $('.message-footer').remove(),
+      $('.customButton').click();
     }
   };
+
 });
