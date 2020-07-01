@@ -27,8 +27,8 @@ $(document).on('turbolinks:load', function () {
     } else {
       //終了した時のテキスト
       $("#Timer").text('終了！'),
-      $('.message-footer').remove(),
       $('.customButton').click();
+      $('#main-modal').addClass('modal-active');
     }
   };
 
