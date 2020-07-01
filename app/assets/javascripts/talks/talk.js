@@ -131,14 +131,6 @@ $(document).on('turbolinks:load',(function(){
       var html2 = buildHTML2(data);
       $('[data-id = ' + data.user_id + ']').remove(); //同じuser_idを持ったブロック要素を削除 ※変数展開が独特
       $(".talk_side__bar").prepend(html2);
-      // var elements1 = document.getElementById('box1');
-      // var elements2 = document.getElementById('box2');
-      // var toggleBtn = document.getElementById("menu-button");
-      // console.log(elements1.checked)
-      // console.log(elements2.checked)
-      var html2 = buildHTML2(data);
-      $('[data-id = ' + data.user_id + ']').remove(); //同じuser_idを持ったブロック要素を削除 ※変数展開が独特
-      $(".talk_side__bar").prepend(html2);
       if (data.status_id === 1) {
       $('.room-main-content').append(html);
       $('.room-main-content').animate({ scrollTop: $('.room-main-content')[0].scrollHeight});
@@ -168,6 +160,7 @@ $(document).on('turbolinks:load',(function(){
   var reloadMessages = function() {
     var last_talk_id = $('.room-main-content__left:last').data("talk-id");
     var last_talk_id2 = $('.room-main-content__right:last').data("talk-id");
+    var user_id = $('talk_side__group:last').data("id");
     // var status_id = $('.room-main-content__right:last').data("status-id")
     $.ajax({
       url: "api/talks",
@@ -175,16 +168,22 @@ $(document).on('turbolinks:load',(function(){
       dataType: 'json',
       data: {
         id: last_talk_id,
-        id2:last_talk_id2
+        id2:last_talk_id2,
+        user_id: user_id
         // ,status_id: status_id
           }
     })
     .done(function(talks) {
       if (talks.length !== 0) {
         var insertHTML = '';
+        var insertHTML2 = '';
         $.each(talks, function(i, talk) {
           insertHTML += buildHTML(talk)
+          insertHTML2 += buildHTML2(talk)
+          $('[data-id = ' + talk.user_id + ']').remove(); //同じuser_idを持ったブロック要素を削除 ※変数展開が独特
+          $(".talk_side__bar").prepend(insertHTML2);
         });
+        
         $('.room-main-content').append(insertHTML);
         $('.room-main-content').animate({ scrollTop: $('.room-main-content')[0].scrollHeight});
       }

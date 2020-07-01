@@ -12,6 +12,7 @@ class HomesController < ApplicationController
     @room_random1 = Room.where(category_id: "1")
     @room_random2 = Room.where(category_id: "2")
     @room_random3 = Room.where(category_id: "4")
+    @room_random4 = Room.where(category_id: "5") 
 
     render
   end 

@@ -102,10 +102,13 @@
               .content-main-box-text-contents
                 .content
                   = icon('far fa-heart fa-3x', class: 'icon')
-                  .number 76
+                  .number
+                    = room.likes.ids.length
                 .content
                   = icon('fas fa-user', class: 'icon')
-                  .number 14
+                  .number 
+                    - talk = Talk.where(room_id: room.id).select(:user_id).distinct
+                    = talk.length
     
       .content-main3.content-remove 
         - current_user.like_rooms.each do |room|
@@ -119,7 +122,10 @@
               .content-main-box-text-contents
                 .content
                   = icon('far fa-heart fa-3x', class: 'icon')
-                  .number 76
+                  .number 
+                    = room.likes.ids.length
                 .content
                   = icon('fas fa-user', class: 'icon')
-                  .number 14
+                  .number 
+                    - talk = Talk.where(room_id: room.id).select(:user_id).distinct
+                    = talk.length

@@ -27,12 +27,9 @@
                     = room.tag_list[1]
               .room-contents-box-likes
                 .likes-icon
-                  - if room.likes_by?(current_user)
-                    = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                      = image_tag "heart.png"
-                  - else
-                    = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                      = image_tag "heart2.png"
+                  %div{:id => "likes_icon_#{room.id}"}
+                    = render partial: 'likes/like', locals: { room: room}
+
       - else 
         .room-contents-area
           .room-contents-area-no 表示するものがありません      
