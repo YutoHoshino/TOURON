@@ -1,168 +1,293 @@
 .room-main {
   background-color: whitesmoke;
-  .room-main-content {
+  &-content {
+    padding: 20px;
     width: 100%;
-    display: flex;
     height: 560px;
-    
-    // 左側（賛成）
+    overflow-y: scroll;
+
+
     &__left {
-      background-color:whitesmoke;
-      height: 100%;
-      width: 50%;
+      padding: 40px 20px;
+      width: 100%;
+      height: fit-content;
       display: flex;
-      flex-direction: column-reverse;
-      overflow: scroll;
-      &__box {
-        height: 60px;
-      }
-      &__user {
-        overflow: visible;
-        // height: 120px;
-        width: 90%;
+      align-items: center;
+      position: relative;
+
+      &-image {
         display: flex;
         align-items: center;
-        position: relative;
-        margin: 10px 0 20px 0;
-        &--image {
-          height: 50px;
-          width: 50px;
-          border: outset 1px transparent;
-          border-radius: 100px;
-          // background-color: white;
-          position: absolute;
-          top: 5px;
-          margin-right: 10px;
-          &--main {
-            height: 50px;
-            width: 50px;
-            border-radius: 100px;
-          }
-        }
-        &--text {
-          width: 100%;
-          overflow: visible;
-          // text-align: center;
-          // line-height: 80%;
-          // height: auto;
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-          background-color: #E6CED0;
-          border-radius: 20px;
-          padding: 10px 50px 10px 60px;
-          font-size: 12px;
-          &--name {
-            font-size: 5px;
-            font-weight: 900;
-            border-bottom: 1px solid black;
-          }
-          &--content {
-            display: flex;
-            flex-wrap: wrap;
-            position: static;
+        width: 10%;
+        height: fit-content;
+        margin: 0;
 
-            &--image {
-              margin: 5px 10px;
-              border-radius: 20px;
-              width: 150px;
-              height: 150px;
-            }
+        img {
+          position: absolute;
+          top: 10px;
+          left: 50px;
+          margin: 0 auto;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          border: 1px solid #fababa;
+          box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      &-text {
+        width: 90%;
+        height: fit-content;
+        margin-right: 200px; 
+        &-box {
+          background: #fababa;
+          color: #333;
+          word-wrap: break-word;
+          flex-wrap: wrap;
+          width: fit-content;
+          padding: 10px 40px;
+          border-radius: 10px;
+          line-height: 1.7;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+          img {
+            width: 400px;
+            height: auto;
+            object-fit: cover;
           }
         }
-        &--text2 {
-          width: 100%;
-          height: 120px;
-          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-          background-color: #E6CED0;
-          border-radius: 20px;
-          padding: 10px 50px 10px 60px;
-          font-size: 12px;
+        &-time {
+          margin-left: 10px;
+          margin-top: 10px;
+          color: rgb(122, 122, 122);
+          font-size: 8px;
         }
       }
     }
 
-    // 右側（反対）
+
     &__right {
-      background-color: whitesmoke;
-      height: 100%;
-      width: 50%;
+      padding: 40px 20px;
+      width: 100%;
+      height: fit-content;
       display: flex;
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      overflow: scroll;
-      &__user {
-        overflow: visible;
-        // height: calc(100% - 85vh);
+      align-items: center;
+      position: relative;
+
+      &-text {
+        text-align: right;
         width: 90%;
+        margin-left: 200px; 
+        &-box {
+          margin-left: auto;
+          background: #b9d5ff;
+          color: #333;
+          word-wrap: break-word;
+          flex-wrap: wrap;
+          width: fit-content;
+          padding: 10px 40px;
+          border-radius: 10px;
+          line-height: 1.7;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+          img {
+            width: 400px;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        &-time {
+          margin-right: 10px;
+          margin-top: 10px;
+          color: rgb(122, 122, 122);
+          font-size: 8px;
+        }
+      }
+
+      &-image {
         display: flex;
         align-items: center;
-        position: relative;
-        margin: 10px 0 20px 0;
-        &--image {
-          height: 50px;
-          width: 50px;
-          border: outset 1px transparent;
-          border-radius: 100px;
-          // background-color: white;
+        width: 10%;
+        height: fit-content;
+        margin: 0px;
+
+        img {
           position: absolute;
-          bottom: 5px;
-          right: 1px;
-          &--main {
-            height: 50px;
-            width: 50px;
-            border-radius: 100px;
-          }
-        }
-        &--text {
-          overflow: visible;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          // text-align: center;
-          // height: 80%;
-          // line-height: 80%;
-          box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
-          background-color: #BBC8D6;
-          border-radius: 20px;
-          padding: 10px 60px 10px 30px;
-          font-size: 12px;
-          &--name {
-            font-size: 5px;
-            font-weight: 900;
-            border-bottom: 1px solid black;
-            display: flex;
-            justify-content: flex-end;
-          }
-          &--content {
-            display: flex;
-            flex-wrap: wrap;
-            overflow: visible;
-            p {
-              position: static;
-            }
-            &--image {
-              margin: 5px 10px;
-              border-radius: 20px;
-              width: 150px;
-              height: 150px;
-            }
-          }
-        }
-        &--text2 {
-          width: 100%;
-          height: 120px;
-          box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
-          background-color: #BBC8D6;
-          border-radius: 20px;
-          padding: 10px 60px 10px 30px;
-          font-size: 12px;
+          top: 15px;
+          right: 50px;
+          border: 1px solid #b9d5ff;
+          margin: 0 auto;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
         }
       }
     }
   }
 }
+
+
+// .room-main {
+//   background-color: whitesmoke;
+//   .room-main-content {
+//     padding: 20px;
+//     width: 100%;
+//     display: flex;
+//     height: 560px;
+//     overflow-y: scroll;
+//     // 左側（賛成）
+//     &__left {
+//       background-color:whitesmoke;
+//       height: 100%;
+//       width: 50%;
+//       // display: flex;
+//       // &__box {
+//       //   height: 60px;
+//       // }
+//       // &__user {
+//       //   overflow: visible;
+//       //   // height: 120px;
+//       //   width: 90%;
+//       //   display: flex;
+//       //   align-items: center;
+//       //   position: relative;
+//       //   margin: 10px 0 20px 0;
+//       //   &--image {
+//       //     height: 50px;
+//       //     width: 50px;
+//       //     border: outset 1px transparent;
+//       //     border-radius: 100px;
+//       //     // background-color: white;
+//       //     position: absolute;
+//       //     top: 5px;
+//       //     margin-right: 10px;
+//       //     &--main {
+//       //       height: 50px;
+//       //       width: 50px;
+//       //       border-radius: 100px;
+//       //     }
+//       //   }
+//       //   &--text {
+//       //     width: 100%;
+//       //     overflow: visible;
+//       //     // text-align: center;
+//       //     // line-height: 80%;
+//       //     // height: auto;
+//       //     display: flex;
+//       //     flex-direction: column;
+//       //     flex-wrap: wrap;
+//       //     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+//       //     background-color: #E6CED0;
+//       //     border-radius: 20px;
+//       //     padding: 10px 50px 10px 60px;
+//       //     font-size: 12px;
+//       //     &--name {
+//       //       font-size: 5px;
+//       //       font-weight: 900;
+//       //       border-bottom: 1px solid black;
+//       //     }
+//       //     &--content {
+//       //       display: flex;
+//       //       flex-wrap: wrap;
+//       //       position: static;
+
+//       //       &--image {
+//       //         margin: 5px 10px;
+//       //         border-radius: 20px;
+//       //         width: 150px;
+//       //         height: 150px;
+//       //       }
+//       //     }
+//       //   }
+//       //   &--text2 {
+//       //     width: 100%;
+//       //     height: 120px;
+//       //     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+//       //     background-color: #E6CED0;
+//       //     border-radius: 20px;
+//       //     padding: 10px 50px 10px 60px;
+//       //     font-size: 12px;
+//       //   }
+//       // }
+//     }
+
+//     // 右側（反対）
+//     &__right {
+//       background-color: whitesmoke;
+//       height: 100%;
+//       width: 50%;
+//       // display: flex;
+//       // flex-direction: column-reverse;
+//       // &__user {
+//       //   overflow: visible;
+//       //   // height: calc(100% - 85vh);
+//       //   width: 90%;
+//       //   display: flex;
+//       //   align-items: center;
+//       //   position: relative;
+//       //   margin: 10px 0 20px 0;
+//       //   &--image {
+//       //     height: 50px;
+//       //     width: 50px;
+//       //     border: outset 1px transparent;
+//       //     border-radius: 100px;
+//       //     // background-color: white;
+//       //     position: absolute;
+//       //     bottom: 5px;
+//       //     right: 1px;
+//       //     &--main {
+//       //       height: 50px;
+//       //       width: 50px;
+//       //       border-radius: 100px;
+//       //     }
+//       //   }
+//       //   &--text {
+//       //     overflow: visible;
+//       //     width: 100%;
+//       //     display: flex;
+//       //     flex-direction: column;
+//       //     // text-align: center;
+//       //     // height: 80%;
+//       //     // line-height: 80%;
+//       //     box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+//       //     background-color: #BBC8D6;
+//       //     border-radius: 20px;
+//       //     padding: 10px 60px 10px 30px;
+//       //     font-size: 12px;
+//       //     &--name {
+//       //       font-size: 5px;
+//       //       font-weight: 900;
+//       //       border-bottom: 1px solid black;
+//       //       display: flex;
+//       //       justify-content: flex-end;
+//       //     }
+//       //     &--content {
+//       //       display: flex;
+//       //       flex-wrap: wrap;
+//       //       overflow: visible;
+//       //       p {
+//       //         position: static;
+//       //       }
+//       //       &--image {
+//       //         margin: 5px 10px;
+//       //         border-radius: 20px;
+//       //         width: 150px;
+//       //         height: 150px;
+//       //       }
+//       //     }
+//       //   }
+//       //   &--text2 {
+//       //     width: 100%;
+//       //     height: 120px;
+//       //     box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+//       //     background-color: #BBC8D6;
+//       //     border-radius: 20px;
+//       //     padding: 10px 60px 10px 30px;
+//       //     font-size: 12px;
+//       //   }
+//       // }
+//     }
+//   }
+// }
 
 .talk-main {
   width: 100%;

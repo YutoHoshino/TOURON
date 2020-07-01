@@ -15,6 +15,12 @@ class TalksController < ApplicationController
     @image = current_user.image
     @rooms = Room.find_by(params[:room_id])
     gon.room = @rooms.period
+
+
+    @category_id = Room.find(params[:room_id]).category_id
+    @category = Category.find(@category_id.to_i)
+
+
     @stasu = Room.find(params[:room_id])
   end
   

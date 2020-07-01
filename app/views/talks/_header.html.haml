@@ -7,8 +7,9 @@
   .talks_room_header-image
     = link_to mypages_path do
       = image_tag("#{@user.image}")
-    .new-btn
-      + 部屋作成
+    = link_to new_room_path do
+      .new-btn
+        + 部屋作成
 
   
 -# .talk-second_header

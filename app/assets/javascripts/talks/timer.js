@@ -1,12 +1,15 @@
 $(document).on('turbolinks:load', function () {
   
   let diff = 0;
-  let time = gon.room;
+  let time = gon.room
   
   let startTime = new Date();
   let endTime = new Date(Date.now() + time * 60000);
 
+
   $('.talk__rightside-box-time').click(function () {
+  $(function () {
+
     diff = endTime - startTime;
     countDown(diff);
   }),$("#Timer").text('Push Start');
