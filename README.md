@@ -37,6 +37,8 @@ pass: testtest
 - タイマー機能
 
 # DB 設計
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/67e21f3891f3327d2e876595f175cbde.png)](https://gyazo.com/67e21f3891f3327d2e876595f175cbde)
 
 ## users テーブル
 
