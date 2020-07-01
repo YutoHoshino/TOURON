@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', function () {
   
   let diff = 0;
   let time = gon.room
+  console.log(time);
   
   let startTime = new Date();
   let endTime = new Date(Date.now() + time * 60000);
