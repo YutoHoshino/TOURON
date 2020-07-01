@@ -80,7 +80,6 @@ gem 'acts-as-taggable-on'
 gem 'rails-i18n'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'gon'
-gem 'jquery-turbolinks'
 group :production do
   gem 'unicorn'
 end
