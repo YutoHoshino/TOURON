@@ -14,7 +14,8 @@
             .follow-user-main-area-user
               = link_to user_path(user.id) do
                 = user.username
-              = render "relationships/follow_button", user: user
+              %div{:id => "follow_#{user.id}"}
+                = render "relationships/follow_home_button", user: user
               
       .follow-user-main.follower-list.content-remove
         - current_user.followers.each do |user|
@@ -26,5 +27,6 @@
               = link_to user_path(user.id) do
                 .follow-user-main-area-user-name
                   = user.username
-              = render "relationships/follow_button", user: user
+              %div{:id => "follow_#{user.id}"}
+                = render "relationships/follow_home_button", user: user
 

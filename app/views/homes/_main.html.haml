@@ -65,7 +65,8 @@
                     .users-box-name
                       = user.username
                     .users-box-follow
-                      = render "relationships/follow_home_button", user: user
+                      %div{:id => "follow_#{user.id}"}
+                        = render "relationships/follow_home_button", user: user
 
 
       .home-body-main-popular-contents
@@ -94,10 +95,8 @@
                         = room.tag_list[1]
                   .room-contents-box-likes
                     .likes-icon
-                      - if room.likes_by?(current_user)
-                        = link_to image_tag("heart.png"), likes_delete_path(id: room.id, room_id: room.id), method: :post, remote: true
-                      - else
-                        = link_to image_tag("heart2.png"),likes_create_path(id: room.id, room_id: room.id), method: :post, remote: true
+                      %div{:id => "likes_icon_#{room.id}"}
+                        = render partial: 'likes/like', locals: { room: room}
                           
                           
         -# サイドユーザー
@@ -130,12 +129,9 @@
                         = room.tag_list[1]
                   .room-contents-box-likes
                     .likes-icon
-                      - if room.likes_by?(current_user)
-                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart.png"
-                      - else
-                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2.png"
+                      %div{:id => "likes_icon_#{room.id}"}
+                        = render partial: 'likes/like', locals: { room: room}
+
         -# サイドユーザー
         .home-body-main-popular-contents-user
 
@@ -165,12 +161,9 @@
                         = room.tag_list[1]
                   .room-contents-box-likes
                     .likes-icon
-                      - if room.likes_by?(current_user)
-                        = link_to likes_delete_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart.png"
-                      - else
-                        = link_to likes_create_path(id: room.id, room_id: room.id), {method: "post"} do
-                          = image_tag "heart2.png"
+                      %div{:id => "likes_icon_#{room.id}"}
+                        = render partial: 'likes/like', locals: { room: room}
+
         -# サイドユーザー
         .home-body-main-popular-contents-user
 
