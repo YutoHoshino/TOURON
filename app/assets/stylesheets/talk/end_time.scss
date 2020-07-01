@@ -1,0 +1,14 @@
+.end_message-footer {
+  width: 100%;
+  padding: 0 50px;
+  height: calc(100vh - 60px - 560px);
+  &-text {
+    border-top: 1px solid rgb(209, 209, 209);
+    line-height: 169px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
