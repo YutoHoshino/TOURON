@@ -126,4 +126,6 @@
                     = room.likes.ids.length
                 .content
                   = icon('fas fa-user', class: 'icon')
-                  .number 14
+                  .number 
+                    - talk = Talk.where(room_id: room.id).select(:user_id).distinct
+                    = talk.length

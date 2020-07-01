@@ -1,6 +1,7 @@
 class MypagesController < ApplicationController
   
   def index
+    @talk = Talk.where(user_id: current_user.id).select(:room_id).distinct.length #自分の参加した部屋の総数を表示
   end
 
   def info
