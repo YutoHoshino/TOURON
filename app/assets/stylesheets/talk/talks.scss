@@ -42,6 +42,7 @@
           border: 1px solid #fababa;
           box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
         }
+      
         &--text {
           // width: 100%;
           overflow: visible;
@@ -158,8 +159,8 @@
     }
   }
 }
-
-
+  }
+}
 // .room-main {
 //   background-color: whitesmoke;
 //   .room-main-content {
@@ -322,7 +323,7 @@
 //     }
 //   }
 // }
-
+  
 .talk-main {
   width: 100%;
   height: 100%;
@@ -340,3 +341,5 @@
   border-right: 1px solid #b3b3b3;
   border-left: 1px solid #b3b3b3;
 }
+
+
