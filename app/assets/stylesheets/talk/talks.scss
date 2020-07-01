@@ -42,7 +42,7 @@
         &-box {
           background: #fababa;
           color: #333;
-          word-wrap: break-word;
+          word-break: break-all;
           flex-wrap: wrap;
           width: fit-content;
           padding: 10px 40px;
@@ -80,7 +80,7 @@
           margin-left: auto;
           background: #b9d5ff;
           color: #333;
-          word-wrap: break-word;
+          word-break: break-all;
           flex-wrap: wrap;
           width: fit-content;
           padding: 10px 40px;
@@ -94,12 +94,14 @@
           }
         }
         &-time {
+          text-align: right;
           margin-right: 10px;
           margin-top: 10px;
           color: rgb(122, 122, 122);
           font-size: 8px;
         }
       }
+      
 
       &-image {
         display: flex;
