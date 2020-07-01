@@ -77,7 +77,7 @@ pass: testtest
 - belongs_to :user
 - belongs_to :room
 
-## roomsーブル
+## rooms テーブル
 
 | Column      | Type       | Options           |
 | ----------- | ---------- | ----------------- |
