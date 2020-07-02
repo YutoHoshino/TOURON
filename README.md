@@ -11,7 +11,7 @@ password: the74
 
 ## テストアカウント
 
-Email: text@gmail.com<br>
+Email: test@gmail.com<br>
 pass: testtest
 
 
